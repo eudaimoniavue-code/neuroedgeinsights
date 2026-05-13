@@ -22,7 +22,7 @@
       --border:     rgba(25, 35, 76, 0.12);
 
       /* ---- FONTS — Edit font families here ---- */
-      --font-heading: '--font-accent: 'Calibri', 'Trebuchet MS', sans-serif;  /* elegant display — swappable */
+      --font-heading: 'Bodoni Moda', 'Trebuchet MS', sans-serif;  /* elegant display — swappable */
       --font-body:    'Fira Sans', sans-serif;      /* primary body/UI font */
       /* var(--font-accent) is loaded via @font-face below — used for accent labels */
 
@@ -39,7 +39,15 @@
        var(--font-accent) — fallback if you have the font file
        Replace the src URL with your actual var(--font-accent) file path
     ============================================================ */
-  var(--font-accent) --font-accent: 'Calibri', 'Trebuchet MS', sans-serif;
+   @font-face {
+      font-family: 'Bodoni Moda';
+      src: local('Bodoni Moda'),
+           url('fonts/Bodoni Moda.woff2') format('woff2'),
+           url('fonts/Bodoni Moda.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
 
     /* ============================================================
        RESET & BASE
@@ -83,7 +91,7 @@
       background: var(--blue);
       border-radius: var(--radius);
       display: flex; align-items: center; justify-content: center;
-      font-family: 'var(--font-accent)', var(--font-body);
+      font-family: 'Bodoni Moda', var(--font-body);
       font-size: 14px; font-weight: 700;
       color: var(--white);
       letter-spacing: 0.05em;
@@ -167,7 +175,7 @@
     .section-lg { padding: 120px 0; }
 
     .section-label {
-      font-family: 'var(--font-accent)', var(--font-body);
+      font-family: 'Bodoni Moda', var(--font-body);
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--blue);
@@ -203,7 +211,7 @@
       border-radius: 20px;
       font-size: 12px; font-weight: 600;
       letter-spacing: 0.05em;
-      font-family: 'var(--font-accent)', var(--font-body);
+      font-family: 'Bodoni Moda', var(--font-body);
     }
 
     .btn {
@@ -273,7 +281,7 @@
       position: relative; z-index: 1;
     }
     .hero-eyebrow {
-      font-family: 'var(--font-accent)', var(--font-body);
+      font-family: 'Bodoni Moda', var(--font-body);
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.2em; text-transform: uppercase;
       color: rgba(255,255,255,0.5);
