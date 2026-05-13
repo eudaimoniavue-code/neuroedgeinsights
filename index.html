@@ -7,6 +7,58 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+ /* ============================================================
+   AVATAR CAROUSEL — alongside bio text
+============================================================ */
+.avatar-carousel {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--navy);
+  aspect-ratio: 3/4; /* portrait crop — change to 1/1 for square */
+  flex-shrink: 0;
+}
+.avatar-carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+}
+.avatar-carousel-slide {
+  min-width: 100%; height: 100%;
+}
+.avatar-carousel-slide img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+}
+.avatar-carousel-btn {
+  position: absolute; bottom: 16px;
+  width: 36px; height: 36px;
+  background: rgba(25,35,76,0.7);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: var(--white); font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 10;
+  transition: background var(--transition);
+  backdrop-filter: blur(6px);
+}
+.avatar-carousel-btn:hover { background: var(--blue); }
+.avatar-carousel-btn.prev { right: 60px; }
+.avatar-carousel-btn.next { right: 16px; }
+.avatar-carousel-dots {
+  position: absolute; top: 12px; right: 12px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.avatar-carousel-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,0.3); cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+.avatar-carousel-dot.active {
+  background: var(--white); transform: scale(1.4);
+}
   <style>
     /* ============================================================
        CSS VARIABLES — Edit colours and fonts here
@@ -1369,92 +1421,66 @@
 
         <!-- SIDEBAR -->
         <div>
+          <!-- ============================================================
+     AVATAR CAROUSEL — replace src values with your headshot filenames
+     Add or remove <div class="avatar-carousel-slide"> blocks for more photos
+============================================================ -->
+<div class="avatar-carousel" id="avatarCarousel">
+  <div class="avatar-carousel-track" id="avatarTrack">
+
+    <!-- PHOTO 1 -->
+    <div class="avatar-carousel-slide">
+      <img src="IMG-20160506-WA0000.jpg" alt="photo 1">
+    </div>
+
+    <!-- PHOTO 2 -->
+    <div class="avatar-carousel-slide">
+      <img src="profile 2.JPG" alt="photo 2">
+    </div>
+
+    <!-- PHOTO 3 -->
+    <div class="avatar-carousel-slide">
+      <img src="profile 3.JPG" alt="Photo 3">
+    </div>
+
+    <!-- ADD MORE: duplicate a slide block above -->
+
+  </div>
+
+  <div class="avatar-carousel-dots" id="avatarDots"></div>
+  <button class="avatar-carousel-btn prev" onclick="moveAvatar(-1)">&#8592;</button>
+  <button class="avatar-carousel-btn next" onclick="moveAvatar(1)">&#8594;</button>
+</div>
+<!-- END AVATAR CAROUSEL -->
           <div class="sidebar-card">
             <div class="sidebar-title">Qualifications</div>
             <!-- EDIT QUALIFICATIONS HERE -->
             <div class="sidebar-item">
               <div class="sidebar-item-icon">🎓</div>
               <div>
-                <div class="sidebar-item-label">PhD / MSc</div>
-                [Your degree, university, year]
+                <div class="sidebar-item-label">MSc</div>
+                Master of Science, Psychology and Neuroscience in Mental Health. King's College London, United Kingdom 2023
               </div>
             </div>
             <div class="sidebar-item">
               <div class="sidebar-item-icon">📜</div>
               <div>
-                <div class="sidebar-item-label">Chartered CIPD</div>
-                HR & People Development
+                <div class="sidebar-item-label">Experienced Learning and Development</div>
+                Empowering People Development through Effective Project Management and Learning
               </div>
             </div>
             <div class="sidebar-item">
-              <div class="sidebar-item-icon">🏛️</div>
+              <div class="sidebar-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-cloud-icon lucide-monitor-cloud"><path d="M11 13a3 3 0 1 1 2.83-4H14a2 2 0 0 1 0 4z"/><path d="M12 17v4"/><path d="M8 21h8"/><rect x="2" y="3" width="20" height="14" rx="2"/></svg></div>
               <div>
-                <div class="sidebar-item-label">BPS Member</div>
-                British Psychological Society
+                <div class="sidebar-item-label">Educator</div>
+                With over 15 years of dedicated experience in teaching and designing effective curriculum, with a background with mainstream and special needs students
               </div>
             </div>
             <!-- END QUALIFICATIONS -->
-          </div>
-
-          <div class="sidebar-card">
-            <div class="sidebar-title">Affiliations</div>
-            <!-- EDIT AFFILIATIONS HERE -->
-            <div class="sidebar-item">
-              <div class="sidebar-item-icon">🔗</div>
-              [Organisation or institution name]
-            </div>
-            <div class="sidebar-item">
-              <div class="sidebar-item-icon">🔗</div>
-              [Research body or network]
-            </div>
+         
             <!-- END AFFILIATIONS -->
-          </div>
+      
 
-          <div class="sidebar-card">
-            <div class="sidebar-title">Speaking & Media</div>
-            <div class="sidebar-item">
-              <div class="sidebar-item-icon">🎤</div>
-              Available for keynotes and panel discussions on neuroscience in HR
-            </div>
-            <div class="sidebar-item">
-              <div class="sidebar-item-icon">📰</div>
-              Media enquiries welcome
-            </div>
-            <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px" onclick="showPage('about');setTimeout(scrollToContact,100)">Enquire →</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- PUBLICATIONS / RESEARCH -->
-      <div class="fade-up">
-        <div class="section-label">Research & Publications</div>
-        <h2 class="section-title" style="font-size:28px;margin-bottom:8px">Selected Work</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="pub-grid">
-        <!-- EDIT / ADD PUBLICATIONS HERE -->
-        <div class="pub-card fade-up">
-          <div class="pub-num">01</div>
-          <div>
-            <div class="pub-title">[Publication or Research Title Here]</div>
-            <p class="pub-body">[Journal / Publisher / Year] — Brief description of the research, its findings, and relevance to workforce psychology or attrition.</p>
-          </div>
-        </div>
-        <div class="pub-card fade-up">
-          <div class="pub-num">02</div>
-          <div>
-            <div class="pub-title">[Second Publication or Presentation Title]</div>
-            <p class="pub-body">[Conference / Report / Year] — Brief description of the work and its contribution to the field.</p>
-          </div>
-        </div>
-        <div class="pub-card fade-up">
-          <div class="pub-num">03</div>
-          <div>
-            <div class="pub-title">[Add More As Needed]</div>
-            <p class="pub-body">Duplicate this block to add additional publications, conference papers, reports, or media appearances.</p>
-          </div>
-        </div>
-        <!-- END PUBLICATIONS -->
       </div>
     </div>
   </section>
@@ -1470,10 +1496,10 @@
   <div class="about-hero">
     <div class="container">
       <div class="about-hero-inner">
-        <div class="section-label" style="color:rgba(255,255,255,0.45)">About NeuroHR Insights</div>
-        <h1 class="section-title light">We Believe Every Workforce<br>Crisis Has a Neurological Cause</h1>
+        <div class="section-label" style="color:rgba(255,255,255,0.45)">About Neuroedge Insights</div>
+        <h1 class="section-title light">We Believe Every Workforce<br>Crisis Runs Deeper Than The Surface</h1>
         <div class="divider"></div>
-        <p class="section-body light">Founded to solve the retention crisis in education — and designed to scale across every high-attrition sector — we are the UK's specialist at the intersection of neuroscience, psychology, and HR data.</p>
+        <p class="section-body light">Founded to solve the retention crisis in education — and designed to scale across every high-attrition sector — we specialise at the intersection of neuroscience, psychology, and HR data.</p>
       </div>
     </div>
   </div>
@@ -1488,7 +1514,7 @@
           <div class="divider"></div>
           <!-- EDIT MISSION TEXT HERE -->
           <p class="section-body" style="margin-bottom:20px">Traditional HR metrics — engagement scores, exit interviews, headcount ratios — describe what happened. Neuroscience tells us <em>why</em> it happened and, critically, what will happen next.</p>
-          <p style="font-size:16px;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:20px">Our mission is to give HR leaders in high-attrition sectors the psychological intelligence to intervene early, build resilient cultures, and retain the professionals society depends on most.</p>
+          <p style="font-size:16px;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:20px">Our mission is to give companies and leaders in high-attrition sectors the psychological intelligence to intervene early, build resilient cultures, and retain the professionals society depends on most.</p>
           <p style="font-size:16px;font-weight:300;color:var(--muted);line-height:1.8">We start with education because the crisis is acute, the data is compelling, and the human cost is immeasurable. Healthcare is next — where the same principles apply with even greater urgency.</p>
           <!-- END MISSION TEXT -->
           <div style="margin-top:32px">
@@ -1550,23 +1576,7 @@
             <div class="team-card-role">CEO & Managing Director</div>
             <p class="team-card-bio">Neuroscience, occupational psychology, and HR strategy. [Short bio sentence about background and specialism.]</p>
           </div>
-        </div>
-        <div class="team-card fade-up">
-          <div class="team-card-photo">👤</div>
-          <div class="team-card-body">
-            <div class="team-card-name">[Advisor / Collaborator Name]</div>
-            <div class="team-card-role">Research Advisor</div>
-            <p class="team-card-bio">[Their background and contribution to the work. Duplicate this block to add more team members.]</p>
-          </div>
-        </div>
-        <div class="team-card fade-up">
-          <div class="team-card-photo">👤</div>
-          <div class="team-card-body">
-            <div class="team-card-name">[Partner / Associate Name]</div>
-            <div class="team-card-role">Associate Consultant</div>
-            <p class="team-card-bio">[Background and specialisms. Add as many team cards as needed by duplicating this block.]</p>
-          </div>
-        </div>
+        
         <!-- END TEAM CARDS -->
       </div>
     </div>
@@ -1595,7 +1605,7 @@
         <div class="value-card fade-up">
           <div class="value-icon">🌍</div>
           <div class="value-title">Societal Impact</div>
-          <p class="value-body">We chose education and healthcare deliberately. Losing great teachers and nurses isn't just an HR problem — it's a societal emergency. We're here to help solve it.</p>
+          <p class="value-body">We focus on people — because when they thrive, communities thrive. Right now, our work is centred on education and healthcare, where the stakes are highest and the challenges are urgent. These sectors matter deeply, and we’re committed to helping solve the issues they face.</p>
         </div>
         <div class="value-card fade-up">
           <div class="value-icon">⚡</div>
@@ -1617,19 +1627,6 @@
     </div>
   </section>
 
-  <!-- PARTNERS STRIP -->
-  <div class="partner-strip">
-    <div class="partner-label">Recognised & Affiliated With</div>
-    <div class="partner-logos">
-      <!-- EDIT PARTNER/CREDENTIAL LOGOS HERE -->
-      <div class="partner-logo">BPS Member</div>
-      <div class="partner-logo">Chartered CIPD</div>
-      <div class="partner-logo">[University Partner]</div>
-      <div class="partner-logo">[Awarding Body]</div>
-      <div class="partner-logo">[Industry Body]</div>
-      <!-- END PARTNERS -->
-    </div>
-  </div>
 
   <!-- CONTACT -->
   <section class="section" id="contact-about">
@@ -1651,11 +1648,11 @@
           </div>
           <div class="form-group">
             <label class="form-label">Email</label>
-            <input type="email" class="form-input" placeholder="jane@trust.org.uk">
+            <input type="email" class="form-input" placeholder="jane@email.com">
           </div>
           <div class="form-group">
             <label class="form-label">Organisation</label>
-            <input type="text" class="form-input" placeholder="School / Trust / NHS Trust / Other">
+            <input type="text" class="form-input" placeholder="School / Business / Healthcare / Other">
           </div>
           <div class="form-group">
             <label class="form-label">Type of Enquiry</label>
@@ -1663,7 +1660,6 @@
               <option value="">Select...</option>
               <option>Commissioning a Project</option>
               <option>Research Partnership</option>
-              <option>Speaking Engagement</option>
               <option>Media / Press</option>
               <option>General Enquiry</option>
             </select>
@@ -1686,17 +1682,10 @@
             </div>
           </div>
           <div class="contact-detail">
-            <div class="contact-icon">🎤</div>
-            <div>
-              <div class="contact-detail-label">Speaking & Media</div>
-              <div class="contact-detail-value">media@neurohrinsights.com</div>
-            </div>
-          </div>
-          <div class="contact-detail">
             <div class="contact-icon">🤝</div>
             <div>
               <div class="contact-detail-label">Research Partnerships</div>
-              <div class="contact-detail-value">research@neurohrinsights.com</div>
+              <div class="contact-detail-value">hello@neuroedgeinsights.com</div>
             </div>
           </div>
           <!-- END CONTACT DETAILS -->
@@ -1715,7 +1704,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand-name">NeuroHR Insights</div>
+        <div class="footer-brand-name">Neuroedge Insights</div>
         <p class="footer-brand-desc">Neuroscience and psychology applied to HR data — helping high-attrition sectors understand, predict, and transform workforce outcomes.</p>
       </div>
       <div>
@@ -1738,13 +1727,13 @@
       <div>
         <div class="footer-col-title">Connect</div>
         <!-- EDIT SOCIAL/CONTACT LINKS HERE -->
-        <a class="footer-link" href="mailto:hello@neurohrinsights.com">Email Us</a>
+        <a class="footer-link" href="hello@neuroedgeinsights.com">Email Us</a>
         <span class="footer-link">LinkedIn</span>
         <span class="footer-link">Research Gate</span>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 NeuroHR Insights. All rights reserved.</div>
+      <div class="footer-copy">© 2026 Neuroedge Insights. All rights reserved.</div>
       <div class="footer-legal">
         <a>Privacy Policy</a>
         <a>Terms of Use</a>
@@ -1759,6 +1748,41 @@
      JAVASCRIPT
 ================================================================ -->
 <script>
+/* ---- AVATAR CAROUSEL ---- */
+(function(){
+  const track = document.getElementById('avatarTrack');
+  const dotsWrap = document.getElementById('avatarDots');
+  if (!track) return;
+
+  let current = 0;
+  const slides = track.querySelectorAll('.avatar-carousel-slide');
+  const total = slides.length;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'avatar-carousel-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => avatarGoTo(i);
+    dotsWrap.appendChild(d);
+  });
+
+  function avatarGoTo(n) {
+    current = (n + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsWrap.querySelectorAll('.avatar-carousel-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === current));
+  }
+
+  window.moveAvatar = (dir) => avatarGoTo(current + dir);
+
+  // Swipe support
+  let startX = 0;
+  track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) avatarGoTo(current + (diff > 0 ? 1 : -1));
+  });
+})();
   /* ---- PAGE SWITCHING ---- */
   function showPage(name) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
