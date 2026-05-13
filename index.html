@@ -562,58 +562,6 @@
       padding: 80px 0 0;
       position: relative;
     }
-    /* ============================================================
-   AVATAR CAROUSEL — alongside bio text
-============================================================ */
-.avatar-carousel {
-  position: relative;
-  width: 100%;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--navy);
-  aspect-ratio: 3/4; /* portrait crop — change to 1/1 for square */
-  flex-shrink: 0;
-}
-.avatar-carousel-track {
-  display: flex;
-  height: 100%;
-  transition: transform 0.5s cubic-bezier(.4,0,.2,1);
-}
-.avatar-carousel-slide {
-  min-width: 100%; height: 100%;
-}
-.avatar-carousel-slide img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center top;
-  display: block;
-}
-.avatar-carousel-btn {
-  position: absolute; bottom: 16px;
-  width: 36px; height: 36px;
-  background: rgba(25,35,76,0.7);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 50%;
-  color: var(--white); font-size: 16px;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; z-index: 10;
-  transition: background var(--transition);
-  backdrop-filter: blur(6px);
-}
-.avatar-carousel-btn:hover { background: var(--blue); }
-.avatar-carousel-btn.prev { right: 60px; }
-.avatar-carousel-btn.next { right: 16px; }
-.avatar-carousel-dots {
-  position: absolute; top: 12px; right: 12px;
-  display: flex; flex-direction: column; gap: 6px;
-}
-.avatar-carousel-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: rgba(255,255,255,0.3); cursor: pointer;
-  transition: background var(--transition), transform var(--transition);
-}
-.avatar-carousel-dot.active {
-  background: var(--white); transform: scale(1.4);
-}
     .profile-hero-inner {
       display: grid; grid-template-columns: auto 1fr;
       gap: 48px; align-items: end;
@@ -989,7 +937,7 @@
 <nav class="nav" id="main-nav">
   <div class="nav-inner">
     <div class="nav-logo" onclick="showPage('overview')">
-      <div class="nav-logo-mark"> <img src="NeuroEdge LOGO.png" alt="Logo1"></div>
+      <div class="img src="NeuroEdge LOGO.png" alt="Logo1"></div>
       <div>
         <div class="nav-logo-text">Neuroedge Insights</div>
         <div class="nav-logo-sub">Neuroscience × HR</div>
@@ -1321,7 +1269,7 @@
             <div class="contact-icon">📧</div>
             <div>
               <div class="contact-detail-label">Email</div>
-              <div class="contact-detail-value">sales@neuroedgeinsights.com</div>
+              <div class="contact-detail-value">hello@neuroedgeinsights.com</div>
             </div>
           </div>
           <div class="contact-detail">
@@ -1422,37 +1370,6 @@
 
         <!-- SIDEBAR -->
         <div>
-          <!-- ============================================================
-     AVATAR CAROUSEL — replace src values with your headshot filenames
-     Add or remove <div class="avatar-carousel-slide"> blocks for more photos
-============================================================ -->
-<div class="avatar-carousel" id="avatarCarousel">
-  <div class="avatar-carousel-track" id="avatarTrack">
-
-    <!-- PHOTO 1 -->
-    <div class="avatar-carousel-slide">
-      <img src="IMG-20160506-WA0000.jpg" alt="photo 1">
-    </div>
-
-    <!-- PHOTO 2 -->
-    <div class="avatar-carousel-slide">
-      <img src="profile 2.JPG" alt="photo 2">
-    </div>
-
-    <!-- PHOTO 3 -->
-    <div class="avatar-carousel-slide">
-      <img src="profile 3.JPG" alt="Photo 3">
-    </div>
-
-    <!-- ADD MORE: duplicate a slide block above -->
-
-  </div>
-
-  <div class="avatar-carousel-dots" id="avatarDots"></div>
-  <button class="avatar-carousel-btn prev" onclick="moveAvatar(-1)">&#8592;</button>
-  <button class="avatar-carousel-btn next" onclick="moveAvatar(1)">&#8594;</button>
-</div>
-<!-- END AVATAR CAROUSEL -->
           <div class="sidebar-card">
             <div class="sidebar-title">Qualifications</div>
             <!-- EDIT QUALIFICATIONS HERE -->
@@ -1571,7 +1488,7 @@
         <!-- TEAM CARD — duplicate to add more team members -->
         <div class="team-card fade-up">
           <!-- Replace div.team-card-photo with <img src="photo.jpg" alt="Name"> -->
-          <div class="team-card-photo">👤</div>
+          <div class=" <img src="IMG-20160506-WA0000.jpg" alt="Photo 1">">👤</div>
           <div class="team-card-body">
             <div class="team-card-name">Felicia Teo]</div>
             <div class="team-card-role">CEO & Managing Director</div>
@@ -1749,33 +1666,6 @@
      JAVASCRIPT
 ================================================================ -->
 <script>
-/* ---- AVATAR CAROUSEL ---- */
-(function(){
-  const track = document.getElementById('avatarTrack');
-  const dotsWrap = document.getElementById('avatarDots');
-  if (!track) return;
-
-  let current = 0;
-  const slides = track.querySelectorAll('.avatar-carousel-slide');
-  const total = slides.length;
-
-  // Build dots
-  slides.forEach((_, i) => {
-    const d = document.createElement('div');
-    d.className = 'avatar-carousel-dot' + (i === 0 ? ' active' : '');
-    d.onclick = () => avatarGoTo(i);
-    dotsWrap.appendChild(d);
-  });
-
-  function avatarGoTo(n) {
-    current = (n + total) % total;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dotsWrap.querySelectorAll('.avatar-carousel-dot').forEach((d, i) =>
-      d.classList.toggle('active', i === current));
-  }
-
-  window.moveAvatar = (dir) => avatarGoTo(current + dir);
-
   // Swipe support
   let startX = 0;
   track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
