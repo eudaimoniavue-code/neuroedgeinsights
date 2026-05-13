@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
- /* ============================================================
   <style>
     /* ============================================================
        CSS VARIABLES — Edit colours and fonts here
@@ -25,7 +24,7 @@
       /* ---- FONTS — Edit font families here ---- */
       --font-heading: 'DM Serif Display', serif;   /* elegant display — swappable */
       --font-body:    'Fira Sans', sans-serif;      /* primary body/UI font */
-      /* Segment A is loaded via @font-face below — used for accent labels */
+      /* var(--font-accent) is loaded via @font-face below — used for accent labels */
 
       --radius: 4px;
       --radius-lg: 10px;
@@ -36,20 +35,12 @@
       /* ---- SITE CONFIG — Edit site name/tagline here ---- */
       --site-name: "Neuroedge Insights";
     }
-
     /* ============================================================
-       SEGMENT A — fallback if you have the font file
-       Replace the src URL with your actual Segment A file path
+       var(--font-accent) — fallback if you have the font file
+       Replace the src URL with your actual var(--font-accent) file path
     ============================================================ */
     @font-face {
-      font-family: 'Segment A';
-      src: local('Segment A'),
-           url('fonts/SegmentA.woff2') format('woff2'),
-           url('fonts/SegmentA.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
+      --font-accent: 'Calibri', 'Trebuchet MS', sans-serif;}
 
     /* ============================================================
        RESET & BASE
@@ -93,7 +84,7 @@
       background: var(--blue);
       border-radius: var(--radius);
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Segment A', var(--font-body);
+      font-family: 'var(--font-accent)', var(--font-body);
       font-size: 14px; font-weight: 700;
       color: var(--white);
       letter-spacing: 0.05em;
@@ -177,7 +168,7 @@
     .section-lg { padding: 120px 0; }
 
     .section-label {
-      font-family: 'Segment A', var(--font-body);
+      font-family: 'var(--font-accent)', var(--font-body);
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--blue);
@@ -213,7 +204,7 @@
       border-radius: 20px;
       font-size: 12px; font-weight: 600;
       letter-spacing: 0.05em;
-      font-family: 'Segment A', var(--font-body);
+      font-family: 'var(--font-accent)', var(--font-body);
     }
 
     .btn {
@@ -283,7 +274,7 @@
       position: relative; z-index: 1;
     }
     .hero-eyebrow {
-      font-family: 'Segment A', var(--font-body);
+      font-family: 'var(--font-accent)', var(--font-body);
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.2em; text-transform: uppercase;
       color: rgba(255,255,255,0.5);
@@ -439,7 +430,7 @@
       padding: 36px;
     }
     .focus-visual-title {
-      font-family: 'Segment A', var(--font-body);
+      font-family: 'var(--font-accent)', var(--font-body);
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.15em; text-transform: uppercase;
       color: rgba(255,255,255,0.4);
@@ -502,7 +493,7 @@
     }
     .approach-step:last-child { border-bottom: none; }
     .step-num {
-      font-family: 'Segment A', var(--font-body);
+      font-family: 'var(--font-accent)', var(--font-body);
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.1em;
       color: var(--blue);
@@ -528,7 +519,7 @@
     .approach-quote-attr {
       font-size: 13px; font-weight: 500;
       color: rgba(255,255,255,0.5);
-      font-family: 'Segment A', var(--font-body);
+      font-family: 'var(--font-accent)', var(--font-body);
       letter-spacing: 0.08em; text-transform: uppercase;
     }
 
@@ -641,7 +632,7 @@
       margin-bottom: 20px;
     }
     .sidebar-title {
-      font-family: 'Segment A', var(--font-body);
+      font-family: 'var(--font-accent)', var(--font-body);
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.15em; text-transform: uppercase;
       color: var(--muted);
@@ -771,7 +762,7 @@
       padding: 40px 0;
     }
     .partner-label {
-      font-family: 'Segment A', var(--font-body);
+      font-family: 'var(--font-accent)', var(--font-body);
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.15em; text-transform: uppercase;
       color: var(--muted);
@@ -863,7 +854,7 @@
       font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 240px;
     }
     .footer-col-title {
-      font-family: 'Segment A', var(--font-body);
+      font-family: 'var(--font-accent)', var(--font-body);
       font-size: 10px; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase;
       color: rgba(255,255,255,0.35); margin-bottom: 16px;
@@ -1079,7 +1070,7 @@
         <div>
           <div class="focus-item">
             <div class="focus-item-title">Education — Active Focus</div>
-            <p class="focus-item-body">Supporting schools, multi-academy trusts, and higher education institutions to understand and address the psychological drivers of teacher and lecturer attrition.</p>
+            <p class="focus-item-body">Supporting schools, academies, and higher education institutions to understand and address the psychological drivers of teacher and lecturer attrition.</p>
           </div>
           <div class="focus-item">
             <div class="focus-item-title">Cognitive Load & Burnout</div>
@@ -1096,7 +1087,7 @@
             <div class="roadmap-dot active">1</div>
             <div>
               <div class="roadmap-text-title">Education Sector</div>
-              <div class="roadmap-text-body">Schools, MATs, HE institutions — live and scaling</div>
+              <div class="roadmap-text-body">Schools, Academies, HE institutions — live and scaling</div>
             </div>
           </div>
           <div class="roadmap-item">
@@ -1304,7 +1295,7 @@
     <div class="container">
       <div class="profile-hero-inner">
         <!-- AVATAR: Replace the div below with <img src="your-photo.jpg" alt="Name" class="profile-avatar"> -->
-        <div class="profile-avatar">👤</div>
+        <div class="Profile pic 1.jpg" alt="Name" class="profile-avatar">👤</div>
         <div>
           <!-- EDIT PROFILE NAME & TITLE HERE -->
           <h1 class="profile-hero-name">Felicia Teo</h1>
@@ -1488,11 +1479,12 @@
         <!-- TEAM CARD — duplicate to add more team members -->
         <div class="team-card fade-up">
           <!-- Replace div.team-card-photo with <img src="photo.jpg" alt="Name"> -->
-          <div class=" <img src="IMG-20160506-WA0000.jpg" alt="Photo 1">">👤</div>
+          <div class=" <img src="profile 4.JPG" alt="Photo 1">">👤</div>
           <div class="team-card-body">
             <div class="team-card-name">Felicia Teo]</div>
             <div class="team-card-role">CEO & Managing Director</div>
-            <p class="team-card-bio">Neuroscience, occupational psychology, and HR strategy. [Short bio sentence about background and specialism.]</p>
+            <p class="team-card-bio">As a Strategic Learning & Development professional with over 15 years of experience designing and scaling training initiatives, my career spans leading retention‑focused programmes, strengthening educator performance through tailored curricula, and mentoring high‑performing teams across diverse sectors. Alongside with my educational experience, I bring evidence‑based insight into workforce development, blending innovation with cross‑sector collaboration.
+</P>Right now, my inspiration is to reshape high‑attrition industries like education and healthcare by embedding neuroscience into learning systems. I believe understanding the psychology of burnout and behaviour is not optional — it’s essential. My mission is to create practical, evidence‑backed tools that empower people, reduce stressors, and build healthier environments where all professionals can thrive
           </div>
         
         <!-- END TEAM CARDS -->
@@ -1596,7 +1588,7 @@
             <div class="contact-icon">📧</div>
             <div>
               <div class="contact-detail-label">General</div>
-              <div class="contact-detail-value">hello@neurohrinsights.com</div>
+              <div class="contact-detail-value">hello@neuroedgeinsights.com</div>
             </div>
           </div>
           <div class="contact-detail">
@@ -1645,10 +1637,9 @@
       <div>
         <div class="footer-col-title">Connect</div>
         <!-- EDIT SOCIAL/CONTACT LINKS HERE -->
-        <a class="footer-link" href="hello@neuroedgeinsights.com">Email Us</a>
-        <span class="footer-link">LinkedIn</span>
-        <span class="footer-link">Research Gate</span>
-      </div>
+        <a class="hello@neuroedgeinsights.com">Email Us</a>
+        <span class="https://www.linkedin.com/in/felicia-teo-3b4009181/">LinkedIn</span>
+        </div>
     </div>
     <div class="footer-bottom">
       <div class="footer-copy">© 2026 Neuroedge Insights. All rights reserved.</div>
