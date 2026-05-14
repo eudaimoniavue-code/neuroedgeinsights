@@ -16,28 +16,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
 
   <style>
-  .headlines-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      text-align: center;
-    }
-
-    .headline-item h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin: 0 0 0.5rem 0;
-      color: #333;
-    }
-
-    .headline-item p {
-      font-size: 0.95rem;
-      color: #666;
-      margin: 0;
-    }
-  <!-- END OF CSS -->
-  
-</head>
     /* ============================================================
        SEGMENT A FONT
        HOW TO USE YOUR OWN FONT FILE:
@@ -374,6 +352,26 @@
     .rtext-title { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 3px; }
     .rtext-body  { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.48); line-height: 1.5; }
 
+    /* --- HEADLINES SECTION --- */
+    .headlines-section { background: var(--off-white); padding: 64px 0; border-bottom: 1px solid var(--border); }
+    .headlines-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .headline-item h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem 0;
+      color: #333;
+    }
+    .headline-item p {
+      font-size: 0.95rem;
+      color: #666;
+      margin: 0;
+    }
+
     /* --- STATS BAR --- */
     .stats-bar { background: var(--royal); padding: 52px 0; }
     .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); }
@@ -669,6 +667,7 @@
       .values-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .cta-banner { flex-direction: column; padding: 36px 28px; }
+      .headlines-grid { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 600px) {
       .container { padding: 0 18px; }
@@ -679,6 +678,7 @@
       .footer-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
+      .headlines-grid { grid-template-columns: 1fr; }
     }
 
   </style>
@@ -753,7 +753,7 @@
             Where Brain Science<br>Meets <em>Workforce Intelligence</em>
           </h1>
           <p class="hero-body">
-            Applying neuroscience and psychology to decode attrition, engagement, and performance — starting with education, expanding to healthcare. Evidence-based insights that transform how organisations retain their people.
+            Applying neuroscience and psychology to decode attrition, engagement, and performance — starting with education, expanding to healthcare. Evidence-based insights that transform how organ[...]
           </p>
           <div class="hero-actions">
             <button class="btn btn-primary" onclick="showPage('about')">Discover Our Approach</button>
@@ -776,7 +776,7 @@
           </div>
            <div class="hero-stat-card">
             <div class="hero-stat-num">Billions in hidden annual costs</div>
-            <div class="hero-stat-label">driven by hiring, training time, and lost instructional quality, fracture the continuity essential for student learning — <span class="hero-stat-hl">preventable with proactive insight</span></div>
+            <div class="hero-stat-label">driven by hiring, training time, and lost instructional quality, fracture the continuity essential for student learning — <span class="hero-stat-hl">preventa[...]
           </div>
         </div>
         <!-- END STAT CARDS -->
@@ -807,14 +807,14 @@
         <div class="section-label">What We Do</div>
         <h2 class="section-title">Science-Led HR Solutions<br>for High-Stakes Roles</h2>
         <div class="divider"></div>
-        <p class="section-body">We bridge the gap between cognitive science research and practical HR decisions — giving leaders the tools to understand, predict, and improve workforce wellbeing as well as retention.</p>
+        <p class="section-body">We bridge the gap between cognitive science research and practical HR decisions — giving leaders the tools to understand, predict, and improve workforce wellbeing as [...]
       </div>
       <div class="services-grid">
 
         <div class="service-card fade-up">
           <div class="service-icon">🧠</div>
           <div class="service-title">Neuropsychological Assessment and Action Plans</div>
-          <p class="service-body">Evidence-based assessments rooted in cognitive neuroscience to identify stress responses, burnout risk factors, and resilience profiles in your workforce—paired with a targeted action plan to address them.</p>
+          <p class="service-body">Evidence-based assessments rooted in cognitive neuroscience to identify stress responses, burnout risk factors, and resilience profiles in your workforce—paired wit[...]
         </div>
 
         <div class="service-card fade-up">
@@ -938,7 +938,7 @@
           <div class="approach-steps">
             <div class="approach-step">
               <div class="step-num">01</div>
-              <div><div class="step-title">Assess</div><p class="step-body">To ensure a respectful and evidence‑grounded approach, we will collaboratively develop key performance indicators, deploy a workforce assessment, and analyse the resulting data.</p></div>
+              <div><div class="step-title">Assess</div><p class="step-body">To ensure a respectful and evidence‑grounded approach, we will collaboratively develop key performance indicators, deploy [...]
             </div>
             <div class="approach-step">
               <div class="step-num">02</div>
@@ -946,7 +946,7 @@
             </div>
             <div class="approach-step">
               <div class="step-num">03</div>
-              <div><div class="step-title">Advise</div><p class="step-body">Translate findings into clear, prioritised HR recommendations — from individual plans to systemic culture change interventions.</p></div>
+              <div><div class="step-title">Advise</div><p class="step-body">Translate findings into clear, prioritised HR recommendations — from individual plans to systemic culture change intervent[...]
             </div>
             <div class="approach-step">
               <div class="step-num">04</div>
@@ -956,7 +956,7 @@
         </div>
         <div class="approach-panel fade-up">
           <!-- ✏️ edit this quote -->
-          <p class="approach-quote">"Understanding people isn’t a luxury; it’s the foundation of every strategy. True success demands big‑picture thinking, not short‑term wins, and real change only happens when every voice is heard, from the ground up."</p>
+          <p class="approach-quote">"Understanding people isn't a luxury; it's the foundation of every strategy. True success demands big‑picture thinking, not short‑term wins, and real change[...]
           <div class="approach-attr">— Neuroedge Insights Founding Principle</div>
         </div>
       </div>
@@ -998,608 +998,3 @@
           <span class="profile-tag">Learning and Development</span>
           <span class="profile-tag">Cognitive Neuroscience</span>
           <span class="profile-tag">HR Analytics</span>
-          <span class="profile-tag">Education Sector</span>
-          <span class="profile-tag">Curriculum Builder</span>
-        </div>
-      </div>
-    </div>
-    <div class="profile-wave"></div>
-  </div>
-
-  <!-- PROFILE CONTENT: Photo Carousel (left) + Bio & Sidebar (right) -->
-  <section class="section">
-    <div class="container">
-      <div class="profile-content">
-
-        <!-- ════════════════════════════════════════════════════
-             PHOTO CAROUSEL
-             ────────────────────────────────────────────────────
-             HOW TO ADD YOUR PHOTOS (ELI5):
-             1. Upload your photo files to GitHub (e.g. photo1.jpg)
-             2. Replace "your-photo-1.jpg" below with the filename
-             3. To ADD another photo: copy a whole .avatar-carousel-slide
-                block and paste it before the closing </div>
-             4. To REMOVE a photo: delete the .avatar-carousel-slide block
-             5. If you only have ONE photo: delete the two
-                .avatar-carousel-btn buttons — no arrows needed
-             ════════════════════════════════════════════════════ -->
-        <div class="avatar-carousel" id="avatarCarousel">
-          <div class="avatar-carousel-track" id="avatarTrack">
-
-            <!-- PHOTO 1 — replace src with your image filename or URL -->
-            <div class="avatar-carousel-slide">
-              <div class="avatar-placeholder">
-               <img src="Profile pic 1.jpg" alt="profile1">
-              </div>
-              <!-- EXAMPLE with real photo: -->
-              <!-- <img src="headshot-1.jpg" alt="Your Name"> -->
-            </div>
-
-            <!-- PHOTO 2 -->
-            <div class="avatar-carousel-slide">
-              <div class="avatar-placeholder">
-              <img src="profile 4.JPG" alt="profile2">
-              </div>
-              <!-- <img src="headshot-2.jpg" alt="Your Name"> -->
-            </div>
-
-            <!-- PHOTO 3 — delete this block if you only have 2 photos -->
-            <div class="avatar-carousel-slide">
-              <div class="avatar-placeholder">
-              <img src="profile 5.JPG" alt="profile3">
-              </div>
-              <!-- <img src="headshot-3.jpg" alt="Your Name"> -->
-            </div>
-
-          </div><!-- end track -->
-
-          <div class="avatar-carousel-dots" id="avatarDots"></div>
-          <button class="avatar-carousel-btn prev" onclick="moveAvatar(-1)">&#8592;</button>
-          <button class="avatar-carousel-btn next" onclick="moveAvatar(1)">&#8594;</button>
-        </div>
-        <!-- END PHOTO CAROUSEL -->
-
-
-        <!-- RIGHT COLUMN: Bio + Expertise + Sidebar -->
-        <div>
-
-          <!-- BIO — ✏️ replace the placeholder paragraphs with your real bio -->
-          <div class="section-label">Biography</div>
-          <h2 class="section-title" style="font-size:26px;margin-bottom:20px">About the Founder</h2>
-          <div class="profile-bio">
-            <p>Felicia is a practitioner at the intersection of cognitive neuroscience, occupational psychology, and HR strategy, with over 15 years of experience across education, research, and organisational development—offering a rare combination of scientific rigour and practical insight into workforce challenges. </p>
-            <p>Having witnessed firsthand the severe impact of high attrition, declining mental wellness, and burnout across educational institutions and other industries, alongside the failure of traditional HR approaches to address their root causes, Felicia founded Neuroedge Insights to bridge the gap between brain science and people management.</p>
-            <p>Their approach is grounded in the evidence-based understanding that workplace behaviour is fundamentally a product of neurobiology—specifically, stress responses, threat appraisal, reward systems, and social cognition—all of which critically influence employees’ decisions, including whether to stay or leave.</p>
-          </div>
-
-          <!-- EXPERTISE — ✏️ edit items, add by duplicating, remove by deleting a block -->
-          <div class="section-label" style="margin-top:32px;margin-bottom:16px">Areas of Expertise</div>
-          <div>
-            <div class="expertise-item"><div class="expertise-check">✓</div><div class="expertise-text">Occupational psychology and workforce wellbeing</div></div>
-            <div class="expertise-item"><div class="expertise-check">✓</div><div class="expertise-text">Cognitive neuroscience applied to HR</div></div>
-            <div class="expertise-item"><div class="expertise-check">✓</div><div class="expertise-text">Attrition modelling and predictive analytics</div></div>
-            <div class="expertise-item"><div class="expertise-check">✓</div><div class="expertise-text">Psychological safety and organisational culture</div></div>
-            <div class="expertise-item"><div class="expertise-check">✓</div><div class="expertise-text">Educator retention and workforce strategy</div></div>
-            <div class="expertise-item"><div class="expertise-check">✓</div><div class="expertise-text">Burnout prevention and cognitive load management</div></div>
-          </div>
-
-          <!-- SIDEBAR CARDS -->
-          <div style="margin-top:36px">
-
-            <!-- QUALIFICATIONS CARD
-                 ✏️ Edit the three qualification items:
-                 MSc, Experienced Learning and Development, Educator -->
-            <div class="sidebar-card">
-              <div class="sidebar-title">Experience</div>
-
-              <div class="sidebar-item">
-                <div class="sidebar-icon">🎓</div>
-                <div>
-                  <span class="sidebar-label">MSc</span>
-                  Master of Science, Psychology and Neuroscience in Mental Health. King's College London, United Kingdom 2023
-                   <p style="font-size: 11px; font-style: italic; color: rgba(44, 44, 44, 0.7); margin-top: 8px;">
-                  Specialisation in evidence-based methodologies, critical analysis, and understanding of research management and strategies across psychology and neuroscience domains. 
-                   </p>
-                </div>
-              </div>
-
-              <div class="sidebar-item">
-                <div class="sidebar-icon">📋</div>
-                <div>
-                  <span class="sidebar-label">Experienced Learning & Development</span>
-                  Empowering people development since 2023 through project management, learning strategy, change leadership, and evidence-based impact analysis.
-                   <p style="font-size: 11px; font-style: italic; color: rgba(44, 44, 44, 0.7); margin-top: 8px;">
-                  Proficiency in strategic L&D leadership, change management, and evidence-based impact analysis—driving an increase in retention through neuroscience-informed learning strategies and competency framework evaluations since 2023.
-                   </p>   
-                </div>
-              </div>
-
-              <div class="sidebar-item">
-                <div class="sidebar-icon">🏫</div>
-                <div>
-                  <span class="sidebar-label">Educator</span>
-                 <p> Specialist Diploma, Arts Education. Nanyang Technological University (NIE), Singapore 2015<p/>
-                  <p style="font-size: 11px; font-style: italic; color: rgba(44, 44, 44, 0.7); margin-top: 8px;">
-                Over 15 years of dedicated experience in teaching and effective curriculum design, combined with a background in both mainstream and special needs student learning, providing a comprehensive foundation in addressing diverse educational needs.
-                </p>
-                </div>
-              </div>
-
-            </div>
-            <!-- END QUALIFICATIONS -->
-
-                <!-- ENQUIRE BUTTON -->
-            <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="showPage('about');setTimeout(goContact,120)">Get in Touch →</button>
-
-          </div><!-- end sidebar -->
-        </div><!-- end right column -->
-
-      </div><!-- end profile-content -->
-    </div>
-  </section>
-
-</div><!-- ✅ END PAGE: PROFILE -->
-
-
-<!-- ================================================================
-     PAGE: ABOUT US
-================================================================ -->
-<div class="page" id="page-about">
-
-  <!-- ABOUT HERO — ✏️ edit heading and body text -->
-  <div class="about-hero">
-    <div class="container">
-      <div class="about-hero-inner">
-        <div class="section-label" style="color:rgba(255,255,255,0.4)">About Neuroedge Insights</div>
-        <h1 class="section-title light">We Believe Every Workforce Crisis<br>Runs Deeper Than The Surface</h1>
-        <div class="divider"></div>
-        <p class="section-body light">Founded to solve the retention crisis in education — and designed to scale across every high-attrition sector — we are specialise at the intersection of neuroscience, psychology, and HR data.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- MISSION -->
-  <section class="section mission-section">
-    <div class="container">
-      <div class="mission-grid">
-        <div class="fade-up">
-          <div class="section-label">Mission & Vision</div>
-          <h2 class="section-title">Why We Exist</h2>
-          <div class="divider"></div>
-          <!-- ✏️ edit mission paragraphs -->
-          <p class="section-body" style="margin-bottom:18px">Traditional HR metrics describe what happened. Neuroscience, psychology and prediction modelling tell us <em>why</em> it happened and, critically, what will happen next.</p>
-          <p style="font-size:16px;font-weight:300;color:var(--muted);line-height:1.85;margin-bottom:18px">Our mission is to give organisations and leaders in high-attrition sectors the psychological intelligence to intervene early, build resilient cultures, and retain the professionals society depends on most.</p>
-          <p style="font-size:16px;font-weight:300;color:var(--muted);line-height:1.85">We start with education because the crisis is acute and the human cost is immeasurable. Healthcare is next — where the same principles apply with even greater urgency.</p>
-          <div style="margin-top:28px">
-            <button class="btn btn-primary" onclick="showPage('overview')">See Our Services</button>
-          </div>
-        </div>
-        <!-- MISSION VALUES — ✏️ edit or add .mission-value blocks -->
-        <div class="mission-visual fade-up">
-          <div class="mission-value">
-            <div class="mv-icon">🧬</div>
-            <div><div class="mv-title">Evidence First</div><p class="mv-body">Every recommendation is rooted in peer-reviewed neuroscience and occupational psychology — not intuition or trend.</p></div>
-          </div>
-          <div class="mission-value">
-            <div class="mv-icon">🎯</div>
-            <div><div class="mv-title">Sector Specificity</div><p class="mv-body">Generic HR tools fail high-attrition roles. Our models are calibrated to the unique stressors of teaching and similar professions.</p></div>
-          </div>
-          <div class="mission-value">
-            <div class="mv-icon">🔄</div>
-            <div><div class="mv-title">Whole-System Thinking</div><p class="mv-body">We examine individual, team, and organisational factors together — because attrition is never just one person's problem.</p></div>
-          </div>
-          <div class="mission-value">
-            <div class="mv-icon">📈</div>
-            <div><div class="mv-title">Measurable Impact</div><p class="mv-body">Every engagement includes baseline measurement and outcome tracking — so you always know what has changed.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VALUES -->
-  <section class="section values-section">
-    <div class="container">
-      <div class="fade-up">
-        <div class="section-label" style="color:rgba(255,255,255,0.35)">Our Values</div>
-        <h2 class="section-title light">What Guides Everything We Do</h2>
-        <div class="divider"></div>
-      </div>
-      <!-- ✏️ ADD a value: copy a .value-card block. REMOVE: delete the block. -->
-      <div class="values-grid">
-        <div class="value-card fade-up">
-          <div class="value-icon">🔬</div>
-          <div class="value-title">Scientific Integrity</div>
-          <p class="value-body">We never overstate the evidence. Our recommendations acknowledge complexity and the limits of the science — because good HR deserves honest data.</p>
-        </div>
-        <div class="value-card fade-up">
-          <div class="value-icon">🤝</div>
-          <div class="value-title">Human Dignity</div>
-          <p class="value-body">Data serves people — not the other way around. Every assessment and report is designed with participant wellbeing at its centre.</p>
-        </div>
-        <div class="value-card fade-up">
-          <div class="value-icon">🌏</div>
-          <div class="value-title">Societal Impact</div>
-          <p class="value-body">The deliberate focus on education and healthcare reflects a critical truth: losing great teachers and nurses is not merely an HR challenge but requires our immediate attention.</p>
-        </div>
-        <div class="value-card fade-up">
-          <div class="value-icon">⚡</div>
-          <div class="value-title">Practical Usefulness</div>
-          <p class="value-body">Academic insight is only valuable when it changes decisions. We translate complex science into strategies HR leaders can act on tomorrow.</p>
-        </div>
-        <div class="value-card fade-up">
-          <div class="value-icon">🔒</div>
-          <div class="value-title">Ethical Data Practice</div>
-          <p class="value-body">Psychological data is sensitive. We operate under the highest standards of consent, confidentiality, and responsible use.</p>
-        </div>
-        <div class="value-card fade-up">
-          <div class="value-icon">📚</div>
-          <div class="value-title">Continuous Learning</div>
-          <p class="value-body">Neuroscience is a fast-moving field. We commit to staying at the frontier — updating our frameworks as the research evolves.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT FORM
-       Connected to Formspree — no backend needed.
-       Submissions go straight to your email inbox. -->
-  <section class="section" id="contact-section">
-    <div class="container">
-      <div class="section-label fade-up">Get in Touch</div>
-      <h2 class="section-title fade-up">Start the Conversation</h2>
-      <div class="divider"></div>
-      <div class="contact-grid fade-up">
-
-        <!--
-        ════════════════════════════════════════════════
-        CONTACT FORM — powered by Formspree
-        Formspree URL is already set below.
-        Submissions will arrive at your Formspree inbox.
-        ════════════════════════════════════════════════
-        -->
-        <form class="contact-form"
-              action="https://app.proforms.top/f/prb1220daf"
-              method="POST">
-
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="fname">First Name</label>
-              <input type="text" id="fname" name="first_name" class="form-input" placeholder="Jane" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="lname">Last Name</label>
-              <input type="text" id="lname" name="last_name" class="form-input" placeholder="Smith" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="email">Email Address</label>
-            <input type="email" id="email" name="email" class="form-input" placeholder="jane@school.com" required>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="org">Organisation</label>
-            <input type="text" id="org" name="organisation" class="form-input" placeholder="School, Ministry, or Organisation">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="interest">Area of Interest</label>
-            <select id="interest" name="interest" class="form-select">
-              <option value="">Select one...</option>
-              <option>Attrition &amp; Retention Strategy</option>
-              <option>Psychological Assessments</option>
-              <option>Learning &amp; Development</option>
-              <option>Leadership Development</option>
-              <option>Healthcare Pipeline</option>
-               <option>Research Partnership</option>
-              <option>General Enquiry</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="msg">Message</label>
-            <textarea id="msg" name="message" class="form-textarea" placeholder="Tell us about your organisation and the challenges you're facing..."></textarea>
-          </div>
-
-          <!-- Hidden fields so Formspree knows where you are -->
-          <input type="hidden" name="_subject" value="New enquiry from Neuroedge Insights website">
-
-          <button type="submit" class="btn btn-primary" style="align-self:flex-start">Send Message →</button>
-
-        </form>
-        <!-- END FORM -->
-
-        <!-- CONTACT DETAILS — ✏️ edit emails and location -->
-        <div>
-          <div class="contact-info-title">We'd love to hear from you.</div>
-          <p class="contact-info-body">Whether you're an educational leader, HR director, or researcher — get in touch and let's explore how we can work together.</p>
-
-          <div class="contact-detail">
-            <div class="contact-icon">📧</div>
-            <div>
-              <div class="contact-detail-label">Sales or Partnership</div>
-              <div class="contact-detail-value">sales@neuroedgeinsights.com</div>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-icon">💬</div>
-            <div>
-              <div class="contact-detail-label">General</div>
-              <div class="contact-detail-value">hello@neuroedgeinsights.com</div>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-icon">📍</div>
-            <div>
-              <div class="contact-detail-label">Location</div>
-              <div class="contact-detail-value">Singapore</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div><!-- ✅ END PAGE: ABOUT US -->
-<!--
-================================================================
-✏️ HOW TO ADD A COMPLETELY NEW PAGE — ELI5
-
-STEP 1: Copy the block below (between the === lines)
-STEP 2: Paste it here, after the END PAGE: ABOUT US comment
-STEP 3: Change "page-newpage" to "page-yourname" (e.g. page-resources)
-STEP 4: Add a nav link in the NAVIGATION section above
-
-=== COPY FROM HERE ===
-
-<div class="page" id="page-newpage">
-  <section class="section-lg">
-    <div class="container">
-      <div class="section-label">Your Label</div>
-      <h1 class="section-title">Your Page Title</h1>
-      <div class="divider"></div>
-      <p class="section-body">Your page content goes here. Add sections below by copying any section block from another page.</p>
-    </div>
-  </section>
-</div>
-
-=== COPY TO HERE ===
-
-Then in the nav, add:
-<span class="nav-link" data-page="newpage" onclick="showPage('newpage')">Your Label</span>
-
-And in the mobile menu, add:
-<span class="mobile-link" data-page="newpage" onclick="showPage('newpage');toggleMenu()">Your Label</span>
-================================================================
--->
-
-
-<!--
-================================================================
-OPTIONAL ADD-ON: TEAM PAGE
-----------------------------------------------------------------
-This entire block is commented out (hidden).
-To make it live:
-1. Remove the opening < !-- and closing -- > around this block
-2. Add this nav link:
-   <span class="nav-link" data-page="team" onclick="showPage('team')">Our Team</span>
-3. Add footer link too (see footer section)
-================================================================
-
-<div class="page" id="page-team">
-
-  <section class="section-lg" style="background:var(--navy);padding-top:100px">
-    <div class="container">
-      <div class="section-label" style="color:rgba(255,255,255,0.4)">The People</div>
-      <h1 class="section-title light">The People Behind the Science</h1>
-      <div class="divider"></div>
-      <p class="section-body light">Our team combines deep academic expertise with hands-on HR practice.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:0">
-
-        ✏️ TEAM CARD — duplicate to add more people
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden">
-          <div style="height:200px;background:linear-gradient(135deg,var(--navy),var(--royal));display:flex;align-items:center;justify-content:center;font-size:52px;color:rgba(255,255,255,0.25)">👤</div>
-          <div style="padding:22px">
-            <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:4px">[Name]</div>
-            <div style="font-size:13px;color:var(--muted);margin-bottom:12px">[Role]</div>
-            <p style="font-size:13px;color:var(--charcoal);line-height:1.6">[Short bio here]</p>
-          </div>
-        </div>
-
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden">
-          <div style="height:200px;background:linear-gradient(135deg,var(--navy),var(--royal));display:flex;align-items:center;justify-content:center;font-size:52px;color:rgba(255,255,255,0.25)">👤</div>
-          <div style="padding:22px">
-            <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:4px">[Name]</div>
-            <div style="font-size:13px;color:var(--muted);margin-bottom:12px">[Role]</div>
-            <p style="font-size:13px;color:var(--charcoal);line-height:1.6">[Short bio here]</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  Recognised & Affiliated With strip
-  <div style="background:var(--off-white);border-top:1px solid var(--border);padding:40px 0">
-    <div class="container">
-      <div style="font-family:var(--font-accent);font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:24px">Recognised & Affiliated With</div>
-      <div style="display:flex;justify-content:center;align-items:center;gap:32px;flex-wrap:wrap">
-        ✏️ Replace these with your real credentials/logos
-        <div style="padding:10px 22px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);font-size:13px;font-weight:700;color:var(--muted)">[Credential 1]</div>
-        <div style="padding:10px 22px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);font-size:13px;font-weight:700;color:var(--muted)">[Credential 2]</div>
-        <div style="padding:10px 22px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);font-size:13px;font-weight:700;color:var(--muted)">[Credential 3]</div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-END TEAM PAGE -->
-
-
-<!-- ================================================================
-     FOOTER
-     ✏️ HOW TO ADD A FOOTER LINK: copy a <span class="footer-link"> line
-================================================================ -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <img src="NeuroEdge LOGO.png" alt="Neuroedge Insights" style="height:80px;width:auto;margin-bottom:12px;opacity:0.85;"> 
-        <div class="footer-brand-name">Neuroedge Insights</div>
-        <p class="footer-brand-desc">Neuroscience and psychology applied to HR data — helping high-attrition sectors understand, predict, and transform workforce outcomes. Based in Singapore.</p>
-      </div>
-      <div>
-        <div class="footer-col-title">Navigate</div>
-        <span class="footer-link" onclick="showPage('overview')">Overview</span>
-        <span class="footer-link" onclick="showPage('profile')">Profile</span>
-        <span class="footer-link" onclick="showPage('about')">About Us</span>
-        <span class="footer-link" onclick="showPage('about');setTimeout(goContact,120)">Contact</span>
-        <!-- ✏️ ADD NEW PAGE FOOTER LINK HERE -->
-      </div>
-      <div>
-        <div class="footer-col-title">Services</div>
-        <span class="footer-link">Attrition Modelling</span>
-        <span class="footer-link">Psychological Assessment</span>
-        <span class="footer-link">Learning &amp; Development</span>
-        <span class="footer-link">Leadership Development</span>
-        <span class="footer-link">Healthcare (Coming Soon)</span>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <a class="footer-link" href="mailto:hello@neuroedgeinsights.com">How can we help?</a>
-        <span class="footer-link">Singapore</span>
-        <span class="footer-link" href="https://www.linkedin.com/company/neuroedgeinsights">LinkedIn</span>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-copy">© 2026 Neuroedge Insights. All rights reserved.</div>
-      <div class="footer-legal">
-        <a>Privacy Policy</a>
-        <a>Terms of Use</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-
-  // ========== NAVIGATION & OTHER FUNCTIONS ==========
-  function toggleMenu() { ... } // Keep existing functions
-</script>
-<!-- ================================================================
-     JAVASCRIPT — page switching, carousel, animations
-================================================================ -->
-<script>
-
-  /* ============================================================
-     PAGE SWITCHING
-     showPage('name') shows that page and hides all others.
-     The name must match the id of the page div, minus "page-".
-     Example: showPage('overview') shows <div id="page-overview">
-  ============================================================ */
-  function showPage(name) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page-' + name).classList.add('active');
-    document.querySelectorAll('.nav-link, .mobile-link').forEach(l => {
-      l.classList.toggle('active', l.dataset.page === name);
-    });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(observeFadeUps, 80);
-  }
-
-  /* ============================================================
-     SCROLL TO CONTACT
-  ============================================================ */
-  function goContact() {
-    const el = document.getElementById('contact-section');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  /* ============================================================
-     NAV SHADOW ON SCROLL
-  ============================================================ */
-  window.addEventListener('scroll', () => {
-    document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
-  });
-
-  /* ============================================================
-     MOBILE MENU TOGGLE
-  ============================================================ */
-  function toggleMenu() {
-    document.getElementById('mobile-menu').classList.toggle('open');
-  }
-
-  /* ============================================================
-     FADE-UP SCROLL ANIMATION
-  ============================================================ */
-  function observeFadeUps() {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 65);
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.page.active .fade-up').forEach(el => {
-      if (!el.classList.contains('visible')) io.observe(el);
-    });
-  }
-  document.addEventListener('DOMContentLoaded', observeFadeUps);
-
-  /* ============================================================
-     AVATAR PHOTO CAROUSEL (Profile page)
-     - Prev/next buttons
-     - Dot indicators
-     - Touch/swipe on mobile
-  ============================================================ */
-  (function () {
-    const track   = document.getElementById('avatarTrack');
-    const dotWrap = document.getElementById('avatarDots');
-    if (!track) return;
-
-    let current = 0;
-    const slides = track.querySelectorAll('.avatar-carousel-slide');
-    const total  = slides.length;
-
-    /* Build dot indicators */
-    slides.forEach((_, i) => {
-      const d = document.createElement('div');
-      d.className = 'avatar-dot' + (i === 0 ? ' active' : '');
-      d.onclick = () => avatarGoTo(i);
-      dotWrap.appendChild(d);
-    });
-
-    function avatarGoTo(n) {
-      current = (n + total) % total;
-      track.style.transform = `translateX(-${current * 100}%)`;
-      dotWrap.querySelectorAll('.avatar-dot').forEach((d, i) =>
-        d.classList.toggle('active', i === current));
-    }
-
-    /* Expose so buttons can call it */
-    window.moveAvatar = (dir) => avatarGoTo(current + dir);
-
-    /* Swipe support for mobile */
-    let startX = 0;
-    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
-    track.addEventListener('touchend',   e => {
-      const diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) avatarGoTo(current + (diff > 0 ? 1 : -1));
-    });
-  })();
-
-</script>
-
-</body>
-</html>
