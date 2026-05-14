@@ -227,16 +227,7 @@
     }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-
-    /* ===========================================================
-       ██████  ██████   ██████  ███████ ██ ██      ███████
-       ██   ██ ██   ██ ██    ██ ██      ██ ██      ██
-       ██████  ██████  ██    ██ █████   ██ ██      █████
-       ██      ██   ██ ██    ██ ██      ██ ██      ██
-       ██      ██   ██  ██████  ██      ██ ███████ ███████
-       =========================================================== */
-
-    /* --- HERO --- */
+    /* HERO & MAIN SECTIONS */
     .hero {
       background: var(--navy);
       padding: 110px 0 90px;
@@ -250,417 +241,174 @@
         radial-gradient(ellipse 50% 70% at 5% 85%, rgba(24,59,132,0.28) 0%, transparent 60%);
       pointer-events: none;
     }
-    .hero-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 56px; align-items: center; position: relative; z-index: 1;
-    }
-    .hero-eyebrow {
-      font-family: var(--font-accent);
-      font-size: 10px; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: rgba(255,255,255,0.45); margin-bottom: 18px;
-    }
-    .hero-title {
-      font-family: var(--font-body);
-      font-size: clamp(34px, 5vw, 58px);
-      font-weight: 800; line-height: 1.1;
-      color: var(--white); margin-bottom: 22px;
-    }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; position: relative; z-index: 1; }
+    .hero-eyebrow { font-family: var(--font-accent); font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 18px; }
+    .hero-title { font-family: var(--font-body); font-size: clamp(34px, 5vw, 58px); font-weight: 800; line-height: 1.1; color: var(--white); margin-bottom: 22px; }
     .hero-title em { font-style: italic; font-weight: 300; color: rgba(255,255,255,0.6); }
-    .hero-body {
-      font-size: 16px; font-weight: 300; line-height: 1.85;
-      color: rgba(255,255,255,0.7); margin-bottom: 34px; max-width: 460px;
-    }
+    .hero-body { font-size: 16px; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,0.7); margin-bottom: 34px; max-width: 460px; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
     .hero-stat-stack { display: flex; flex-direction: column; gap: 14px; }
-    .hero-stat-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.11);
-      border-radius: var(--radius-lg);
-      padding: 20px 24px;
-      backdrop-filter: blur(10px);
-      transition: transform var(--transition);
-    }
+    .hero-stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.11); border-radius: var(--radius-lg); padding: 20px 24px; backdrop-filter: blur(10px); transition: transform var(--transition); }
     .hero-stat-card:hover { transform: translateX(5px); }
-    .hero-stat-num {
-      font-size: 36px; font-weight: 800; line-height: 1;
-      color: var(--white); margin-bottom: 4px;
-    }
+    .hero-stat-num { font-size: 36px; font-weight: 800; line-height: 1; color: var(--white); margin-bottom: 4px; }
     .hero-stat-label { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.5; }
     .hero-stat-hl { color: rgba(255,255,255,0.88); font-weight: 500; }
 
-    /* --- INTRO PILLS --- */
+    /* INTRO PILLS */
     .intro-strip { background: var(--off-white); border-bottom: 1px solid var(--border); padding: 28px 0; }
     .intro-pills { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-    .intro-pill {
-      display: flex; align-items: center; gap: 8px;
-      padding: 7px 16px;
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 30px; font-size: 13px; font-weight: 500; color: var(--navy);
-    }
+    .intro-pill { display: flex; align-items: center; gap: 8px; padding: 7px 16px; background: var(--white); border: 1px solid var(--border); border-radius: 30px; font-size: 13px; font-weight: 500; color: var(--navy); }
     .intro-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
 
-    /* --- SERVICES --- */
-    .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 22px; margin-top: 44px;
-    }
-    .service-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 30px;
-      position: relative; overflow: hidden;
-      transition: all var(--transition);
-    }
-    .service-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-      height: 3px; background: var(--blue);
-      transform: scaleX(0); transform-origin: left; transition: transform var(--transition);
-    }
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 22px; margin-top: 44px; }
+    .service-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 30px; position: relative; overflow: hidden; transition: all var(--transition); }
+    .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--blue); transform: scaleX(0); transform-origin: left; transition: transform var(--transition); }
     .service-card:hover::after { transform: scaleX(1); }
     .service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
-    .service-icon {
-      width: 46px; height: 46px; background: var(--light-blue);
-      border-radius: var(--radius); display: flex; align-items: center;
-      justify-content: center; font-size: 22px; margin-bottom: 18px;
-    }
+    .service-icon { width: 46px; height: 46px; background: var(--light-blue); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px; }
     .service-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
     .service-body { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-    /* --- FOCUS / ROADMAP --- */
+    /* FOCUS / ROADMAP */
     .focus-section { background: var(--navy); }
     .focus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 52px; align-items: start; }
     .focus-item { border-left: 3px solid var(--blue); padding: 3px 0 3px 22px; margin-bottom: 28px; }
     .focus-item-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 7px; }
     .focus-item-body { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.58); line-height: 1.7; }
-    .focus-visual {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-lg); padding: 32px;
-    }
-    .focus-visual-label {
-      font-family: var(--font-accent); font-size: 10px; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: rgba(255,255,255,0.35); margin-bottom: 22px;
-    }
+    .focus-visual { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 32px; }
+    .focus-visual-label { font-family: var(--font-accent); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 22px; }
     .roadmap-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
-    .rdot {
-      width: 30px; height: 30px; flex-shrink: 0; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 11px; font-weight: 700;
-    }
+    .rdot { width: 30px; height: 30px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
     .rdot.on  { background: var(--blue); color: var(--white); }
     .rdot.off { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.35); border: 2px solid rgba(255,255,255,0.12); }
     .rtext-title { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 3px; }
     .rtext-body  { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.48); line-height: 1.5; }
 
-    /* --- HEADLINES SECTION --- */
+    /* HEADLINES SECTION */
     .headlines-section { background: var(--off-white); padding: 64px 0; border-bottom: 1px solid var(--border); }
-    .headlines-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      text-align: center;
-    }
-    .headline-item h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin: 0 0 0.5rem 0;
-      color: #333;
-    }
-    .headline-item p {
-      font-size: 0.95rem;
-      color: #666;
-      margin: 0;
-    }
+    .headlines-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; }
+    .headline-item h3 { font-size: 1.25rem; font-weight: 600; margin: 0 0 0.5rem 0; color: #333; }
+    .headline-item p { font-size: 0.95rem; color: #666; margin: 0; }
 
-    /* --- STATS BAR --- */
+    /* STATS BAR */
     .stats-bar { background: var(--royal); padding: 52px 0; }
     .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); }
-    .stat-item {
-      text-align: center; padding: 0 20px;
-      border-right: 1px solid rgba(255,255,255,0.15);
-    }
+    .stat-item { text-align: center; padding: 0 20px; border-right: 1px solid rgba(255,255,255,0.15); }
     .stat-item:last-child { border-right: none; }
     .stat-num { font-size: 46px; font-weight: 800; line-height: 1; color: var(--white); margin-bottom: 8px; }
     .stat-label { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.45; }
 
-    /* --- APPROACH --- */
+    /* APPROACH */
     .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .approach-steps { display: flex; flex-direction: column; }
-    .approach-step {
-      display: flex; gap: 18px; padding: 22px 0;
-      border-bottom: 1px solid var(--border);
-    }
+    .approach-step { display: flex; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--border); }
     .approach-step:last-child { border-bottom: none; }
-    .step-num {
-      font-family: var(--font-accent); font-size: 11px; font-weight: 700;
-      letter-spacing: 0.1em; color: var(--blue);
-      width: 36px; flex-shrink: 0; padding-top: 3px;
-    }
+    .step-num { font-family: var(--font-accent); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--blue); width: 36px; flex-shrink: 0; padding-top: 3px; }
     .step-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
     .step-body  { font-size: 14px; color: var(--muted); line-height: 1.7; }
-    .approach-panel {
-      background: linear-gradient(140deg, var(--navy) 0%, var(--royal) 100%);
-      border-radius: var(--radius-lg); padding: 44px 38px; color: var(--white);
-    }
-    .approach-quote {
-      font-size: 20px; font-weight: 300; font-style: italic;
-      line-height: 1.55; color: var(--white); margin-bottom: 22px;
-    }
-    .approach-attr {
-      font-family: var(--font-accent); font-size: 10px; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45);
-    }
+    .approach-panel { background: linear-gradient(140deg, var(--navy) 0%, var(--royal) 100%); border-radius: var(--radius-lg); padding: 44px 38px; color: var(--white); }
+    .approach-quote { font-size: 20px; font-weight: 300; font-style: italic; line-height: 1.55; color: var(--white); margin-bottom: 22px; }
+    .approach-attr { font-family: var(--font-accent); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
 
-    /* --- CTA BANNER --- */
-    .cta-banner {
-      background: var(--navy); border-radius: var(--radius-lg);
-      padding: 52px 56px;
-      display: flex; align-items: center; justify-content: space-between; gap: 28px;
-      position: relative; overflow: hidden;
-    }
-    .cta-banner::before {
-      content: ''; position: absolute; right: -60px; top: -60px;
-      width: 260px; height: 260px;
-      background: radial-gradient(circle, rgba(2,67,202,0.28) 0%, transparent 70%);
-    }
+    /* CTA BANNER */
+    .cta-banner { background: var(--navy); border-radius: var(--radius-lg); padding: 52px 56px; display: flex; align-items: center; justify-content: space-between; gap: 28px; position: relative; overflow: hidden; }
+    .cta-banner::before { content: ''; position: absolute; right: -60px; top: -60px; width: 260px; height: 260px; background: radial-gradient(circle, rgba(2,67,202,0.28) 0%, transparent 70%); }
     .cta-title { font-size: 26px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
     .cta-body  { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.62); }
     .cta-actions { display: flex; gap: 12px; flex-shrink: 0; }
 
-
-    /* ===========================================================
-       ██████  ██████   ██████  ███████ ██ ██      ███████
-       ██   ██ ██   ██ ██    ██ ██      ██ ██      ██
-       ██████  ██████  ██    ██ █████   ██ ██      █████
-       ██      ██   ██ ██    ██ ██      ██ ██      ██
-       ██      ██   ██  ██████  ██      ██ ███████ ███████
-         PROFILE PAGE
-       =========================================================== */
-
-    /* --- PROFILE HERO BANNER --- */
-    .profile-hero {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--royal) 100%);
-      padding: 70px 0 0; position: relative;
-    }
-    .profile-hero-inner {
-      display: grid; grid-template-columns: 1fr;
-      gap: 0; position: relative; z-index: 1;
-    }
-    .profile-hero-name {
-      font-size: clamp(28px, 4vw, 44px); font-weight: 800;
-      color: var(--white); margin-bottom: 8px;
-    }
-    .profile-hero-title {
-      font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.65); margin-bottom: 18px;
-    }
+    /* PROFILE PAGE */
+    .profile-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--royal) 100%); padding: 70px 0 0; position: relative; }
+    .profile-hero-inner { display: grid; grid-template-columns: 1fr; gap: 0; position: relative; z-index: 1; }
+    .profile-hero-name { font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: var(--white); margin-bottom: 8px; }
+    .profile-hero-title { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.65); margin-bottom: 18px; }
     .profile-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
-    .profile-tag {
-      padding: 5px 13px;
-      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 20px; font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.8);
-    }
-    .profile-wave {
-      height: 52px; background: var(--white);
-      clip-path: ellipse(120% 100% at 50% 100%); margin-top: -1px;
-    }
-
-    /* --- PROFILE CONTENT (2 columns: carousel left, bio+sidebar right) --- */
-    .profile-content {
-      display: grid; grid-template-columns: 340px 1fr;
-      gap: 48px; padding: 56px 0; align-items: start;
-    }
-
-    /* --- AVATAR PHOTO CAROUSEL --- */
-    .avatar-carousel {
-      position: sticky; top: 84px;
-      border-radius: var(--radius-lg); overflow: hidden;
-      background: var(--navy); aspect-ratio: 3/4;
-    }
-    .avatar-carousel-track {
-      display: flex; height: 100%;
-      transition: transform 0.5s cubic-bezier(.4,0,.2,1);
-    }
+    .profile-tag { padding: 5px 13px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.8); }
+    .profile-wave { height: 52px; background: var(--white); clip-path: ellipse(120% 100% at 50% 100%); margin-top: -1px; }
+    .profile-content { display: grid; grid-template-columns: 340px 1fr; gap: 48px; padding: 56px 0; align-items: start; }
+    .avatar-carousel { position: sticky; top: 84px; border-radius: var(--radius-lg); overflow: hidden; background: var(--navy); aspect-ratio: 3/4; }
+    .avatar-carousel-track { display: flex; height: 100%; transition: transform 0.5s cubic-bezier(.4,0,.2,1); }
     .avatar-carousel-slide { min-width: 100%; height: 100%; }
-    .avatar-carousel-slide img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center top; display: block;
-    }
-    /* Placeholder shown when no photo is uploaded yet */
-    .avatar-placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 12px;
-      background: linear-gradient(160deg, var(--navy), var(--royal));
-      color: rgba(255,255,255,0.3);
-      font-size: 13px; font-weight: 400; text-align: center; padding: 20px;
-    }
+    .avatar-carousel-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .avatar-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: linear-gradient(160deg, var(--navy), var(--royal)); color: rgba(255,255,255,0.3); font-size: 13px; font-weight: 400; text-align: center; padding: 20px; }
     .avatar-placeholder span { font-size: 56px; }
-    .avatar-carousel-btn {
-      position: absolute; bottom: 14px;
-      width: 34px; height: 34px;
-      background: rgba(25,35,76,0.75);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 50%; color: var(--white); font-size: 15px;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; z-index: 10; backdrop-filter: blur(6px);
-      transition: background var(--transition);
-    }
+    .avatar-carousel-btn { position: absolute; bottom: 14px; width: 34px; height: 34px; background: rgba(25,35,76,0.75); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; color: var(--white); font-size: 15px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; backdrop-filter: blur(6px); transition: background var(--transition); }
     .avatar-carousel-btn:hover { background: var(--blue); }
     .avatar-carousel-btn.prev { right: 56px; }
     .avatar-carousel-btn.next { right: 14px; }
-    .avatar-carousel-dots {
-      position: absolute; top: 12px; right: 12px;
-      display: flex; flex-direction: column; gap: 5px;
-    }
-    .avatar-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: rgba(255,255,255,0.3); cursor: pointer;
-      transition: background var(--transition), transform var(--transition);
-    }
+    .avatar-carousel-dots { position: absolute; top: 12px; right: 12px; display: flex; flex-direction: column; gap: 5px; }
+    .avatar-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: background var(--transition), transform var(--transition); }
     .avatar-dot.active { background: var(--white); transform: scale(1.4); }
-
-    /* --- BIO --- */
-    .profile-bio {
-      font-size: 16px; font-weight: 300; line-height: 1.9; color: var(--charcoal); margin-bottom: 30px;
-    }
+    .profile-bio { font-size: 16px; font-weight: 300; line-height: 1.9; color: var(--charcoal); margin-bottom: 30px; }
     .profile-bio p { margin-bottom: 18px; }
     .profile-bio p:last-child { margin-bottom: 0; }
-
-    /* --- EXPERTISE CHECKLIST --- */
-    .expertise-item {
-      display: flex; align-items: center; gap: 12px;
-      padding: 11px 0; border-bottom: 1px solid var(--border);
-    }
+    .expertise-item { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border); }
     .expertise-item:last-child { border-bottom: none; }
-    .expertise-check {
-      width: 20px; height: 20px; flex-shrink: 0;
-      background: var(--light-blue); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 11px; color: var(--blue);
-    }
+    .expertise-check { width: 20px; height: 20px; flex-shrink: 0; background: var(--light-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--blue); }
     .expertise-text { font-size: 15px; font-weight: 500; color: var(--navy); }
-
-    /* --- PROFILE SIDEBAR --- */
-    .sidebar-card {
-      background: var(--off-white); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 26px; margin-bottom: 18px;
-    }
-    .sidebar-title {
-      font-family: var(--font-accent); font-size: 10px; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 14px;
-    }
-    .sidebar-item {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 14px; color: var(--charcoal);
-      margin-bottom: 10px; line-height: 1.5;
-    }
+    .sidebar-card { background: var(--off-white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px; margin-bottom: 18px; }
+    .sidebar-title { font-family: var(--font-accent); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .sidebar-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--charcoal); margin-bottom: 10px; line-height: 1.5; }
     .sidebar-item:last-child { margin-bottom: 0; }
     .sidebar-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
     .sidebar-label { font-weight: 600; color: var(--navy); display: block; margin-bottom: 1px; }
 
-
-    /* ===========================================================
-       ABOUT PAGE
-       =========================================================== */
-
+    /* ABOUT PAGE */
     .about-hero { background: var(--navy); padding: 80px 0; position: relative; overflow: hidden; }
-    .about-hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 55% at 85% 50%, rgba(2,67,202,0.18) 0%, transparent 70%);
-    }
+    .about-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 55% at 85% 50%, rgba(2,67,202,0.18) 0%, transparent 70%); }
     .about-hero-inner { position: relative; z-index: 1; max-width: 720px; }
-
-    /* Mission */
     .mission-section { background: var(--off-white); border-bottom: 1px solid var(--border); }
     .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
     .mission-visual { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px; }
     .mission-value { display: flex; gap: 14px; margin-bottom: 22px; align-items: flex-start; }
     .mission-value:last-child { margin-bottom: 0; }
-    .mv-icon {
-      width: 38px; height: 38px; flex-shrink: 0; background: var(--light-blue);
-      border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 17px;
-    }
+    .mv-icon { width: 38px; height: 38px; flex-shrink: 0; background: var(--light-blue); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 17px; }
     .mv-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
     .mv-body  { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-    /* Values */
     .values-section { background: var(--navy); }
     .values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 44px; }
-    .value-card {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
-      border-radius: var(--radius-lg); padding: 28px; transition: background var(--transition);
-    }
+    .value-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: var(--radius-lg); padding: 28px; transition: background var(--transition); }
     .value-card:hover { background: rgba(255,255,255,0.08); }
     .value-icon { font-size: 26px; margin-bottom: 14px; }
     .value-title { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
     .value-body  { font-size: 13px; color: rgba(255,255,255,0.58); line-height: 1.7; }
 
-    /* ============================================================
-       CONTACT FORM
-       Connected to Formspree — submissions go to your inbox.
-    ============================================================ */
+    /* CONTACT FORM */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
     .contact-form { display: flex; flex-direction: column; gap: 14px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .form-group { display: flex; flex-direction: column; gap: 5px; }
     .form-label { font-size: 13px; font-weight: 600; color: var(--navy); }
-    .form-input, .form-select, .form-textarea {
-      padding: 11px 14px; border: 1.5px solid var(--border);
-      border-radius: var(--radius); font-family: var(--font-body);
-      font-size: 14px; color: var(--charcoal); background: var(--white);
-      transition: border-color var(--transition), box-shadow var(--transition); outline: none;
-    }
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--blue); box-shadow: 0 0 0 3px rgba(2,67,202,0.1);
-    }
+    .form-input, .form-select, .form-textarea { padding: 11px 14px; border: 1.5px solid var(--border); border-radius: var(--radius); font-family: var(--font-body); font-size: 14px; color: var(--charcoal); background: var(--white); transition: border-color var(--transition), box-shadow var(--transition); outline: none; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(2,67,202,0.1); }
     .form-textarea { resize: vertical; min-height: 116px; }
     .form-select { appearance: none; cursor: pointer; }
     .contact-info-title { font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
     .contact-info-body  { font-size: 15px; font-weight: 300; color: var(--muted); line-height: 1.75; margin-bottom: 28px; }
     .contact-detail { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 18px; }
-    .contact-icon {
-      width: 38px; height: 38px; flex-shrink: 0;
-      background: var(--light-blue); border-radius: var(--radius);
-      display: flex; align-items: center; justify-content: center; font-size: 17px;
-    }
+    .contact-icon { width: 38px; height: 38px; flex-shrink: 0; background: var(--light-blue); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 17px; }
     .contact-detail-label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1px; }
     .contact-detail-value { font-size: 15px; font-weight: 600; color: var(--navy); }
 
-    /* ============================================================
-       FOOTER
-    ============================================================ */
+    /* FOOTER */
     .footer { background: var(--charcoal); padding: 60px 0 28px; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 44px; }
     .footer-brand-name { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
-.footer-brand-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 230px; }
-    .footer-col-title {
-      font-family: var(--font-accent); font-size: 10px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(255,255,255,0.3); margin-bottom: 14px;
-    }
-    .footer-link {
-      display: block; font-size: 13px; color: rgba(255,255,255,0.5);
-      margin-bottom: 9px; cursor: pointer; transition: color var(--transition);
-    }
+    .footer-brand-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 230px; }
+    .footer-col-title { font-family: var(--font-accent); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+    .footer-link { display: block; font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 9px; cursor: pointer; transition: color var(--transition); }
     .footer-link:hover { color: var(--white); }
-    .footer-bottom {
-      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08);
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
-    }
+    .footer-bottom { padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
     .footer-copy { font-size: 12px; color: rgba(255,255,255,0.28); }
     .footer-legal { display: flex; gap: 18px; }
     .footer-legal a { font-size: 12px; color: rgba(255,255,255,0.28); cursor: pointer; }
     .footer-legal a:hover { color: rgba(255,255,255,0.6); }
 
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
+    /* RESPONSIVE */
     @media (max-width: 960px) {
-      .hero-grid, .focus-grid, .approach-grid, .mission-grid,
-      .contact-grid, .profile-content { grid-template-columns: 1fr; }
+      .hero-grid, .focus-grid, .approach-grid, .mission-grid, .contact-grid, .profile-content { grid-template-columns: 1fr; }
       .hero-stat-stack { display: none; }
-      .profile-content { grid-template-columns: 1fr; }
       .avatar-carousel { aspect-ratio: 4/3; position: static; max-width: 420px; }
       .stats-grid { grid-template-columns: repeat(2,1fr); }
       .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 22px; }
@@ -680,21 +428,11 @@
       .services-grid { grid-template-columns: 1fr; }
       .headlines-grid { grid-template-columns: 1fr; }
     }
-
   </style>
 </head>
 <body>
 
-<!-- ================================================================
-     NAVIGATION
-     ----------------------------------------------------------------
-     HOW TO ADD A NEW PAGE LINK:
-     1. Copy one <span class="nav-link"> line
-     2. Change data-page="XXX" to your new page id
-     3. Change onclick="showPage('XXX')" to match
-     4. Change the label text (e.g. "Resources")
-     5. Do the same in the mobile menu below
-================================================================ -->
+<!-- NAVIGATION -->
 <nav class="nav" id="main-nav">
   <div class="nav-inner">
     <div class="nav-logo" onclick="showPage('overview')">
@@ -710,8 +448,6 @@
       <li><span class="nav-link active" data-page="overview" onclick="showPage('overview')">Overview</span></li>
       <li><span class="nav-link" data-page="profile"  onclick="showPage('profile')">Profile</span></li>
       <li><span class="nav-link" data-page="about"    onclick="showPage('about')">About Us</span></li>
-    
-      <!-- ✏️ ADD NEW PAGE LINK HERE — copy the line above, change data-page and onclick -->
     </ul>
     <button class="nav-cta" onclick="showPage('about');setTimeout(goContact,120)">Get in Touch</button>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
@@ -725,42 +461,23 @@
   <span class="mobile-link active" data-page="overview" onclick="showPage('overview');toggleMenu()">Overview</span>
   <span class="mobile-link" data-page="profile"  onclick="showPage('profile');toggleMenu()">Profile</span>
   <span class="mobile-link" data-page="about"    onclick="showPage('about');toggleMenu()">About Us</span>
-
-  <!-- ✏️ ADD MOBILE LINK HERE TOO when adding a new page -->
   <span class="mobile-link" onclick="showPage('about');goContact();toggleMenu()">Get in Touch</span>
 </div>
 
-
-<!-- ================================================================
-     ██████  ██████   ██████  ███████ ██ ██      ███████
-     ██   ██ ██   ██ ██    ██ ██      ██ ██      ██
-     ██████  ██████  ██    ██ █████   ██ ██      █████
-     ██      ██   ██ ██    ██ ██      ██ ██      ██
-     ██      ██   ██  ██████  ██      ██ ███████ ███████
-     PAGE: OVERVIEW
-================================================================ -->
+<!-- PAGE: OVERVIEW -->
 <div class="page active" id="page-overview">
-
-  <!-- HERO
-       ✏️ EDIT: hero-eyebrow, hero-title, hero-body, hero-actions
-       ✏️ EDIT: stat numbers and labels in hero-stat-card blocks -->
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
         <div>
           <div class="hero-eyebrow">Neuroscience · Psychology · HR Data</div>
-          <h1 class="hero-title">
-            Where Brain Science<br>Meets <em>Workforce Intelligence</em>
-          </h1>
-          <p class="hero-body">
-            Applying neuroscience and psychology to decode attrition, engagement, and performance — starting with education, expanding to healthcare. Evidence-based insights that transform how organ[...]
-          </p>
+          <h1 class="hero-title">Where Brain Science<br>Meets <em>Workforce Intelligence</em></h1>
+          <p class="hero-body">Applying neuroscience and psychology to decode attrition, engagement, and performance — starting with education, expanding to healthcare. Evidence-based insights that transform how organisations understand their people.</p>
           <div class="hero-actions">
             <button class="btn btn-primary" onclick="showPage('about')">Discover Our Approach</button>
             <button class="btn btn-outline-white" onclick="showPage('profile')">Meet the Team</button>
           </div>
         </div>
-        <!-- STAT CARDS — edit the numbers and text below -->
         <div class="hero-stat-stack">
           <div class="hero-stat-card">
             <div class="hero-stat-num">10 month average turnaround</div>
@@ -772,19 +489,17 @@
           </div>
           <div class="hero-stat-card">
             <div class="hero-stat-num">25–74% of global teachers</div>
-            <div class="hero-stat-label">experience clinically meaningful burnout <span class="hero-stat-hl">- which can be reduced with early interventions</span> </div>
+            <div class="hero-stat-label">experience clinically meaningful burnout <span class="hero-stat-hl">- which can be reduced with early interventions</span></div>
           </div>
-           <div class="hero-stat-card">
+          <div class="hero-stat-card">
             <div class="hero-stat-num">Billions in hidden annual costs</div>
-            <div class="hero-stat-label">driven by hiring, training time, and lost instructional quality, fracture the continuity essential for student learning — <span class="hero-stat-hl">preventa[...]
+            <div class="hero-stat-label">driven by hiring, training time, and lost instructional quality, fracture the continuity essential for student learning</div>
           </div>
         </div>
-        <!-- END STAT CARDS -->
       </div>
     </div>
   </section>
 
-  <!-- INTRO PILLS — ✏️ edit or add pill text -->
   <div class="intro-strip">
     <div class="container">
       <div class="intro-pills">
@@ -798,60 +513,49 @@
     </div>
   </div>
 
-  <!-- SERVICES
-       ✏️ HOW TO ADD A SERVICE: copy one .service-card block and paste it below the last one
-       ✏️ HOW TO REMOVE A SERVICE: delete the whole .service-card block -->
   <section class="section">
     <div class="container">
       <div class="fade-up">
         <div class="section-label">What We Do</div>
         <h2 class="section-title">Science-Led HR Solutions<br>for High-Stakes Roles</h2>
         <div class="divider"></div>
-        <p class="section-body">We bridge the gap between cognitive science research and practical HR decisions — giving leaders the tools to understand, predict, and improve workforce wellbeing as [...]
+        <p class="section-body">We bridge the gap between cognitive science research and practical HR decisions — giving leaders the tools to understand, predict, and improve workforce wellbeing.</p>
       </div>
       <div class="services-grid">
-
         <div class="service-card fade-up">
           <div class="service-icon">🧠</div>
           <div class="service-title">Neuropsychological Assessment and Action Plans</div>
-          <p class="service-body">Evidence-based assessments rooted in cognitive neuroscience to identify stress responses, burnout risk factors, and resilience profiles in your workforce—paired wit[...]
+          <p class="service-body">Evidence-based assessments rooted in cognitive neuroscience to identify stress responses, burnout risk factors, and resilience profiles in your workforce.</p>
         </div>
-
         <div class="service-card fade-up">
           <div class="service-icon">📊</div>
           <div class="service-title">Attrition Prediction Modelling</div>
           <p class="service-body">Data models that flag flight risk months before resignation — drawing on psychological and behavioural signals unique to high-attrition sectors.</p>
         </div>
-
         <div class="service-card fade-up">
           <div class="service-icon">🎓</div>
           <div class="service-title">Education Workforce Strategy</div>
           <p class="service-body">Tailored programmes for schools and institutions to reduce educator turnover through evidence-based retention strategies grounded in occupational psychology.</p>
         </div>
-
         <div class="service-card fade-up">
           <div class="service-icon">💡</div>
           <div class="service-title">Leadership Development</div>
           <p class="service-body">Neuroscience-informed coaching for senior leaders — building psychological safety, reducing cognitive overload, and improving decision making under pressure.</p>
         </div>
-
         <div class="service-card fade-up">
           <div class="service-icon">🔬</div>
           <div class="service-title">Research & Benchmarking</div>
           <p class="service-body">Sector-specific benchmarking contextualising your HR metrics against the latest applied neuroscience and occupational psychology research.</p>
         </div>
-
         <div class="service-card fade-up">
           <div class="service-icon">🏥</div>
           <div class="service-title">Healthcare Pipeline (Coming Soon)</div>
           <p class="service-body">Extending our data modelling and analytics to healthcare — addressing critical workforce challenges in nursing, allied health, and medical leadership.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- SECTOR ROADMAP -->
   <section class="section focus-section">
     <div class="container">
       <div class="fade-up">
@@ -874,7 +578,6 @@
             <p class="focus-item-body">Assessing organisational cultures to identify where threat responses inhibit performance and wellbeing.</p>
           </div>
         </div>
-        <!-- ROADMAP — ✏️ edit stage names and descriptions -->
         <div class="focus-visual">
           <div class="focus-visual-label">Sector Roadmap</div>
           <div class="roadmap-item">
@@ -898,35 +601,33 @@
     </div>
   </section>
 
- <!-- HEADLINE SECTION — ✏️ edit the headlines and descriptions -->
-<div class="headlines-section">
-  <div class="container">
-    <div class="headlines-grid">
-      <div class="headline-item">
-        <h3 class="headline-title">Flag flight risk months early</h3>
-        <p class="headline-description">Intervene before resignation</p>
-      </div>
-      <div class="headline-item">
-        <h3 class="headline-title">Three disciplines, one solution</h3>
-        <p class="headline-description">Root causes, not HR band-aids</p>
-      </div>
-      <div class="headline-item">
-        <h3 class="headline-title">Pinpoint burnout risk</h3>
-        <p class="headline-description">No more guessing from exit interviews</p>
-      </div>
-      <div class="headline-item">
-        <h3 class="headline-title">Built for education</h3>
-        <p class="headline-description">Scaled to healthcare and every high-attrition sector</p>
-      </div>
-      <div class="headline-item">
-        <h3 class="headline-title">Targeted action plans</h3>
-        <p class="headline-description">Evidence-based, not generic wellbeing</p>
+  <div class="headlines-section">
+    <div class="container">
+      <div class="headlines-grid">
+        <div class="headline-item">
+          <h3>Flag flight risk months early</h3>
+          <p>Intervene before resignation</p>
+        </div>
+        <div class="headline-item">
+          <h3>Three disciplines, one solution</h3>
+          <p>Root causes, not HR band-aids</p>
+        </div>
+        <div class="headline-item">
+          <h3>Pinpoint burnout risk</h3>
+          <p>No more guessing from exit interviews</p>
+        </div>
+        <div class="headline-item">
+          <h3>Built for education</h3>
+          <p>Scaled to healthcare and every high-attrition sector</p>
+        </div>
+        <div class="headline-item">
+          <h3>Targeted action plans</h3>
+          <p>Evidence-based, not generic wellbeing</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-  <!-- APPROACH -->
   <section class="section">
     <div class="container">
       <div class="approach-grid">
@@ -934,11 +635,10 @@
           <div class="section-label">Our Approach</div>
           <h2 class="section-title">From Data to<br>Actionable Insight</h2>
           <div class="divider"></div>
-          <!-- ✏️ EDIT or ADD steps by copying an .approach-step block -->
           <div class="approach-steps">
             <div class="approach-step">
               <div class="step-num">01</div>
-              <div><div class="step-title">Assess</div><p class="step-body">To ensure a respectful and evidence‑grounded approach, we will collaboratively develop key performance indicators, deploy [...]
+              <div><div class="step-title">Assess</div><p class="step-body">To ensure a respectful and evidence-grounded approach, we will collaboratively develop key performance indicators.</p></div>
             </div>
             <div class="approach-step">
               <div class="step-num">02</div>
@@ -946,7 +646,7 @@
             </div>
             <div class="approach-step">
               <div class="step-num">03</div>
-              <div><div class="step-title">Advise</div><p class="step-body">Translate findings into clear, prioritised HR recommendations — from individual plans to systemic culture change intervent[...]
+              <div><div class="step-title">Advise</div><p class="step-body">Translate findings into clear, prioritised HR recommendations — from individual plans to systemic culture change.</p></div>
             </div>
             <div class="approach-step">
               <div class="step-num">04</div>
@@ -955,15 +655,13 @@
           </div>
         </div>
         <div class="approach-panel fade-up">
-          <!-- ✏️ edit this quote -->
-          <p class="approach-quote">"Understanding people isn't a luxury; it's the foundation of every strategy. True success demands big‑picture thinking, not short‑term wins, and real change[...]
+          <p class="approach-quote">"Understanding people isn't a luxury; it's the foundation of every strategy. True success demands big-picture thinking, not short-term wins."</p>
           <div class="approach-attr">— Neuroedge Insights Founding Principle</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA BANNER -->
   <section class="section-sm">
     <div class="container">
       <div class="cta-banner fade-up">
@@ -978,23 +676,299 @@
       </div>
     </div>
   </section>
+</div>
 
-</div><!-- ✅ END PAGE: OVERVIEW -->
-
-
-<!-- ================================================================
-     PAGE: PROFILE
-================================================================ -->
+<!-- PAGE: PROFILE -->
 <div class="page" id="page-profile">
-
-  <!-- PROFILE HERO BANNER — ✏️ edit name, title, and tags -->
   <div class="profile-hero">
     <div class="container">
       <div class="profile-hero-inner">
         <h1 class="profile-hero-name">Felicia Teo</h1>
         <div class="profile-hero-title">Founder & Director — Neuroscience, Psychology & HR Strategy</div>
-        <!-- ✏️ ADD or REMOVE tags by copying/deleting <span class="profile-tag"> -->
         <div class="profile-tags">
           <span class="profile-tag">Learning and Development</span>
           <span class="profile-tag">Cognitive Neuroscience</span>
           <span class="profile-tag">HR Analytics</span>
+        </div>
+      </div>
+    </div>
+    <div class="profile-wave"></div>
+  </div>
+
+  <div class="container">
+    <div class="profile-content">
+      <div class="avatar-carousel">
+        <div class="avatar-carousel-track">
+          <div class="avatar-carousel-slide">
+            <div class="avatar-placeholder">
+              <span>📷</span>
+              Photo coming soon
+            </div>
+          </div>
+        </div>
+        <button class="avatar-carousel-btn prev">‹</button>
+        <button class="avatar-carousel-btn next">›</button>
+        <div class="avatar-carousel-dots">
+          <div class="avatar-dot active"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="profile-bio">
+          <p>Felicia Teo is the Founder and Director of Neuroedge Insights, where neuroscience meets human resources strategy. With deep expertise in cognitive neuroscience, occupational psychology, and HR analytics, Felicia bridges the gap between research and practice.</p>
+          <p>Her mission: to help organisations solve their most pressing workforce challenges—attrition, burnout, disengagement—by understanding the neuroscience and psychology behind human behaviour in the workplace.</p>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Areas of Expertise</div>
+          <div class="expertise-item">
+            <div class="expertise-check">✓</div>
+            <div class="expertise-text">Cognitive Neuroscience & Stress Responses</div>
+          </div>
+          <div class="expertise-item">
+            <div class="expertise-check">✓</div>
+            <div class="expertise-text">Occupational Psychology</div>
+          </div>
+          <div class="expertise-item">
+            <div class="expertise-check">✓</div>
+            <div class="expertise-text">Attrition & Retention Modelling</div>
+          </div>
+          <div class="expertise-item">
+            <div class="expertise-check">✓</div>
+            <div class="expertise-text">Leadership Development</div>
+          </div>
+          <div class="expertise-item">
+            <div class="expertise-check">✓</div>
+            <div class="expertise-text">Evidence-Based HR Strategy</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Background</div>
+          <div class="sidebar-item">
+            <span class="sidebar-icon">🎓</span>
+            <div><span class="sidebar-label">Master's in Neuroscience</span>Research-focused, published work in occupational cognitive neuroscience</div>
+          </div>
+          <div class="sidebar-item">
+            <span class="sidebar-icon">💼</span>
+            <div><span class="sidebar-label">10+ years in HR & Talent</span>From operations to strategic consulting in education and professional services</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: ABOUT -->
+<div class="page" id="page-about">
+  <div class="about-hero">
+    <div class="container">
+      <div class="about-hero-inner">
+        <div class="section-label" style="color:rgba(255,255,255,0.4)">About Neuroedge</div>
+        <h1 class="section-title light">Evidence-Based HR Starts With Understanding the Brain</h1>
+        <p class="section-body light">We apply neuroscience and psychology to the HR problems that matter most: attrition, burnout, disengagement. Our approach is grounded in research, proven in practice, and built for sectors where retention is critical.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mission-section">
+    <div class="container" style="padding:80px 32px">
+      <div class="mission-grid">
+        <div>
+          <h2 class="section-title">Our Mission</h2>
+          <p class="section-body">To empower organisations to make smarter, science-backed decisions about their most valuable asset: their people. We believe that true HR transformation starts with understanding the neuroscience and psychology behind human behaviour at work.</p>
+        </div>
+        <div class="mission-visual">
+          <div class="mission-value">
+            <div class="mv-icon">🧬</div>
+            <div>
+              <div class="mv-title">Grounded in Science</div>
+              <div class="mv-body">Every recommendation is rooted in published neuroscience and occupational psychology research</div>
+            </div>
+          </div>
+          <div class="mission-value">
+            <div class="mv-icon">📊</div>
+            <div>
+              <div class="mv-title">Data-Driven</div>
+              <div class="mv-body">We model real-world HR challenges using robust analytics and predictive modelling</div>
+            </div>
+          </div>
+          <div class="mission-value">
+            <div class="mv-icon">⚡</div>
+            <div>
+              <div class="mv-title">Action-Oriented</div>
+              <div class="mv-body">Insights mean nothing without implementation. We help you turn findings into measurable outcomes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="values-section">
+    <div class="container" style="padding:80px 32px">
+      <h2 class="section-title light">Our Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🔬</div>
+          <div class="value-title">Scientific Integrity</div>
+          <div class="value-body">We follow the evidence, not trends. Our methods are transparent, replicable, and published.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <div class="value-title">Human-Centred</div>
+          <div class="value-body">Technology and data serve people, not the other way around. We respect the complexity of human experience.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🌱</div>
+          <div class="value-title">Sustainable Impact</div>
+          <div class="value-body">We build capability. Our goal is to leave your team equipped to sustain improvements long after we've gone.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: var(--off-white); padding: 80px 0;">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-grid">
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-input" name="firstName" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-input" name="lastName" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" name="email" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Organisation</label>
+            <input type="text" class="form-input" name="organisation" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+
+        <div>
+          <h3 class="contact-info-title">Let's Talk</h3>
+          <p class="contact-info-body">Have questions about how neuroscience can transform your HR strategy? Reach out — we'd love to explore how Neuroedge can help your organisation.</p>
+          
+          <div class="contact-detail">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <div class="contact-detail-value">hello@neuroedge.insights</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-detail-label">Location</div>
+              <div class="contact-detail-value">Singapore</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">🔗</div>
+            <div>
+              <div class="contact-detail-label">LinkedIn</div>
+              <div class="contact-detail-value">Neuroedge Insights</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container" style="padding:60px 32px 0;">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Neuroedge Insights</div>
+        <div class="footer-brand-desc">Neuroscience and psychology for better HR decisions. Evidence-based strategies that transform workforce performance.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <a href="#" class="footer-link" onclick="showPage('about')">About Us</a>
+        <a href="#" class="footer-link" onclick="showPage('about');goContact()">Contact</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <a href="#" class="footer-link" onclick="showPage('overview')">Attrition Analytics</a>
+        <a href="#" class="footer-link" onclick="showPage('overview')">Leadership Development</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="padding:0 32px 28px;">
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Neuroedge Insights. All rights reserved. UEN: 202620298W</div>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Page Navigation
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + pageId).classList.add('active');
+  document.querySelectorAll('[data-page]').forEach(link => link.classList.remove('active'));
+  document.querySelector('[data-page="' + pageId + '"]').classList.add('active');
+  window.scrollTo(0, 0);
+  closeMobileMenu();
+}
+
+function toggleMenu() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+
+function goContact() {
+  document.querySelector('[id="contact-form"]').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Scroll Animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 0);
+});
+
+// Mobile menu close on resize
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 600) closeMobileMenu();
+});
+</script>
+
+</body>
+</html>
