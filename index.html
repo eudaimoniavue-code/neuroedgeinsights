@@ -1320,8 +1320,16 @@
         <div class="divider"></div>
       </div>
       
-      <div style="margin-top: 40px;" id="admin-content">
-        <p style="text-align: center; color: var(--muted);">Loading...</p>
+      <!-- Load admin content directly -->
+      <div style="margin-top: 40px; text-align: center; padding: 40px; background: var(--off-white); border-radius: 4px;">
+        <p style="margin-bottom: 15px; font-size: 14px; color: var(--charcoal);">
+          Staff TSI Assessment Tool
+        </p>
+        <a href="https://github.com/eudaimoniavue-code/neuroedgeinsights/raw/main/staff_tsi_v8%20FINAL%20NT%20PUBLISHED.html" 
+           target="_blank" 
+           style="display: inline-block; padding: 15px 30px; background: var(--blue); color: white; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 16px;">
+          📊 Open TSI Tool
+        </a>
       </div>
     </div>
   </section>
@@ -1473,29 +1481,16 @@ END TEAM PAGE -->
 </footer>
 
 <script>
-  // Load admin content from GitHub
-  function loadAdminContent() {
-    fetch('https://github.com/eudaimoniavue-code/neuroedgeinsights/blob/318aef724a055deee0571b51933b68449b0c9a9b/staff_tsi_v8%20FINAL%20NT%20PUBLISHED.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('admin-content').innerHTML = html;
-      })
-      .catch(error => {
-        document.getElementById('admin-content').innerHTML = '<p style="color: red;">Error loading admin content.</p>';
-      });
-  }
 
-  // Original showPage function - MODIFY IT
-  function showPage(pageId) {
-    // PASSWORD CHECK
-    if (pageId === 'admin') {
-      const password = prompt('Enter admin password:');
-      if (password !== 'S2026!NEUROEDGEadminstatsforSCHOOLS.%') {
-        alert('Incorrect password. Access denied.');
-        return;
-      }
-      loadAdminContent();
+function showPage(pageId) {
+  if (pageId === 'admin') {
+    const password = prompt('Enter admin password:');
+    if (password !== 'S2026!NEUROEDGEadminstatsforSCHOOLS.%') {
+      alert('Incorrect password. Access denied.');
+      return;
     }
+    // No loadAdminContent() needed — content loads directly
+  }
 
     // Hide all pages
     document.querySelectorAll('.page').forEach(page => {
