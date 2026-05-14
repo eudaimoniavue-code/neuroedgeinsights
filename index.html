@@ -16,7 +16,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
 
   <style>
+  .headlines-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
 
+    .headline-item h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem 0;
+      color: #333;
+    }
+
+    .headline-item p {
+      font-size: 0.95rem;
+      color: #666;
+      margin: 0;
+    }
+  </style>
+  <!-- END OF CSS -->
+  
+</head>
     /* ============================================================
        SEGMENT A FONT
        HOW TO USE YOUR OWN FONT FILE:
@@ -877,18 +899,33 @@
     </div>
   </section>
 
-  <!-- STATS BAR — ✏️ edit the 4 numbers and labels -->
-  <div class="stats-bar">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item"><div class="stat-num">Flag </div><div class="stat-label">flight risk months early<br>intervene before resignation.</div></div>
-        <div class="stat-item"><div class="stat-num">Three disciplines</div><div class="stat-label">One solution.<br>Root causes, not HR band‑aids.</div></div>
-        <div class="stat-item"><div class="stat-num">Pinpoint</div><div class="stat-label">burnout risk<br>no more guessing from exit interviews.</div></div>
-        <div class="stat-item"><div class="stat-num">Built</div><div class="stat-label">for education<br>Scaled to healthcare. Every high‑attrition sector.</div></div>
-        <div class="stat-item"><div class="stat-num">Targeted</div><div class="stat-label">action plans<br>evidence‑based, not generic wellbeing.</div></div>
+ <!-- HEADLINE SECTION — ✏️ edit the headlines and descriptions -->
+<div class="headlines-section">
+  <div class="container">
+    <div class="headlines-grid">
+      <div class="headline-item">
+        <h3 class="headline-title">Flag flight risk months early</h3>
+        <p class="headline-description">Intervene before resignation</p>
+      </div>
+      <div class="headline-item">
+        <h3 class="headline-title">Three disciplines, one solution</h3>
+        <p class="headline-description">Root causes, not HR band-aids</p>
+      </div>
+      <div class="headline-item">
+        <h3 class="headline-title">Pinpoint burnout risk</h3>
+        <p class="headline-description">No more guessing from exit interviews</p>
+      </div>
+      <div class="headline-item">
+        <h3 class="headline-title">Built for education</h3>
+        <p class="headline-description">Scaled to healthcare and every high-attrition sector</p>
+      </div>
+      <div class="headline-item">
+        <h3 class="headline-title">Targeted action plans</h3>
+        <p class="headline-description">Evidence-based, not generic wellbeing</p>
       </div>
     </div>
   </div>
+</div>
 
   <!-- APPROACH -->
   <section class="section">
