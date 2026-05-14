@@ -1,11 +1,20 @@
 <div>
-  <h3 style="font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 15px;">Private Admin Dashboard</h3>
-  <p style="font-size: 15px; color: var(--charcoal); line-height: 1.7; margin-bottom: 20px;">
-    This is your private admin content. Only accessible with password.
-  </p>
+  <h3 style="font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Staff TSI Assessment Tool</h3>
+  <p style="font-size: 13px; color: rgba(44, 44, 44, 0.6); margin-bottom: 20px;">Version 8 - Final Published</p>
   
-  <div style="background: white; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px;">
-    <h4 style="color: var(--navy); margin-bottom: 10px;">Your Private Data</h4>
-    <p>Add your confidential information here.</p>
+  <!-- EMBEDDED DOCUMENT -->
+  <div style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow);">
+    <iframe 
+      src="https://raw.githubusercontent.com/eudaimoniavue-code/neuroedgeinsights/main/staff_tsi_v8%20FINAL%20NT%20PUBLISHED.html" 
+      style="width: 100%; height: 900px; border: none; display: block;">
+    </iframe>
+  </div>
+
+  <!-- FALLBACK IF IFRAME FAILS -->
+  <div style="margin-top: 15px; padding: 15px; background: #fff3cd; border-radius: 4px; display: none;" id="iframe-fallback">
+    <p style="font-size: 14px; color: #856404; margin: 0;">
+      If the document doesn't load above, 
+      <a href="https://raw.githubusercontent.com/eudaimoniavue-code/neuroedgeinsights/main/staff_tsi_v8%20FINAL%20NT%20PUBLISHED.html" target="_blank" style="color: #0243ca; font-weight: 600;">click here to open it</a>
+    </p>
   </div>
 </div>
