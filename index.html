@@ -635,7 +635,169 @@
     .footer-legal a { font-size: 12px; color: rgba(255,255,255,0.28); cursor: pointer; }
     .footer-legal a:hover { color: rgba(255,255,255,0.6); }
 
+    /* ============================================================
+       PROJECTS PAGE
+    ============================================================ */
+
+    /* Hero */
+    .projects-hero {
+      background: var(--navy); padding: 80px 0 0; position: relative; overflow: hidden;
+    }
+    .projects-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 90% 20%, rgba(2,67,202,0.22) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 50% at 10% 80%, rgba(24,59,132,0.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .projects-hero-inner { position: relative; z-index: 1; max-width: 780px; padding-bottom: 56px; }
+    .projects-wave { height: 52px; background: var(--off-white); clip-path: ellipse(120% 100% at 50% 100%); margin-top: -1px; }
+
+    /* Intro strip */
+    .projects-intro { background: var(--off-white); padding: 52px 0; border-bottom: 1px solid var(--border); }
+    .projects-intro-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
+    .proj-intro-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 26px; text-align: center;
+    }
+    .proj-intro-num { font-size: 32px; font-weight: 800; color: var(--blue); margin-bottom: 6px; }
+    .proj-intro-label { font-size: 13px; font-weight: 500; color: var(--muted); line-height: 1.5; }
+
+    /* Photo carousel */
+    .proj-carousel-section { background: var(--white); padding: 72px 0; }
+    .proj-carousel-wrap { position: relative; overflow: hidden; border-radius: var(--radius-lg); }
+    .proj-carousel-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+    }
+    .proj-carousel-slide {
+      min-width: 100%; position: relative;
+    }
+    .proj-carousel-img {
+      width: 100%; height: 420px; object-fit: cover; display: block;
+      border-radius: var(--radius-lg);
+    }
+    .proj-carousel-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(25,35,76,0.92) 0%, transparent 100%);
+      padding: 48px 36px 30px;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+    .proj-carousel-title { font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .proj-carousel-sub { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.72); line-height: 1.6; max-width: 540px; }
+    .proj-carousel-nav {
+      display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 22px;
+    }
+    .proj-carousel-btn {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--white); border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 16px; color: var(--navy);
+      transition: all var(--transition);
+    }
+    .proj-carousel-btn:hover { background: var(--blue); border-color: var(--blue); color: var(--white); }
+    .proj-carousel-dots { display: flex; gap: 8px; align-items: center; }
+    .proj-cdot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--border); cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .proj-cdot.active { background: var(--blue); transform: scale(1.3); }
+
+    /* Project topic cards */
+    .proj-topics { padding: 72px 0; background: var(--off-white); }
+    .proj-topics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 44px; }
+    .proj-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden;
+      transition: all var(--transition);
+    }
+    .proj-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .proj-card-header {
+      padding: 28px 28px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 16px;
+    }
+    .proj-card-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: var(--light-blue); border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center; font-size: 20px;
+    }
+    .proj-card-title { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .proj-card-sub { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    .proj-card-body { padding: 20px 28px 24px; }
+    .proj-card-body p { font-size: 14px; color: var(--charcoal); line-height: 1.75; margin-bottom: 14px; }
+    .proj-card-body p:last-child { margin-bottom: 0; }
+
+    /* Bullet list inside project cards */
+    .proj-list { list-style: none; padding: 0; margin: 0 0 14px; }
+    .proj-list li {
+      font-size: 13px; color: var(--charcoal); line-height: 1.65;
+      padding: 5px 0; border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .proj-list li:last-child { border-bottom: none; }
+    .proj-list li::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--blue); flex-shrink: 0; margin-top: 7px;
+    }
+
+    /* Accordion panels inside proj-card */
+    .proj-accordion-btn {
+      width: 100%; background: none; border: none; border-top: 1px solid var(--border);
+      padding: 14px 28px; text-align: left; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--font-body); font-size: 13px; font-weight: 600; color: var(--blue);
+      transition: background var(--transition);
+    }
+    .proj-accordion-btn:hover { background: var(--light-blue); }
+    .proj-accordion-arrow { transition: transform 0.3s ease; font-style: normal; }
+    .proj-card.open .proj-accordion-arrow { transform: rotate(180deg); }
+    .proj-accordion-body {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(.4,0,.2,1), opacity 0.3s ease;
+      opacity: 0; padding: 0 28px;
+    }
+    .proj-card.open .proj-accordion-body { max-height: 2000px; opacity: 1; padding: 0 28px 24px; }
+
+    /* Table inside accordion */
+    .proj-table-wrap { overflow-x: auto; margin-top: 14px; }
+    .proj-table {
+      width: 100%; border-collapse: collapse; font-size: 13px;
+    }
+    .proj-table th {
+      background: var(--navy); color: var(--white);
+      padding: 10px 14px; text-align: left;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .proj-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; }
+    .proj-table tr:last-child td { border-bottom: none; }
+    .proj-table tr:nth-child(even) td { background: var(--off-white); }
+
+    /* SEL competency table */
+    .sel-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--blue); color: var(--white);
+      font-size: 11px; font-weight: 700; flex-shrink: 0;
+    }
+
+    /* Highlight callout box */
+    .proj-callout {
+      background: var(--light-blue); border-left: 3px solid var(--blue);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 14px 18px; margin: 14px 0;
+      font-size: 13px; color: var(--navy); line-height: 1.7;
+    }
+    .proj-callout strong { font-weight: 700; }
+
+    /* CTA at bottom of projects page */
+    .projects-cta { background: var(--navy); padding: 72px 0; }
+
     @media (max-width: 960px) {
+      .proj-topics-grid { grid-template-columns: 1fr; }
+      .projects-intro-grid { grid-template-columns: 1fr; }
+    }
       .hero-grid, .focus-grid, .approach-grid, .mission-grid,
       .contact-grid, .profile-content { grid-template-columns: 1fr; }
       .hero-stat-stack { display: none; }
@@ -661,7 +823,7 @@
   </style>
 </head>
 <body>
-
+PASTE
 <nav class="nav" id="main-nav">
   <div class="nav-inner">
     <div class="nav-logo" onclick="showPage('overview')">
@@ -677,6 +839,7 @@
       <li><span class="nav-link active" data-page="overview" onclick="showPage('overview')">Overview</span></li>
       <li><span class="nav-link" data-page="profile"  onclick="showPage('profile')">Profile</span></li>
       <li><span class="nav-link" data-page="about"    onclick="showPage('about')">About Us</span></li>
+      <li><span class="nav-link" data-page="projects" onclick="showPage('projects')">Projects</span></li>
     </ul>
     <button class="nav-cta" onclick="showPage('about');setTimeout(goContact,120)">Get in Touch</button>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
@@ -689,6 +852,7 @@
   <span class="mobile-link active" data-page="overview" onclick="showPage('overview');toggleMenu()">Overview</span>
   <span class="mobile-link" data-page="profile"  onclick="showPage('profile');toggleMenu()">Profile</span>
   <span class="mobile-link" data-page="about"    onclick="showPage('about');toggleMenu()">About Us</span>
+  <span class="mobile-link" data-page="projects" onclick="showPage('projects');toggleMenu()">Projects</span>
   <span class="mobile-link" onclick="showPage('about');goContact();toggleMenu()">Get in Touch</span>
 </div>
 
@@ -742,8 +906,6 @@
         <div class="intro-pill"><span class="dot"></span>Attrition Analytics</div>
         <div class="intro-pill"><span class="dot"></span>Psychological Profiling</div>
         <div class="intro-pill"><span class="dot"></span>Data-Driven HR</div>
-        <div class="intro-pill"><span class="dot"></span>Long-term Strategic Planning</div>
-        <div class="intro-pill"><span class="dot"></span>Enterprise‑wide competencies integration</div>
         <div class="intro-pill"><span class="dot"></span>Solutions for High Attrition, High Barrier Professions</div>
       </div>
     </div>
@@ -805,7 +967,7 @@
                 <li>Early-warning dashboards with risk tiering</li>
                 <li>Psychological and behavioural signal identification</li>
                 <li>Quarterly model updates as your workforce data evolves</li>
-                <li>Integration guidance for existing work organisations and cultures</li>
+                <li>Integration guidance for existing HRIS platforms</li>
               </ul>
             </div>
           </div>
@@ -821,15 +983,15 @@
         <div class="service-card fade-up">
           <div class="service-icon">🎓</div>
           <div class="service-title">Education Workforce Strategy</div>
-          <p class="service-body">Tailored programmes for high attrition sectors to reduce turnover through evidence-based retention strategies grounded in occupational psychology.</p>
+          <p class="service-body">Tailored programmes for schools and institutions to reduce educator turnover through evidence-based retention strategies grounded in occupational psychology.</p>
 
           <div class="service-extra">
             <div class="service-extra-inner">
-              <p>Built specifically to address the psychological and structural drivers of high attrition that generic HR frameworks miss entirely.</p>
+              <p>Built specifically for schools, MATs, and education ministries, our workforce strategy programmes address the psychological and structural drivers of educator attrition that generic HR frameworks miss entirely.</p>
               <ul class="service-extra-list">
                 <li>Sector-specific attrition analysis and root cause mapping</li>
                 <li>Retention strategy workshops for senior leadership teams</li>
-                <li>Early-career support frameworks</li>
+                <li>Early-career teacher support frameworks</li>
                 <li>Culture and psychological safety audits</li>
                 <li>Long-term partnership model with measurable outcomes</li>
               </ul>
@@ -851,7 +1013,7 @@
 
           <div class="service-extra">
             <div class="service-extra-inner">
-              <p>Leadership and management of teams can be challenging to navigate. Our coaching and development programmes translate the latest brain science into practical tools for the leaders and managers who shape your culture from the top down.</p>
+              <p>Leadership is fundamentally a neurobiological challenge. Our coaching and development programmes translate the latest brain science into practical tools for the leaders who shape your culture from the top down.</p>
               <ul class="service-extra-list">
                 <li>1:1 neuroscience-informed executive coaching</li>
                 <li>Psychological safety assessment and team workshops</li>
@@ -933,16 +1095,12 @@
       <div class="focus-grid fade-up">
         <div>
           <div class="focus-item">
-            <div class="focus-item-title">Education</div>
+            <div class="focus-item-title">Education — Active Focus</div>
             <p class="focus-item-body">Supporting schools and institutions to understand and address the psychological drivers of educator attrition.</p>
           </div>
           <div class="focus-item">
             <div class="focus-item-title">Cognitive Load & Burnout</div>
             <p class="focus-item-body">Measuring the neuropsychological impact of excessive cognitive demands — a primary driver of early-career departure in teaching.</p>
-          </div>
-           <div class="focus-item">
-            <div class="focus-item-title">Impactful Behaviour Change</div>
-            <p class="focus-item-body">Developing programmes that include sustained behaviour-change process that rewires habits and mindsets in the real work context, not a one-off or one size fits all.</p>
           </div>
           <div class="focus-item">
             <div class="focus-item-title">Psychological Safety Culture</div>
@@ -1000,7 +1158,7 @@
           </div>
         </div>
         <div class="approach-panel fade-up">
-          <p class="approach-quote">"Know your people before you plan your path — broad vision outlasts quick victories and change only takes root when the quietest voices are heard."</p>
+          <p class="approach-quote">"Understanding people isn't a luxury; it's the foundation of every strategy. True success demands big‑picture thinking, not short‑term wins, and real change only happens when every voice is heard, from the ground up."</p>
           <div class="approach-attr">— Neuroedge Insights Founding Principle</div>
         </div>
       </div>
@@ -1147,7 +1305,7 @@
         <div class="section-label" style="color:rgba(255,255,255,0.4)">About Neuroedge Insights</div>
         <h1 class="section-title light">We Believe Every Workforce Crisis<br>Runs Deeper Than The Surface</h1>
         <div class="divider"></div>
-        <p class="section-body light">Founded to solve the retention and resilience in the workforce, designed to scale across every high-attrition sector. We specialise at the intersection of neuroscience, psychology, and HR data.</p>
+        <p class="section-body light">Founded to solve the retention crisis in education — and designed to scale across every high-attrition sector — we are specialise at the intersection of neuroscience, psychology, and HR data.</p>
       </div>
     </div>
   </div>
@@ -1160,8 +1318,8 @@
           <h2 class="section-title">Why We Exist</h2>
           <div class="divider"></div>
           <p class="section-body" style="margin-bottom:18px">Traditional HR metrics describe what happened. Neuroscience, psychology and prediction modelling tell us <em>why</em> it happened and, critically, what will happen next.</p>
-          <p style="font-size:16px;font-weight:300;color:var(--muted);line-height:1.85;margin-bottom:18px">Our mission is to give organisations and leaders in high-attrition sectors the psychological intelligence to intervene early, build resilient cultures, and retain the professionals.</p>
-          <p style="font-size:16px;font-weight:300;color:var(--muted);line-height:1.85">A strategic approach begins with workforce education, recognizing that retention requires more than technical competence—it demands resilience, adaptability, and meaningful human connection. Only then does training take place, transforming soft skills into the core drivers of collaboration, leadership, and sustainable growth.</p>
+          <p style="font-size:16px;font-weight:300;color:var(--muted);line-height:1.85;margin-bottom:18px">Our mission is to give organisations and leaders in high-attrition sectors the psychological intelligence to intervene early, build resilient cultures, and retain the professionals society depends on most.</p>
+          <p style="font-size:16px;font-weight:300;color:var(--muted);line-height:1.85">We start with education because the crisis is acute and the human cost is immeasurable. Healthcare is next — where the same principles apply with even greater urgency.</p>
           <div style="margin-top:28px">
             <button class="btn btn-primary" onclick="showPage('overview')">See Our Services</button>
           </div>
@@ -1251,11 +1409,11 @@
           </div>
           <div class="form-group">
             <label class="form-label" for="email">Email Address</label>
-            <input type="email" id="email" name="email" class="form-input" placeholder="jane@organisation.com" required>
+            <input type="email" id="email" name="email" class="form-input" placeholder="jane@school.com" required>
           </div>
           <div class="form-group">
             <label class="form-label" for="org">Organisation</label>
-            <input type="text" id="org" name="organisation" class="form-input" placeholder="Name of Organisation here...">
+            <input type="text" id="org" name="organisation" class="form-input" placeholder="School, Ministry, or Organisation">
           </div>
           <div class="form-group">
             <label class="form-label" for="interest">Area of Interest</label>
@@ -1310,6 +1468,371 @@
 </div><!-- END PAGE: ABOUT US -->
 
 
+<!-- ================================================================
+     PAGE: PROJECTS
+================================================================ -->
+<div class="page" id="page-projects">
+
+  <!-- HERO -->
+  <div class="projects-hero">
+    <div class="container">
+      <div class="projects-hero-inner fade-up">
+        <div class="section-label" style="color:rgba(255,255,255,0.4)">Our Projects</div>
+        <h1 class="section-title light">Building Bridges.<br>Setting Goals Together.</h1>
+        <div class="divider"></div>
+        <p class="section-body light">We work alongside organisations — not just for them. Every project begins with listening, and ends with measurable, lasting change grounded in science. Here is a look at the frameworks and approaches we bring to every collaboration.</p>
+      </div>
+    </div>
+    <div class="projects-wave"></div>
+  </div>
+
+  <!-- INTRO STATS STRIP -->
+  <div class="projects-intro">
+    <div class="container">
+      <div class="projects-intro-grid">
+        <div class="proj-intro-card fade-up">
+          <div class="proj-intro-num">3</div>
+          <div class="proj-intro-label">Core collaboration frameworks applied across every engagement</div>
+        </div>
+        <div class="proj-intro-card fade-up">
+          <div class="proj-intro-num">Evidence-Led</div>
+          <div class="proj-intro-label">Every recommendation is rooted in peer-reviewed neuroscience and occupational psychology</div>
+        </div>
+        <div class="proj-intro-card fade-up">
+          <div class="proj-intro-num">360°</div>
+          <div class="proj-intro-label">Whole-system view — individual, team, and organisational factors examined together</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO CAROUSEL -->
+  <section class="proj-carousel-section">
+    <div class="container">
+      <div class="fade-up" style="margin-bottom:32px">
+        <div class="section-label">How We Work</div>
+        <h2 class="section-title">Collaboration in Practice</h2>
+        <div class="divider"></div>
+        <p class="section-body">From first conversation to final report, our process is built around your organisation's unique context — not a template.</p>
+      </div>
+
+      <div class="fade-up">
+        <div class="proj-carousel-wrap">
+          <div class="proj-carousel-track" id="projCarouselTrack">
+
+            <!-- SLIDE 1 -->
+            <div class="proj-carousel-slide">
+              <img class="proj-carousel-img"
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80"
+                alt="Team collaborating around a table">
+              <div class="proj-carousel-caption">
+                <div class="proj-carousel-title">Discovery &amp; Listening Sessions</div>
+                <div class="proj-carousel-sub">We begin every engagement by immersing ourselves in your organisation — understanding the pressures your people face before any assessment begins.</div>
+              </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="proj-carousel-slide">
+              <img class="proj-carousel-img"
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80"
+                alt="Data analysis and reporting">
+              <div class="proj-carousel-caption">
+                <div class="proj-carousel-title">Data, Analysis &amp; Insight</div>
+                <div class="proj-carousel-sub">Psychological assessments, HR data, and behavioural signals are brought together into a unified picture — with findings presented clearly for every level of your organisation.</div>
+              </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="proj-carousel-slide">
+              <img class="proj-carousel-img"
+                src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=1200&q=80"
+                alt="Leadership workshop in progress">
+              <div class="proj-carousel-caption">
+                <div class="proj-carousel-title">Strategy, Action &amp; Accountability</div>
+                <div class="proj-carousel-sub">Insights translate into tailored action plans with clear owners, timelines, and follow-up checkpoints — so change actually happens.</div>
+              </div>
+            </div>
+
+          </div><!-- end track -->
+        </div><!-- end wrap -->
+
+        <!-- Carousel navigation -->
+        <div class="proj-carousel-nav">
+          <button class="proj-carousel-btn" onclick="moveProjCarousel(-1)">&#8592;</button>
+          <div class="proj-carousel-dots" id="projCarouselDots"></div>
+          <button class="proj-carousel-btn" onclick="moveProjCarousel(1)">&#8594;</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECT TOPIC CARDS -->
+  <section class="proj-topics">
+    <div class="container">
+      <div class="fade-up">
+        <div class="section-label">Focus Areas</div>
+        <h2 class="section-title">What We Bring to Every Partnership</h2>
+        <div class="divider"></div>
+        <p class="section-body">Each focus area below represents a live strand of our collaborative work — frameworks we co-develop with organisations to address their specific workforce challenges.</p>
+      </div>
+
+      <div class="proj-topics-grid">
+
+        <!-- ═══ CARD 1 — BURNOUT SCREENING ═══ -->
+        <div class="proj-card fade-up" id="proj-card-1">
+          <div class="proj-card-header">
+            <div class="proj-card-icon">🧠</div>
+            <div>
+              <div class="proj-card-title">Understanding Burnout: Common Indicators</div>
+              <div class="proj-card-sub">A practical screening framework for identifying burnout risk in your workforce</div>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <p>A practical screening approach may combine several evidence-based data sources. It is best understood as a <strong>screening framework rather than a diagnosis</strong> — burnout is a complex condition with psychological, occupational, and biological contributors, so results always need interpretation by a qualified clinician or occupational health professional.</p>
+
+            <ul class="proj-list">
+              <li>Self-report measures of exhaustion, disengagement, and reduced efficacy</li>
+              <li>Sleep and recovery problem indicators</li>
+              <li>Workload and psychosocial stressor mapping</li>
+              <li>Cortisol rhythm and biological stress markers</li>
+            </ul>
+
+            <div class="proj-callout">
+              <strong>Simple example:</strong> An employee who reports persistent exhaustion, poor sleep, and loss of motivation — while also showing a flattened cortisol rhythm across the day — would be considered at higher burnout risk than someone with stress symptoms alone.
+            </div>
+          </div>
+          <button class="proj-accordion-btn" onclick="toggleProjCard('proj-card-1', this)" aria-expanded="false">
+            Why this matters for your organisation <span class="proj-accordion-arrow">↓</span>
+          </button>
+          <div class="proj-accordion-body">
+            <p style="font-size:14px;color:var(--charcoal);line-height:1.75;margin-top:14px">Early identification of burnout risk allows organisations to intervene before resignations, sick leave, or performance decline become unavoidable. Our collaborative burnout screening programmes are designed around your sector's specific stressors — not generic workplace wellness toolkits.</p>
+            <p style="font-size:14px;color:var(--charcoal);line-height:1.75;margin-bottom:4px">Together we will:</p>
+            <ul class="proj-list" style="margin-bottom:0">
+              <li>Co-design a psychologically safe data collection process</li>
+              <li>Analyse results at individual, team, and organisational level</li>
+              <li>Produce a tiered risk report with targeted intervention recommendations</li>
+              <li>Track change over time with repeat measurement checkpoints</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ═══ CARD 2 — C-SUITE LEADERSHIP ═══ -->
+        <div class="proj-card fade-up" id="proj-card-2">
+          <div class="proj-card-header">
+            <div class="proj-card-icon">💡</div>
+            <div>
+              <div class="proj-card-title">C-Suite Leadership Development</div>
+              <div class="proj-card-sub">Curriculum designed around the most common executive-level challenges</div>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <p>C-level leaders most often struggle with:</p>
+            <ul class="proj-list">
+              <li>Leading through ambiguity and rapid change</li>
+              <li>Making high-stakes decisions with incomplete information</li>
+              <li>Aligning board, investors, and senior team expectations</li>
+              <li>Building a strong leadership bench and succession pipeline</li>
+              <li>Breaking silos across functions and geographies</li>
+              <li>Communicating with clarity, credibility, and consistency</li>
+              <li>Sustaining resilience and judgment under pressure</li>
+            </ul>
+
+            <p style="margin-top:14px;font-size:14px;color:var(--charcoal);line-height:1.75"><strong>Most effective teaching format:</strong> Executive diagnostics before the programme, case studies based on real enterprise dilemmas, peer consultation groups, simulations for conflict and board-level communication, reflection journals, and a post-programme implementation plan with follow-up checkpoints.</p>
+          </div>
+          <button class="proj-accordion-btn" onclick="toggleProjCard('proj-card-2', this)" aria-expanded="false">
+            What we can give you <span class="proj-accordion-arrow">↓</span>
+          </button>
+          <div class="proj-accordion-body">
+            <p style="font-size:14px;color:var(--charcoal);line-height:1.75;margin-top:14px;margin-bottom:12px">Every C-suite engagement produces a suite of tailored deliverables co-built with your leadership team:</p>
+            <ul class="proj-list" style="margin-bottom:16px">
+              <li>A personal leadership insight report</li>
+              <li>A strategic priority map</li>
+              <li>A talent and succession action plan</li>
+              <li>A change leadership plan</li>
+              <li>A stakeholder communication plan</li>
+              <li>A 90-day execution roadmap</li>
+            </ul>
+
+            <p style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px">Why most programmes fail — and how we design around it:</p>
+            <div class="proj-table-wrap">
+              <table class="proj-table">
+                <thead>
+                  <tr>
+                    <th>Failure Pattern</th>
+                    <th>Why It Blocks Behaviour Change</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Knowledge over transformation</td><td>Programmes teach concepts but don't build new habits; behaviour change requires practice, not just understanding</td></tr>
+                  <tr><td>Decoupled from real work</td><td>Classroom learning isn't tied to actual projects; adults retain ~10% of lectures vs ~66% when learning by doing</td></tr>
+                  <tr><td>Ignoring context</td><td>One-size-fits-all competencies don't match the organisation's strategy, culture, or leadership transitions</td></tr>
+                  <tr><td>Underestimating mindsets</td><td>Deep beliefs ("I must control everything") block new behaviours; programmes rarely surface and shift these</td></tr>
+                  <tr><td>No accountability or reinforcement</td><td>No managers or peers involved, no feedback loops, no follow-up; what gets measured is what changes</td></tr>
+                  <tr><td>No measurement of impact</td><td>Evaluation stops at satisfaction surveys; no tracking of behaviour change, career outcomes, or business results</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ CARD 3 — BEHAVIOUR CHANGE DESIGN ═══ -->
+        <div class="proj-card fade-up" id="proj-card-3">
+          <div class="proj-card-header">
+            <div class="proj-card-icon">🔄</div>
+            <div>
+              <div class="proj-card-title">Behaviour-Change Leadership Design</div>
+              <div class="proj-card-sub">How to design around the gaps that make most programmes fail</div>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <p>Research shows that without sustained practice, feedback, and systems support, gains remain superficial and leaders revert to old habits. Our approach uses a <strong>behaviour-change design</strong> rather than a "training event" design — aligned with the Stages of Change Model and McKinsey's 7 principles for behaviour change.</p>
+            <ul class="proj-list">
+              <li>Start with business impact and context — define 2–3 critical capabilities that will move the needle</li>
+              <li>Build around real work — learning around live business projects with real impact</li>
+              <li>Embed sustained practice — application periods between modules where leaders practise on the job</li>
+              <li>Address mindsets, not just skills — surface unconscious beliefs driving behaviour</li>
+              <li>Create accountability systems — involve managers, peers, and mentors</li>
+              <li>Use neuroscience-based learning principles — stretch, self-direction, repetition, psychological safety</li>
+              <li>Measure behaviour change and business impact — 360 feedback before and 6–12 months after</li>
+            </ul>
+          </div>
+          <button class="proj-accordion-btn" onclick="toggleProjCard('proj-card-3', this)" aria-expanded="false">
+            The 7 design principles in detail <span class="proj-accordion-arrow">↓</span>
+          </button>
+          <div class="proj-accordion-body">
+            <div style="margin-top:14px;display:flex;flex-direction:column;gap:14px">
+              <div class="focus-item" style="border-left:3px solid var(--blue);padding:4px 0 4px 18px">
+                <div class="focus-item-title" style="color:var(--navy)">1. Start with business impact and context</div>
+                <p style="font-size:13px;color:var(--muted);line-height:1.65">Define specific organisational challenges, identify 2–3 critical capabilities, and tailor a "from–to" path for each participant based on their actual leadership transition.</p>
+              </div>
+              <div class="focus-item" style="border-left:3px solid var(--blue);padding:4px 0 4px 18px">
+                <div class="focus-item-title" style="color:var(--navy)">2. Build around real work</div>
+                <p style="font-size:13px;color:var(--muted);line-height:1.65">Design learning around live business projects. Make every major project a leadership-development opportunity with explicit behaviour goals. Use stretch assignments that push leaders outside their comfort zone to create new neural pathways.</p>
+              </div>
+              <div class="focus-item" style="border-left:3px solid var(--blue);padding:4px 0 4px 18px">
+                <div class="focus-item-title" style="color:var(--navy)">3. Embed sustained practice</div>
+                <p style="font-size:13px;color:var(--muted);line-height:1.65">Structure application periods between modules. Regular practice expands the skill-related neural network. Provide quick-reference tools to make new behaviours easier to do.</p>
+              </div>
+              <div class="focus-item" style="border-left:3px solid var(--blue);padding:4px 0 4px 18px">
+                <div class="focus-item-title" style="color:var(--navy)">4. Address mindsets, not just skills</div>
+                <p style="font-size:13px;color:var(--muted);line-height:1.65">Use self-assessment, 360 feedback, and reflection to surface unconscious beliefs. Apply a whole-person approach: who the leader needs to be, not just what they need to know.</p>
+              </div>
+              <div class="focus-item" style="border-left:3px solid var(--blue);padding:4px 0 4px 18px">
+                <div class="focus-item-title" style="color:var(--navy)">5. Create accountability systems</div>
+                <p style="font-size:13px;color:var(--muted);line-height:1.65">Involve managers, peers, and mentors in supporting new behaviours. Establish peer coaching groups. Set SMART goals with clear action plans.</p>
+              </div>
+              <div class="focus-item" style="border-left:3px solid var(--blue);padding:4px 0 4px 18px">
+                <div class="focus-item-title" style="color:var(--navy)">6. Use neuroscience-based learning principles</div>
+                <p style="font-size:13px;color:var(--muted);line-height:1.65">Stretch outside comfort zones. Enable self-directed learning with varied modalities. Emphasise on-the-job learning and repetition. Create a positive, psychologically safe context. Focus on strengths, not just fixing gaps. Build in feedback and reflection loops.</p>
+              </div>
+              <div class="focus-item" style="border-left:3px solid var(--blue);padding:4px 0 4px 18px;margin-bottom:0">
+                <div class="focus-item-title" style="color:var(--navy)">7. Measure behaviour change and business impact</div>
+                <p style="font-size:13px;color:var(--muted);line-height:1.65">Run 360-degree feedback before and 6–12 months after. Monitor career outcomes. Track business metrics tied to projects. Avoid relying only on satisfaction surveys.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ CARD 4 — SEL & RESILIENCE ═══ -->
+        <div class="proj-card fade-up" id="proj-card-4">
+          <div class="proj-card-header">
+            <div class="proj-card-icon">🌱</div>
+            <div>
+              <div class="proj-card-title">SEL &amp; Workforce Resilience</div>
+              <div class="proj-card-sub">The five CASEL competencies that build resilience in the workplace</div>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <p>Social Emotional Learning (SEL) areas build resilience through the five core CASEL competencies — proven to help employees manage stress, cope with challenges, and recover from setbacks. These competencies are interrelated and can be refined throughout adulthood.</p>
+
+            <div class="proj-table-wrap">
+              <table class="proj-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>SEL Area</th>
+                    <th>What It Builds</th>
+                    <th>Key Workplace Skills</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="sel-badge">1</span></td>
+                    <td><strong>Self-awareness</strong></td>
+                    <td>Recognises stress signals, emotional triggers, and personal strengths</td>
+                    <td>Identifying emotions, understanding impact on work, accurate self-assessment</td>
+                  </tr>
+                  <tr>
+                    <td><span class="sel-badge">2</span></td>
+                    <td><strong>Self-management</strong></td>
+                    <td>Regulates emotions, stays calm under pressure, and adapts to change</td>
+                    <td>Stress management, impulse control, flexibility, goal-setting, self-discipline</td>
+                  </tr>
+                  <tr>
+                    <td><span class="sel-badge">3</span></td>
+                    <td><strong>Social awareness</strong></td>
+                    <td>Connects with others, builds empathy, and understands diverse perspectives</td>
+                    <td>Empathy, active listening, inclusiveness, cultural awareness</td>
+                  </tr>
+                  <tr>
+                    <td><span class="sel-badge">4</span></td>
+                    <td><strong>Relationship skills</strong></td>
+                    <td>Creates supportive networks and handles conflict constructively</td>
+                    <td>Communication, collaboration, conflict resolution, asking for and giving help</td>
+                  </tr>
+                  <tr>
+                    <td><span class="sel-badge">5</span></td>
+                    <td><strong>Responsible decision-making</strong></td>
+                    <td>Makes thoughtful choices under uncertainty and learns from setbacks</td>
+                    <td>Problem-solving, ethical decisions, growth mindset, adaptive coping</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <button class="proj-accordion-btn" onclick="toggleProjCard('proj-card-4', this)" aria-expanded="false">
+            How SEL builds resilience — the connections <span class="proj-accordion-arrow">↓</span>
+          </button>
+          <div class="proj-accordion-body">
+            <div style="margin-top:14px;display:flex;flex-direction:column;gap:12px">
+              <div class="proj-callout">
+                <strong>Self-awareness + self-management</strong> allow employees to detect stress early and regulate their response, preventing fight-or-flight reactions before they escalate.
+              </div>
+              <div class="proj-callout">
+                <strong>Social awareness + relationship skills</strong> foster strong support systems, empathy, and mutual aid — critical for bouncing back from adversity in high-pressure roles.
+              </div>
+              <div class="proj-callout">
+                <strong>Responsible decision-making</strong> enables people to adapt, learn from failure, and make sound choices even under pressure — a core trait of high-retention teams.
+              </div>
+              <p style="font-size:14px;color:var(--charcoal);line-height:1.75;margin-bottom:0">Integrating SEL into L&amp;D strategies that develop all five areas increases resilience company-wide, improves employee wellness, and enhances productivity. We help organisations embed SEL competencies into existing learning frameworks rather than treating them as a separate programme.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end proj-topics-grid -->
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="projects-cta">
+    <div class="container">
+      <div class="cta-banner fade-up">
+        <div>
+          <h3 class="cta-title">Ready to build something together?</h3>
+          <p class="cta-body">Every project begins with a conversation. Tell us about your organisation and we'll explore how these frameworks can be tailored to your context.</p>
+        </div>
+        <div class="cta-actions">
+          <button class="btn btn-primary" onclick="showPage('about');setTimeout(goContact,120)">Start the Conversation</button>
+          <button class="btn btn-outline-white" onclick="showPage('overview')">See All Services</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- END PAGE: PROJECTS -->
+
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
@@ -1326,13 +1849,12 @@
         <span class="footer-link" onclick="showPage('about')">About Us</span>
         <span class="footer-link" onclick="showPage('about');setTimeout(goContact,120)">Contact</span>
       </div>
-      <div>
+       <div>
         <div class="footer-col-title">Contact</div>
         <a class="footer-link" href="mailto:hello@neuroedgeinsights.com">How can we help?</a>
-        <a class="footer-link" href="https://www.linkedin.com/company/neuroedgeinsights">Company Linkedin</a>
-        <span class="footer-link">Singapore</span>
-              
-      </div>
+   <a class="footer-link" href="https://www.linkedin.com/company/neuroedgeinsights">Company Linkedin</a>      
+  <span class="footer-link">Singapore</span>
+     </div>
     </div>
     <div class="footer-bottom">
       <div class="footer-copy">© 2026 Neuroedge Insights. All rights reserved.</div>
@@ -1401,8 +1923,107 @@
       textNode.textContent = isExpanded ? 'Show less ' : 'Learn more ';
     }
   }
-
   /* AVATAR CAROUSEL */
+  (function () {
+    const track   = document.getElementById('avatarTrack');
+    const dotWrap = document.getElementById('avatarDots');
+    if (!track) return;
+
+    let current = 0;
+    const slides = track.querySelectorAll('.avatar-carousel-slide');
+    const total  = slides.length;
+
+    slides.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'avatar-dot' + (i === 0 ? ' active' : '');
+      d.onclick = () => avatarGoTo(i);
+      dotWrap.appendChild(d);
+    });
+
+    function avatarGoTo(n) {
+      current = (n + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dotWrap.querySelectorAll('.avatar-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current));
+    }
+
+    window.moveAvatar = (dir) => avatarGoTo(current + dir);
+
+    let startX = 0;
+    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+    track.addEventListener('touchend',   e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) avatarGoTo(current + (diff > 0 ? 1 : -1));
+}
+  }
+
+  /* ============================================================
+     PROJECTS PAGE — PHOTO CAROUSEL
+  ============================================================ */
+  (function () {
+    const track   = document.getElementById('projCarouselTrack');
+    const dotWrap = document.getElementById('projCarouselDots');
+    if (!track) return;
+
+    let current = 0;
+    const slides = track.querySelectorAll('.proj-carousel-slide');
+    const total  = slides.length;
+
+    slides.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'proj-cdot' + (i === 0 ? ' active' : '');
+      d.onclick = () => projGoTo(i);
+      dotWrap.appendChild(d);
+    });
+
+    function projGoTo(n) {
+      current = (n + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dotWrap.querySelectorAll('.proj-cdot').forEach((d, i) =>
+        d.classList.toggle('active', i === current));
+    }
+
+    window.moveProjCarousel = (dir) => projGoTo(current + dir);
+
+    // Auto-advance every 5 seconds
+    let autoplay = setInterval(() => projGoTo(current + 1), 5000);
+    track.parentElement.addEventListener('mouseenter', () => clearInterval(autoplay));
+    track.parentElement.addEventListener('mouseleave', () => {
+      autoplay = setInterval(() => projGoTo(current + 1), 5000);
+    });
+
+    // Touch/swipe
+    let startX = 0;
+    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+    track.addEventListener('touchend',   e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) projGoTo(current + (diff > 0 ? 1 : -1));
+    });
+  })();
+
+  /* ============================================================
+     PROJECTS PAGE — ACCORDION CARDS
+  ============================================================ */
+  function toggleProjCard(cardId, btn) {
+    const card = document.getElementById(cardId);
+    const isOpen = card.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+    const arrow = btn.querySelector('.proj-accordion-arrow');
+    if (arrow) arrow.textContent = isOpen ? '↑' : '↓';
+    // Update button label text
+    const textNode = btn.childNodes[0];
+    if (textNode && textNode.nodeType === 3) {
+      const labels = {
+        'proj-card-1': 'Why this matters for your organisation ',
+        'proj-card-2': 'What we can give you ',
+        'proj-card-3': 'The 7 design principles in detail ',
+        'proj-card-4': 'How SEL builds resilience — the connections '
+      };
+      textNode.textContent = isOpen
+        ? (labels[cardId] || textNode.textContent.replace('↓','').trim() + ' ').replace('Show less','').trim() + ' '
+        : (labels[cardId] || textNode.textContent);
+    }
+  }
   (function () {
     const track   = document.getElementById('avatarTrack');
     const dotWrap = document.getElementById('avatarDots');
