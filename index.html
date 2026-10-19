@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 =====================================================================================
- NEUROEDGE INSIGHTS — single-file site  (Overview · Programmes · Profile · About Us · approach)
+ NEUROEDGE INSIGHTS — single-file site  (Overview · Programmes · Profile · About Us · Our Approach)
  Self-contained: all CSS and JS are inline. No frameworks. Copy and structure are unchanged
  from your base file; this round only restyles them to the DESIGN.md brief.
 
@@ -41,43 +41,52 @@
  -------------------------------------------------------------------------------------
  PHOTOS
  Every photo is an <img> inside an .img-slot (a dark placeholder sits behind it). If a photo is
- blocked or missing, the script removes the <img> and the placeholder stays. Photos are
- hotlinked from Pixabay for now; before launch, download them (Pixabay Content License, free)
- and replace each src/srcset with your own path (e.g. images/school.jpg) — Pixabay asks sites
- to host images themselves.
- Slot (data-slot)           Where                          Suggested export   Ratio
-   strip-*  (5)             Overview gallery strip          800 × 1000         4:5
-   service-1…6              Services rows                   960 × 540          16:9
-   sector-*  (3)            Where We Work                   1280×720 / 960×720 16:9, 4:3
-   evidence-1…6             Evidence rows                   960 × 540          16:9
-   pp-*  (3)                Programmes preview tiles        800 × 1000         4:5
-   prog-<id>  (8)           Programme cards                 1280 × 720         16:9
-   profile-1…3              Profile carousel (your files)   900 × 1200         3:4
-   about-team               About › mission                 1200 × 675         16:9
-   approach-1…3             approach carousel               1600 × 560         20:7
- Photo sources (Pixabay):
-   brainhand    cdn.pixabay.com/photo/2019/01/05/10/01/knowledge-3914811_1280.jpg   geralt
-   neurons      cdn.pixabay.com/photo/2017/11/07/09/05/nerves-2926087_1280.jpg   geralt
-   brain        cdn.pixabay.com/photo/2020/03/23/17/04/brain-4961452_1280.jpg   hainguyenrp
-   school       cdn.pixabay.com/photo/2016/10/30/05/43/school-1782427_1280.jpg   sasint
-   student      cdn.pixabay.com/photo/2016/11/29/13/56/asian-1870022_1280.jpg   Pixabay contributor
-   teacher      cdn.pixabay.com/photo/2020/01/22/09/40/teacher-4784917_1280.jpg   Pixabay contributor
-   doctors      cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_1280.jpg   StockSnap
-   stethoscope  cdn.pixabay.com/photo/2024/09/26/17/58/medicine-9077108_1280.jpg   Joa70
-   nurse        cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_1280.jpg   voltamax
-   meeting      cdn.pixabay.com/photo/2020/07/11/23/36/meeting-5395615_1280.jpg   WebTechExperts
-   seminar      cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg   fsHH
-   team         cdn.pixabay.com/photo/2014/07/08/10/47/team-386673_1280.jpg   Henning_W
-   circle       cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_1280.jpg   wollyvonwolleroy
-   bench        cdn.pixabay.com/photo/2022/11/05/19/29/chair-7572636_1280.jpg   KIMDAEJEUNG
-   analytics    cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg   Tumisu
-   journal      cdn.pixabay.com/photo/2016/11/29/07/10/hand-1868015_1280.jpg   Pixabay contributor
-   meditate     cdn.pixabay.com/photo/2020/07/06/07/19/meditate-5375835_1280.jpg   kalyanayahaluwo
-   girlmed      cdn.pixabay.com/photo/2020/03/29/18/33/girl-4981766_1280.jpg   dimitrisvetsikas1969
-   stones       cdn.pixabay.com/photo/2025/12/15/14/22/stones-10016267_1280.jpg   BaumannFoto
-   forest       cdn.pixabay.com/photo/2022/05/06/20/19/forest-7179046_1280.jpg   Nowaja
-   seedling     cdn.pixabay.com/photo/2020/12/04/16/08/tree-5803607_1280.jpg   jggrz
-   sprout       cdn.pixabay.com/photo/2017/07/29/13/17/plant-2551467_1280.jpg   Tuan86
+ blocked or missing, the script removes the <img> and the placeholder stays.
+ • "Your upload" photos live in the  images/  folder next to index.html (e.g. images/school-corridor.jpg).
+   Keep that folder beside this file, on GitHub too.
+ • Pexels, Unsplash and Pixabay photos are linked from their servers for now. Before launch,
+   download each one, put it in images/ and change src to e.g. src="images/clinic-consult.jpg"
+   (delete the srcset="…" part as well).
+ • Each photo is used once. To swap one: search this file for its slot name (first column below),
+   then replace the src and alt text. Suggested export sizes: strip-* and pp-* 800×1000;
+   service-*, evidence-*, prog-*, sector-education, about-team 1280×720; sector-healthcare/workforce 960×720;
+   approach-1…3 1600×560 (a wide band); profile-1…3 (your own team photos) 900×1200.
+ Slot                 Source       Where it is from
+   strip-brain-science  Pixabay      cdn.pixabay.com/photo/2017/11/07/09/05/nerves-2926087_1280.jpg   (geralt)
+   strip-education      Pexels       images.pexels.com/photos/6936021/pexels-photo-6936021.jpeg   (Pexels contributor (your pick))
+   strip-healthcare     Pixabay      cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_1280.jpg   (StockSnap)
+   strip-workforce      Pexels       images.pexels.com/photos/8101931/pexels-photo-8101931.jpeg   (Mikhail Nilov)
+   strip-wellbeing      Pexels       images.pexels.com/photos/13300029/pexels-photo-13300029.jpeg   (Pexels contributor (your pick))
+   service-1            Your upload  images/woman-taking-notes.jpg
+   service-2            Pixabay      cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg   (Tumisu)
+   service-3            Your upload  images/students-walking-to-school.jpg
+   service-4            Your upload  images/people-figurines.jpg
+   service-5            Your upload  images/charts-on-desk.jpg
+   service-6            Pexels       images.pexels.com/photos/5327864/pexels-photo-5327864.jpeg   (Thirdman)
+   sector-education     Your upload  images/school-blue-arches.jpg
+   sector-healthcare    Pexels       images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg   (cottonbro studio)
+   sector-workforce     Your upload  images/marina-bay-skyline.jpg
+   pp-education         Your upload  images/school-clock-tower.jpg
+   pp-healthcare        Pexels       images.pexels.com/photos/6749742/pexels-photo-6749742.jpeg   (Antoni Shkraba)
+   pp-workforce         Your upload  images/man-at-laptop.jpg
+   evidence-1           Pexels       images.pexels.com/photos/7688101/pexels-photo-7688101.jpeg   (Kindel Media)
+   evidence-2           Your upload  images/hourglass-clock.jpg
+   evidence-3           Your upload  images/school-curved-courtyard.jpg
+   evidence-4           Your upload  images/chalk-colour-blocks.jpg
+   evidence-5           Pexels       images.pexels.com/photos/7651715/pexels-photo-7651715.jpeg   (Kindel Media)
+   evidence-6           Your upload  images/school-corridor.jpg
+   about-team           Your upload  images/open-plan-team.jpg
+   approach-1           Your upload  images/duxton-hill-shophouses.jpg
+   approach-2           Your upload  images/hands-over-charts.jpg
+   approach-3           Your upload  images/yellow-window-shutters.jpg
+   prog-ecs             Your upload  images/campus-running-track.jpg
+   prog-tsi             Your upload  images/kpi-infographics.jpg
+   prog-sst             Pexels       images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg   (RDNE Stock project)
+   prog-psych           Pexels       images.pexels.com/photos/6129657/pexels-photo-6129657.jpeg   (RDNE Stock project)
+   prog-csuite          Pexels       images.pexels.com/photos/7845344/pexels-photo-7845344.jpeg   (RDNE Stock project)
+   prog-360             Pixabay      cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg   (fsHH)
+   prog-sel             Pixabay      cdn.pixabay.com/photo/2016/10/30/05/43/school-1782427_1280.jpg   (sasint)
+   prog-wellbeing       Unsplash     images.unsplash.com/photo-1517363898874-737b62a7db91   (Jared Rice)
 
  -------------------------------------------------------------------------------------
  PUBLISHING ON GITHUB PAGES
@@ -108,6 +117,8 @@
   <meta name="description" content="Neuroedge Insights applies neuroscience and psychology to HR data — helping high-attrition sectors understand, predict and reduce workforce attrition. Singapore.">
   <meta name="theme-color" content="#000000">
   <link rel="preconnect" href="https://cdn.pixabay.com">
+  <link rel="preconnect" href="https://images.pexels.com">
+  <link rel="preconnect" href="https://images.unsplash.com">
   <script>document.documentElement.classList.add('js');</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -477,7 +488,7 @@
     .pp-tile:hover { transform: translateY(-6px); }
     .pp-photo { position: absolute; inset: 0; display: block; border-radius: var(--radius-3xl); }
     .pp-tile:hover img { transform: scale(1.06); }
-    .pp-cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; flex-direction: column; gap: 4px; padding: 20px 24px 24px; color: var(--color-bone-white); background: rgba(0,0,0,.55); }
+    .pp-cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; flex-direction: column; gap: 4px; padding: 20px 24px 24px; color: var(--color-bone-white); background: linear-gradient(to top, rgba(0,0,0,.9), rgba(0,0,0,.76)); }
     .pp-cap strong { font-size: var(--text-heading-2xs); font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; }
     .pp-cap span { font-size: 15px; font-weight: 200; color: var(--color-silver-mist); line-height: 1.45; }
     .pp-cap em { margin-top: 10px; font-style: normal; font-size: var(--text-nav-label); font-weight: 600; letter-spacing: .025em; text-transform: uppercase; color: var(--color-saffron-spark); display: inline-flex; gap: 6px; align-items: center; }
@@ -641,7 +652,7 @@
     .proj-carousel-track.dragging { transition: none; cursor: grabbing; }
     .proj-carousel-slide { min-width: 100%; position: relative; }
     .proj-carousel-slide .img-slot { aspect-ratio: 20 / 8; border-radius: 0; }
-    .proj-carousel-caption { position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; background: rgba(0,0,0,.55); padding: 24px 32px 28px; pointer-events: none; }
+    .proj-carousel-caption { position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; background: linear-gradient(to top, rgba(0,0,0,.9), rgba(0,0,0,.76)); padding: 24px 32px 28px; pointer-events: none; }
     .proj-carousel-title { font-size: var(--text-heading-xs); font-weight: 400; letter-spacing: -0.03em; line-height: 1.15; color: var(--color-bone-white); margin-bottom: 8px; }
     .proj-carousel-sub { font-size: 16px; font-weight: 200; color: var(--color-silver-mist); line-height: 1.55; max-width: 620px; }
     .proj-carousel-nav { display: flex; justify-content: center; align-items: center; gap: 18px; margin-top: var(--spacing-24); }
@@ -980,11 +991,11 @@
 
   <section class="photo-strip" aria-label="Where our work makes a difference">
     <div class="strip-row">
-      <figure class="img-slot  strip-tile fade-up" data-slot="strip-brain-science"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-data"/></svg><img src="https://cdn.pixabay.com/photo/2017/11/07/09/05/nerves-2926087_1280.jpg" srcset="https://cdn.pixabay.com/photo/2017/11/07/09/05/nerves-2926087_640.jpg 640w, https://cdn.pixabay.com/photo/2017/11/07/09/05/nerves-2926087_1280.jpg 1280w" sizes="(max-width: 960px) 70vw, 22vw" alt="Glowing abstract network of neurons and synapses" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Brain science · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Brain science</strong><span>Neuroscience-informed insight</span></figcaption></figure>
-      <figure class="img-slot  strip-tile fade-up" data-slot="strip-education"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-education"/></svg><img src="https://www.pexels.com/photo/students-studying-inside-the-classroom-6936021" srcset="https://www.pexels.com/photo/students-studying-inside-the-classroom-6936021 640w, https://www.pexels.com/photo/students-studying-inside-the-classroom-6936021_1280.jpg 1280w" sizes="(max-width: 960px) 70vw, 22vw" alt="Teacher with students sitting on the floor of a classroom" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Education · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Education</strong><span>Educator retention</span></figcaption></figure>
-      <figure class="img-slot  strip-tile fade-up" data-slot="strip-healthcare"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-health"/></svg><img src="https://cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_1280.jpg" srcset="https://cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_640.jpg 640w, https://cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_1280.jpg 1280w" sizes="(max-width: 960px) 70vw, 22vw" alt="Doctors and nurses walking along a hospital corridor" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Healthcare · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Healthcare</strong><span>Workforce sustainability</span></figcaption></figure>
-      <figure class="img-slot  strip-tile fade-up" data-slot="strip-workforce"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2020/07/11/23/36/meeting-5395615_1280.jpg" srcset="https://cdn.pixabay.com/photo/2020/07/11/23/36/meeting-5395615_640.jpg 640w, https://cdn.pixabay.com/photo/2020/07/11/23/36/meeting-5395615_1280.jpg 1280w" sizes="(max-width: 960px) 70vw, 22vw" alt="Colleagues around a table in a team meeting" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Workforce · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Workforce</strong><span>HR analytics &amp; leadership</span></figcaption></figure>
-      <figure class="img-slot  strip-tile fade-up" data-slot="strip-wellbeing"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-person"/></svg><img src="https://www.pexels.com/photo/people-sitting-on-green-grass-field-13300029" srcset="https://www.pexels.com/photo/people-sitting-on-green-grass-field-13300029 640w, https://www.pexels.com/photo/people-sitting-on-green-grass-field-13300029 1280w" sizes="(max-width: 960px) 70vw, 22vw" alt="Woman meditating at a misty mountain viewpoint" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Wellbeing · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Wellbeing</strong><span>Resilience and recovery</span></figcaption></figure>
+      <figure class="img-slot  strip-tile fade-up" data-slot="strip-brain-science"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-data"/></svg><img src="https://cdn.pixabay.com/photo/2017/11/07/09/05/nerves-2926087_1280.jpg" srcset="https://cdn.pixabay.com/photo/2017/11/07/09/05/nerves-2926087_640.jpg 640w, https://cdn.pixabay.com/photo/2017/11/07/09/05/nerves-2926087_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Glowing abstract network of neurons and synapses" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Brain science · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Brain science</strong><span>Neuroscience-informed insight</span></figcaption></figure>
+      <figure class="img-slot  strip-tile fade-up" data-slot="strip-education"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-education"/></svg><img src="https://images.pexels.com/photos/6936021/pexels-photo-6936021.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/6936021/pexels-photo-6936021.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/6936021/pexels-photo-6936021.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Students studying together inside a classroom" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Education · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Education</strong><span>Educator retention</span></figcaption></figure>
+      <figure class="img-slot  strip-tile fade-up" data-slot="strip-healthcare"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-health"/></svg><img src="https://cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_1280.jpg" srcset="https://cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_640.jpg 640w, https://cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Doctors and nurses walking along a hospital corridor" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Healthcare · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Healthcare</strong><span>Workforce sustainability</span></figcaption></figure>
+      <figure class="img-slot  strip-tile fade-up" data-slot="strip-workforce"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://images.pexels.com/photos/8101931/pexels-photo-8101931.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/8101931/pexels-photo-8101931.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/8101931/pexels-photo-8101931.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Group of Asian professionals meeting in a modern office" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Workforce · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Workforce</strong><span>HR analytics &amp; leadership</span></figcaption></figure>
+      <figure class="img-slot  strip-tile fade-up" data-slot="strip-wellbeing"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-person"/></svg><img src="https://images.pexels.com/photos/13300029/pexels-photo-13300029.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/13300029/pexels-photo-13300029.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/13300029/pexels-photo-13300029.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="People sitting together on a green grass field" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Wellbeing · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Wellbeing</strong><span>Resilience and recovery</span></figcaption></figure>
     </div>
   </section>
 
@@ -999,7 +1010,7 @@
       <div class="services-grid">
 
         <div class="service-card fade-up" id="svc-assessment">
-          <div class="img-slot ratio-16x9 service-photo" data-slot="service-1"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-data"/></svg><img src="https://cdn.pixabay.com/photo/2020/03/23/17/04/brain-4961452_1280.jpg" srcset="https://cdn.pixabay.com/photo/2020/03/23/17/04/brain-4961452_640.jpg 640w, https://cdn.pixabay.com/photo/2020/03/23/17/04/brain-4961452_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 380px" alt="Model of a brain held in an open hand" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Service photo · 960×540 · 16:9</span></div>
+          <div class="img-slot ratio-16x9 service-photo" data-slot="service-1"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-data"/></svg><img src="images/woman-taking-notes.jpg" alt="Woman taking notes beside a laptop at a wooden table in a bright workspace" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Service photo · 960×540 · 16:9</span></div>
           <div class="service-icon">🧠</div>
           <div class="service-title">Neuropsychological Assessment and Action Plans</div>
           <p class="service-body">Evidence-based assessments rooted in cognitive neuroscience to identify stress responses, burnout risk factors, and resilience profiles in your workforce—paired with a targeted action plan to address them.</p>
@@ -1017,7 +1028,7 @@
         </div>
 
         <div class="service-card fade-up" id="svc-attrition">
-          <div class="img-slot ratio-16x9 service-photo" data-slot="service-2"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-data"/></svg><img src="https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg" srcset="https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_640.jpg 640w, https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 380px" alt="Person reviewing analytics charts on a laptop" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Service photo · 960×540 · 16:9</span></div>
+          <div class="img-slot ratio-16x9 service-photo" data-slot="service-2"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-data"/></svg><img src="https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg" srcset="https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_640.jpg 640w, https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Person reviewing analytics charts on a laptop" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Service photo · 960×540 · 16:9</span></div>
           <div class="service-icon">📊</div>
           <div class="service-title">Attrition Prediction Modelling</div>
           <p class="service-body">Data models that flag flight risk months before resignation, drawing on psychological and behavioural signals unique to high-attrition sectors.</p>
@@ -1035,7 +1046,7 @@
         </div>
 
         <div class="service-card fade-up" id="svc-education">
-          <div class="img-slot ratio-16x9 service-photo" data-slot="service-3"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-education"/></svg><img src="https://cdn.pixabay.com/photo/2020/01/22/09/40/teacher-4784917_1280.jpg" srcset="https://cdn.pixabay.com/photo/2020/01/22/09/40/teacher-4784917_640.jpg 640w, https://cdn.pixabay.com/photo/2020/01/22/09/40/teacher-4784917_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 380px" alt="Teacher helping a student in class" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Service photo · 960×540 · 16:9</span></div>
+          <div class="img-slot ratio-16x9 service-photo" data-slot="service-3"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-education"/></svg><img src="images/students-walking-to-school.jpg" alt="Students in uniform walking towards a Singapore school building" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Service photo · 960×540 · 16:9</span></div>
           <div class="service-icon">🎓</div>
           <div class="service-title">Education Workforce Strategy</div>
           <p class="service-body">Tailored programmes for high attrition sectors to reduce educator turnover through evidence-based retention strategies grounded in occupational psychology.</p>
@@ -1053,7 +1064,7 @@
         </div>
 
         <div class="service-card fade-up" id="svc-leadership">
-          <div class="img-slot ratio-16x9 service-photo" data-slot="service-4"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg" srcset="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_640.jpg 640w, https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 380px" alt="Workshop participants with cards and markers in a collaborative session" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Service photo · 960×540 · 16:9</span></div>
+          <div class="img-slot ratio-16x9 service-photo" data-slot="service-4"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/people-figurines.jpg" alt="Row of wooden figurines with one yellow figure standing out in front" loading="lazy" decoding="async" draggable="false" style="object-position:64% 50%"><span class="slot-tag">Service photo · 960×540 · 16:9</span></div>
           <div class="service-icon">💡</div>
           <div class="service-title">Leadership Development</div>
           <p class="service-body">Neuroscience-informed coaching for senior leaders. Building psychological safety, reducing cognitive overload, and improving decision-making under pressure.</p>
@@ -1071,7 +1082,7 @@
         </div>
 
         <div class="service-card fade-up" id="svc-research">
-          <div class="img-slot ratio-16x9 service-photo" data-slot="service-5"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-data"/></svg><img src="https://cdn.pixabay.com/photo/2016/11/29/07/10/hand-1868015_1280.jpg" srcset="https://cdn.pixabay.com/photo/2016/11/29/07/10/hand-1868015_640.jpg 640w, https://cdn.pixabay.com/photo/2016/11/29/07/10/hand-1868015_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 380px" alt="Hand writing notes in an open notebook on a desk" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Service photo · 960×540 · 16:9</span></div>
+          <div class="img-slot ratio-16x9 service-photo" data-slot="service-5"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-data"/></svg><img src="images/charts-on-desk.jpg" alt="Colleagues reviewing printed sales charts beside a laptop" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Service photo · 960×540 · 16:9</span></div>
           <div class="service-icon">🔬</div>
           <div class="service-title">Research &amp; Benchmarking</div>
           <p class="service-body">Sector-specific benchmarking contextualising your HR metrics against the latest applied neuroscience and occupational psychology research.</p>
@@ -1088,7 +1099,7 @@
         </div>
 
         <div class="service-card fade-up" id="svc-healthcare">
-          <div class="img-slot ratio-16x9 service-photo" data-slot="service-6"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-health"/></svg><img src="https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_1280.jpg" srcset="https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_640.jpg 640w, https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 380px" alt="Nurse and doctor in a hospital setting" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Service photo · 960×540 · 16:9</span></div>
+          <div class="img-slot ratio-16x9 service-photo" data-slot="service-6"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-health"/></svg><img src="https://images.pexels.com/photos/5327864/pexels-photo-5327864.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/5327864/pexels-photo-5327864.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/5327864/pexels-photo-5327864.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Female doctor discussing results with a patient using a tablet" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Service photo · 960×540 · 16:9</span></div>
           <div class="service-icon">🏥</div>
           <div class="service-title">Healthcare Pipeline (Coming Soon)</div>
           <p class="service-body">Extending our data modelling and analytics to healthcare by addressing critical workforce challenges in nursing, allied health, and medical leadership.</p>
@@ -1125,9 +1136,9 @@
         <div class="focus-visual fade-up" data-reveal="right">
           <div class="focus-visual-label">Where We Work</div>
           <div class="sector-mosaic">
-            <figure class="img-slot ratio-16x9 sector-tile wide" data-slot="sector-education"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-education"/></svg><img src="https://cdn.pixabay.com/photo/2016/11/29/13/56/asian-1870022_1280.jpg" srcset="https://cdn.pixabay.com/photo/2016/11/29/13/56/asian-1870022_640.jpg 640w, https://cdn.pixabay.com/photo/2016/11/29/13/56/asian-1870022_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 40vw" alt="Student in school uniform reading a book outdoors" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Education · 1280×720 · 16:9</span><figcaption class="sector-cap"><strong>Education</strong><span>Educator attrition and retention</span></figcaption></figure>
-            <figure class="img-slot ratio-4x3 sector-tile" data-slot="sector-healthcare"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-health"/></svg><img src="https://cdn.pixabay.com/photo/2024/09/26/17/58/medicine-9077108_1280.jpg" srcset="https://cdn.pixabay.com/photo/2024/09/26/17/58/medicine-9077108_640.jpg 640w, https://cdn.pixabay.com/photo/2024/09/26/17/58/medicine-9077108_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 40vw" alt="Clinician examining a patient with a stethoscope" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Healthcare · 960×720 · 4:3</span><figcaption class="sector-cap"><strong>Healthcare</strong><span>Pipeline coming soon</span></figcaption></figure>
-            <figure class="img-slot ratio-4x3 sector-tile" data-slot="sector-workforce"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2014/07/08/10/47/team-386673_1280.jpg" srcset="https://cdn.pixabay.com/photo/2014/07/08/10/47/team-386673_640.jpg 640w, https://cdn.pixabay.com/photo/2014/07/08/10/47/team-386673_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 40vw" alt="Group of people standing together in a circle, hands in the middle" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Workforce · 960×720 · 4:3</span><figcaption class="sector-cap"><strong>Workforce</strong><span>HR analytics and behaviour change</span></figcaption></figure>
+            <figure class="img-slot ratio-16x9 sector-tile wide" data-slot="sector-education"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-education"/></svg><img src="images/school-blue-arches.jpg" alt="Blue-and-white school building with an arched walkway above a paved courtyard" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Education · 1280×720 · 16:9</span><figcaption class="sector-cap"><strong>Education</strong><span>Educator attrition and retention</span></figcaption></figure>
+            <figure class="img-slot ratio-4x3 sector-tile" data-slot="sector-healthcare"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-health"/></svg><img src="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Doctor and patient in a positive consultation in a bright clinic" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Healthcare · 960×720 · 4:3</span><figcaption class="sector-cap"><strong>Healthcare</strong><span>Pipeline coming soon</span></figcaption></figure>
+            <figure class="img-slot ratio-4x3 sector-tile" data-slot="sector-workforce"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/marina-bay-skyline.jpg" alt="Marina Bay skyline at sunset seen from the Jubilee Bridge promenade, Singapore" loading="lazy" decoding="async" draggable="false" style="object-position:62% 50%"><span class="slot-tag">Workforce · 960×720 · 4:3</span><figcaption class="sector-cap"><strong>Workforce</strong><span>HR analytics and behaviour change</span></figcaption></figure>
           </div>
         </div>
       </div>
@@ -1144,7 +1155,7 @@
       </div>
       <div class="evidence-grid">
       <article class="ev-card fade-up">
-        <div class="ev-media"><div class="img-slot ratio-16x9 ev-photo" data-slot="evidence-1"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2022/11/05/19/29/chair-7572636_1280.jpg" srcset="https://cdn.pixabay.com/photo/2022/11/05/19/29/chair-7572636_640.jpg 640w, https://cdn.pixabay.com/photo/2022/11/05/19/29/chair-7572636_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 360px" alt="Two people talking on a park bench" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Evidence photo · 960×540 · 16:9</span></div>
+        <div class="ev-media"><div class="img-slot ratio-16x9 ev-photo" data-slot="evidence-1"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://images.pexels.com/photos/7688101/pexels-photo-7688101.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/7688101/pexels-photo-7688101.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/7688101/pexels-photo-7688101.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Woman in a red top speaking at an office table during a discussion" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Evidence photo · 960×540 · 16:9</span></div>
           <div class="ev-tags"><span class="ev-tag">Coaching</span><span class="ev-tag sector">Workforce</span></div>
         </div>
         <div class="ev-main">
@@ -1157,7 +1168,7 @@
         </div>
       </article>
       <article class="ev-card fade-up">
-        <div class="ev-media"><div class="img-slot ratio-16x9 ev-photo" data-slot="evidence-2"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2022/05/06/20/19/forest-7179046_1280.jpg" srcset="https://cdn.pixabay.com/photo/2022/05/06/20/19/forest-7179046_640.jpg 640w, https://cdn.pixabay.com/photo/2022/05/06/20/19/forest-7179046_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 360px" alt="Sunbeams lighting a forest path between tall pine trees" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Evidence photo · 960×540 · 16:9</span></div>
+        <div class="ev-media"><div class="img-slot ratio-16x9 ev-photo" data-slot="evidence-2"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/hourglass-clock.jpg" alt="Wooden hourglass in front of a clock face" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Evidence photo · 960×540 · 16:9</span></div>
           <div class="ev-tags"><span class="ev-tag">Burnout</span><span class="ev-tag sector">Healthcare</span></div>
         </div>
         <div class="ev-main">
@@ -1170,7 +1181,7 @@
         </div>
       </article>
       <article class="ev-card fade-up">
-        <div class="ev-media"><div class="img-slot ratio-16x9 ev-photo" data-slot="evidence-3"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2020/12/04/16/08/tree-5803607_1280.jpg" srcset="https://cdn.pixabay.com/photo/2020/12/04/16/08/tree-5803607_640.jpg 640w, https://cdn.pixabay.com/photo/2020/12/04/16/08/tree-5803607_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 360px" alt="Young seedling growing up through green moss" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Evidence photo · 960×540 · 16:9</span></div>
+        <div class="ev-media"><div class="img-slot ratio-16x9 ev-photo" data-slot="evidence-3"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/school-curved-courtyard.jpg" alt="Curved white school building around a green courtyard with palm trees" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Evidence photo · 960×540 · 16:9</span></div>
           <div class="ev-tags"><span class="ev-tag">Induction &amp; mentoring</span><span class="ev-tag sector">Education</span></div>
         </div>
         <div class="ev-main">
@@ -1183,7 +1194,7 @@
         </div>
       </article>
       <article class="ev-card fade-up">
-        <div class="ev-media"><div class="img-slot ratio-16x9 ev-photo" data-slot="evidence-4"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2025/12/15/14/22/stones-10016267_1280.jpg" srcset="https://cdn.pixabay.com/photo/2025/12/15/14/22/stones-10016267_640.jpg 640w, https://cdn.pixabay.com/photo/2025/12/15/14/22/stones-10016267_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 360px" alt="Balanced stones on a beach beside a calm blue sea" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Evidence photo · 960×540 · 16:9</span></div>
+        <div class="ev-media"><div class="img-slot ratio-16x9 ev-photo" data-slot="evidence-4"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/chalk-colour-blocks.jpg" alt="Colourful pastel chalk blocks stacked in rows" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Evidence photo · 960×540 · 16:9</span></div>
           <div class="ev-tags"><span class="ev-tag">Strengths-based</span><span class="ev-tag sector">Wellbeing</span></div>
         </div>
         <div class="ev-main">
@@ -1196,7 +1207,7 @@
         </div>
       </article>
       <article class="ev-card fade-up">
-        <div class="ev-media"><div class="img-slot ratio-16x9 ev-photo" data-slot="evidence-5"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_1280.jpg" srcset="https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_640.jpg 640w, https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 360px" alt="Chairs arranged in a circle for a group conversation" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Evidence photo · 960×540 · 16:9</span></div>
+        <div class="ev-media"><div class="img-slot ratio-16x9 ev-photo" data-slot="evidence-5"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://images.pexels.com/photos/7651715/pexels-photo-7651715.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/7651715/pexels-photo-7651715.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/7651715/pexels-photo-7651715.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Colleagues discussing a project around a laptop in a modern office" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Evidence photo · 960×540 · 16:9</span></div>
           <div class="ev-tags"><span class="ev-tag">360° feedback</span><span class="ev-tag sector">Leadership</span></div>
         </div>
         <div class="ev-main">
@@ -1209,7 +1220,7 @@
         </div>
       </article>
       <article class="ev-card fade-up">
-        <div class="ev-media"><div class="img-slot ratio-16x9 ev-photo" data-slot="evidence-6"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2016/10/30/05/43/school-1782427_1280.jpg" srcset="https://cdn.pixabay.com/photo/2016/10/30/05/43/school-1782427_640.jpg 640w, https://cdn.pixabay.com/photo/2016/10/30/05/43/school-1782427_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 360px" alt="Teacher with students sitting on the floor of a classroom" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Evidence photo · 960×540 · 16:9</span></div>
+        <div class="ev-media"><div class="img-slot ratio-16x9 ev-photo" data-slot="evidence-6"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/school-corridor.jpg" alt="School corridor with a display of student artwork" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Evidence photo · 960×540 · 16:9</span></div>
           <div class="ev-tags"><span class="ev-tag">Social &amp; emotional learning</span><span class="ev-tag sector">Education</span></div>
         </div>
         <div class="ev-main">
@@ -1238,9 +1249,9 @@
         <button type="button" class="btn btn-primary" data-nav="programmes">See all programmes</button>
       </div>
       <div class="pp-grid">
-        <a class="pp-tile fade-up" href="#programmes" data-nav="programmes" data-goto="filter-education"><span class="img-slot  pp-photo" data-slot="pp-education"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2020/01/22/09/40/teacher-4784917_1280.jpg" srcset="https://cdn.pixabay.com/photo/2020/01/22/09/40/teacher-4784917_640.jpg 640w, https://cdn.pixabay.com/photo/2020/01/22/09/40/teacher-4784917_1280.jpg 1280w" sizes="(max-width: 960px) 80vw, 30vw" alt="Teacher helping a student in class" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Education · 800×1000</span><span class="pp-cap"><strong>Education</strong><span>Keeping educators well and in the profession</span><em>Explore <i aria-hidden="true">&#8594;</i></em></span></span></a>
-        <a class="pp-tile fade-up" href="#programmes" data-nav="programmes" data-goto="filter-healthcare"><span class="img-slot  pp-photo" data-slot="pp-healthcare"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_1280.jpg" srcset="https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_640.jpg 640w, https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_1280.jpg 1280w" sizes="(max-width: 960px) 80vw, 30vw" alt="Nurse and doctor in a hospital setting" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Healthcare · 800×1000</span><span class="pp-cap"><strong>Healthcare</strong><span>Sustaining clinical teams</span><em>Explore <i aria-hidden="true">&#8594;</i></em></span></span></a>
-        <a class="pp-tile fade-up" href="#programmes" data-nav="programmes" data-goto="filter-workforce"><span class="img-slot  pp-photo" data-slot="pp-workforce"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg" srcset="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_640.jpg 640w, https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg 1280w" sizes="(max-width: 960px) 80vw, 30vw" alt="Workshop participants with cards and markers in a collaborative session" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Workforce &amp; Leadership · 800×1000</span><span class="pp-cap"><strong>Workforce &amp; Leadership</strong><span>Leaders, teams and wellbeing</span><em>Explore <i aria-hidden="true">&#8594;</i></em></span></span></a>
+        <a class="pp-tile fade-up" href="#programmes" data-nav="programmes" data-goto="filter-education"><span class="img-slot  pp-photo" data-slot="pp-education"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/school-clock-tower.jpg" alt="School clock tower and grandstand beside a sports field" loading="lazy" decoding="async" draggable="false" style="object-position:70% 50%"><span class="slot-tag">Education · 800×1000</span><span class="pp-cap"><strong>Education</strong><span>Keeping educators well and in the profession</span><em>Explore <i aria-hidden="true">&#8594;</i></em></span></span></a>
+        <a class="pp-tile fade-up" href="#programmes" data-nav="programmes" data-goto="filter-healthcare"><span class="img-slot  pp-photo" data-slot="pp-healthcare"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://images.pexels.com/photos/6749742/pexels-photo-6749742.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/6749742/pexels-photo-6749742.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/6749742/pexels-photo-6749742.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Female ophthalmologist talking with a male patient in a clinic" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Healthcare · 800×1000</span><span class="pp-cap"><strong>Healthcare</strong><span>Sustaining clinical teams</span><em>Explore <i aria-hidden="true">&#8594;</i></em></span></span></a>
+        <a class="pp-tile fade-up" href="#programmes" data-nav="programmes" data-goto="filter-workforce"><span class="img-slot  pp-photo" data-slot="pp-workforce"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/man-at-laptop.jpg" alt="Smiling man working at a laptop in a sunlit office" loading="lazy" decoding="async" draggable="false" style="object-position:56% 50%"><span class="slot-tag">Workforce &amp; Leadership · 800×1000</span><span class="pp-cap"><strong>Workforce &amp; Leadership</strong><span>Leaders, teams and wellbeing</span><em>Explore <i aria-hidden="true">&#8594;</i></em></span></span></a>
       </div>
     </div>
   </section>
@@ -1411,7 +1422,7 @@
           <div style="margin-top:28px"><button type="button" class="btn btn-primary" data-nav="overview">See Our Services</button></div>
         </div>
         <div class="mission-visual fade-up" data-reveal="right">
-          <div class="mission-photo-wrap"><div class="img-slot ratio-16x9 mission-photo" data-slot="about-team"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2022/11/05/19/29/chair-7572636_1280.jpg" srcset="https://cdn.pixabay.com/photo/2022/11/05/19/29/chair-7572636_640.jpg 640w, https://cdn.pixabay.com/photo/2022/11/05/19/29/chair-7572636_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 520px" alt="Two people talking on a park bench" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Team photo · 1200×675 · 16:9</span></div></div>
+          <div class="mission-photo-wrap"><div class="img-slot ratio-16x9 mission-photo" data-slot="about-team"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/open-plan-team.jpg" alt="Colleagues working at shared desks while a coworker leans in to help" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Team photo · 1200×675 · 16:9</span></div></div>
           <div class="mission-value"><div class="mv-icon">🧬</div><div><div class="mv-title">Evidence First</div><p class="mv-body">Every recommendation is rooted in peer-reviewed neuroscience and occupational psychology — not intuition or trend.</p></div></div>
           <div class="mission-value"><div class="mv-icon">🎯</div><div><div class="mv-title">Sector Specificity</div><p class="mv-body">Generic HR tools fail high-attrition roles. Our models are calibrated to the unique stressors of teaching and similar professions.</p></div></div>
           <div class="mission-value"><div class="mv-icon">🔄</div><div><div class="mv-title">Whole-System Thinking</div><p class="mv-body">We examine individual, team, and organisational factors together — because attrition is never just one person's problem.</p></div></div>
@@ -1488,7 +1499,7 @@
     <canvas class="ambient" data-ambient aria-hidden="true"></canvas>
     <div class="container">
       <div class="approach-hero-inner fade-up">
-        <div class="section-label">Our approach</div>
+        <div class="section-label">Our Approach</div>
         <h1 class="section-title light">Building Bridges.<br>Setting Goals Together.</h1>
         <div class="divider"></div>
         <p class="section-body light">We work alongside organisations — not just for them. Every project begins with listening, and ends with measurable, lasting change grounded in science.</p>
@@ -1519,21 +1530,21 @@
         <div class="proj-carousel-wrap">
           <div class="proj-carousel-track" id="projCarouselTrack">
             <div class="proj-carousel-slide">
-              <div class="img-slot" data-slot="approach-1"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_1280.jpg" srcset="https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_640.jpg 640w, https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 1200px" alt="Chairs arranged in a circle for a group conversation" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Carousel photo · 1600×560 · 20:7</span></div>
+              <div class="img-slot" data-slot="approach-1"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/duxton-hill-shophouses.jpg" alt="Peranakan shophouses with palm trees on Duxton Hill, Singapore" loading="lazy" decoding="async" draggable="false" style="object-position:50% 58%"><span class="slot-tag">Carousel photo · 1600×560 · 20:7</span></div>
               <div class="proj-carousel-caption">
                 <div class="proj-carousel-title">Discovery &amp; Listening Sessions</div>
                 <div class="proj-carousel-sub">We begin every engagement by immersing ourselves in your organisation by understanding the pressures your people face before any assessment begins.</div>
               </div>
             </div>
             <div class="proj-carousel-slide">
-              <div class="img-slot" data-slot="approach-2"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-data"/></svg><img src="https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg" srcset="https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_640.jpg 640w, https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 1200px" alt="Person reviewing analytics charts on a laptop" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Carousel photo · 1600×560 · 20:7</span></div>
+              <div class="img-slot" data-slot="approach-2"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-data"/></svg><img src="images/hands-over-charts.jpg" alt="Two people pointing at printed charts spread across a table" loading="lazy" decoding="async" draggable="false" style="object-position:50% 52%"><span class="slot-tag">Carousel photo · 1600×560 · 20:7</span></div>
               <div class="proj-carousel-caption">
                 <div class="proj-carousel-title">Data, Analysis &amp; Insight</div>
                 <div class="proj-carousel-sub">Psychological assessments, HR data, and behavioural signals are brought together into a unified picture, with findings presented clearly for every level of your organisation.</div>
               </div>
             </div>
             <div class="proj-carousel-slide">
-              <div class="img-slot" data-slot="approach-3"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-steps"/></svg><img src="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg" srcset="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_640.jpg 640w, https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 1200px" alt="Workshop participants with cards and markers in a collaborative session" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Carousel photo · 1600×560 · 20:7</span></div>
+              <div class="img-slot" data-slot="approach-3"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-steps"/></svg><img src="images/yellow-window-shutters.jpg" alt="Yellow window shutters opened across a white building facade" loading="lazy" decoding="async" draggable="false" style="object-position:50% 48%"><span class="slot-tag">Carousel photo · 1600×560 · 20:7</span></div>
               <div class="proj-carousel-caption">
                 <div class="proj-carousel-title">Strategy, Action &amp; Accountability</div>
                 <div class="proj-carousel-sub">Insights translate into tailored action plans with clear owners, timelines, and follow-up checkpoints so change actually happens.</div>
@@ -1616,7 +1627,7 @@
                 <thead><tr><th>Failure Pattern</th><th>Why It Blocks Behaviour Change</th></tr></thead>
                 <tbody>
                   <tr><td>Knowledge over transformation</td><td>Programmes teach concepts but don't build new habits; behaviour change requires practice, not just understanding</td></tr>
-                  <tr><td>Decoupled from real work</td><td>Classroom learning isn't tied to actual approach; adults retain ~10% of lectures vs ~66% when learning by doing</td></tr>
+                  <tr><td>Decoupled from real work</td><td>Classroom learning isn't tied to actual projects; adults retain ~10% of lectures vs ~66% when learning by doing</td></tr>
                   <tr><td>Ignoring context</td><td>One-size-fits-all competencies don't match the organisation's strategy, culture, or leadership transitions</td></tr>
                   <tr><td>Underestimating mindsets</td><td>Deep beliefs block new behaviours; programmes rarely surface and shift these</td></tr>
                   <tr><td>No accountability or reinforcement</td><td>No managers or peers involved, no feedback loops, no follow-up; what gets measured is what changes</td></tr>
@@ -1633,7 +1644,7 @@
             <p>Research shows that without sustained practice, feedback, and systems support, gains remain superficial and leaders revert to old habits. Our approach uses a <strong>behaviour-change design</strong> — aligned with a small set of core, evidence-based principles that apply across habits, health, work, and education</p>
             <ul class="proj-list">
               <li>Prioritise personal and organisational impact by defining motivation, enhancing capabilities, and addressing obstacles to foster adoption and achieve significant results.</li>
-              <li>Build around real work — learning tied to live business approach</li>
+              <li>Build around real work — learning tied to live business projects</li>
               <li>Embed sustained practice — application periods between modules</li>
               <li>Address mindsets, not just skills — surface unconscious beliefs</li>
               <li>Create accountability systems — involve managers, peers, and mentors</li>
@@ -1645,12 +1656,12 @@
           <div class="proj-accordion-body"><div class="clip"><div class="inner">
             <div style="margin-top:14px;display:flex;flex-direction:column;gap:14px">
               <div class="sub-block"><div class="sub-h">1. Impact First, Capability Defined</div><p class="sub-p">Translate organisational challenges into tailored leadership pathways by clarifying motivation, strengthening capability, and removing barriers to ensure adoption and measurable impact.</p></div>
-              <div class="sub-block"><div class="sub-h">2. Build around real work</div><p class="sub-p">Design learning around live business approach. Use stretch assignments that push leaders outside their comfort zone to create new neural pathways.</p></div>
+              <div class="sub-block"><div class="sub-h">2. Build around real work</div><p class="sub-p">Design learning around live business projects. Use stretch assignments that push leaders outside their comfort zone to create new neural pathways.</p></div>
               <div class="sub-block"><div class="sub-h">3. Embed sustained practice</div><p class="sub-p">Structure application periods between modules. Regular practice expands the skill-related neural network. Provide quick-reference tools to make new behaviours easier to do.</p></div>
               <div class="sub-block"><div class="sub-h">4. Address mindsets, not just skills</div><p class="sub-p">Use self-assessment, 360 feedback, and reflection to surface unconscious beliefs. Apply a whole-person approach: who the leader needs to be, not just what they need to know.</p></div>
               <div class="sub-block"><div class="sub-h">5. Create accountability systems</div><p class="sub-p">Involve managers, peers, and mentors in supporting new behaviours. Establish peer coaching groups and set SMART goals with clear action plans.</p></div>
               <div class="sub-block"><div class="sub-h">6. Use neuroscience-based learning principles</div><p class="sub-p">Stretch outside comfort zones. Enable self-directed learning. Emphasise on-the-job repetition. Create a positive, psychologically safe context. Focus on strengths and build in feedback loops.</p></div>
-              <div class="sub-block"><div class="sub-h">7. Measure behaviour change and business impact</div><p class="sub-p">Run 360-degree feedback before and 6–12 months after. Monitor career outcomes. Track business metrics tied to approach. Avoid relying only on satisfaction surveys.</p></div>
+              <div class="sub-block"><div class="sub-h">7. Measure behaviour change and business impact</div><p class="sub-p">Run 360-degree feedback before and 6–12 months after. Monitor career outcomes. Track business metrics tied to projects. Avoid relying only on satisfaction surveys.</p></div>
             </div>
           </div></div></div>
         </div>
@@ -1739,7 +1750,7 @@
       </div>
       <div class="prog-grid" id="progGrid">
         <article class="prog-card fade-up" id="prog-ecs" data-group="education">
-          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-ecs"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2020/01/22/09/40/teacher-4784917_1280.jpg" srcset="https://cdn.pixabay.com/photo/2020/01/22/09/40/teacher-4784917_640.jpg 640w, https://cdn.pixabay.com/photo/2020/01/22/09/40/teacher-4784917_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 560px" alt="Teacher helping a student in class" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Early-Career Educator Support · 1280×720 · 16:9</span></div>
+          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-ecs"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/campus-running-track.jpg" alt="Red running track curving around a grass field beside a campus building" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Early-Career Educator Support · 1280×720 · 16:9</span></div>
             <span class="prog-badge">Education</span>
             <span class="prog-status">Available</span>
           </div>
@@ -1755,7 +1766,7 @@
           </div>
         </article>
         <article class="prog-card fade-up" id="prog-tsi" data-group="education">
-          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-tsi"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg" srcset="https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_640.jpg 640w, https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 560px" alt="Person reviewing analytics charts on a laptop" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Teacher Sustainability Index · 1280×720 · 16:9</span></div>
+          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-tsi"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/kpi-infographics.jpg" alt="Person marking up printed KPI infographics at a desk" loading="lazy" decoding="async" draggable="false" style="object-position:50% 58%"><span class="slot-tag">Teacher Sustainability Index · 1280×720 · 16:9</span></div>
             <span class="prog-badge">Education</span>
             <span class="prog-status">Available</span>
           </div>
@@ -1771,7 +1782,7 @@
           </div>
         </article>
         <article class="prog-card fade-up" id="prog-sst" data-group="healthcare">
-          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-sst"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_1280.jpg" srcset="https://cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_640.jpg 640w, https://cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 560px" alt="Doctors and nurses walking along a hospital corridor" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Survive. Stay. Thrive. · 1280×720 · 16:9</span></div>
+          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-sst"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="A diverse team of doctors and nurses smiling in a hospital" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Survive. Stay. Thrive. · 1280×720 · 16:9</span></div>
             <span class="prog-badge">Healthcare</span>
             <span class="prog-status is-dev">In development</span>
           </div>
@@ -1787,7 +1798,7 @@
           </div>
         </article>
         <article class="prog-card fade-up" id="prog-psych" data-group="healthcare">
-          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-psych"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_1280.jpg" srcset="https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_640.jpg 640w, https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 560px" alt="Nurse and doctor in a hospital setting" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Psychological Safety for Clinical Teams · 1280×720 · 16:9</span></div>
+          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-psych"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://images.pexels.com/photos/6129657/pexels-photo-6129657.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/6129657/pexels-photo-6129657.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/6129657/pexels-photo-6129657.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Medical professionals discussing patient care in a hospital hallway" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Psychological Safety for Clinical Teams · 1280×720 · 16:9</span></div>
             <span class="prog-badge">Healthcare</span>
             <span class="prog-status is-dev">In development</span>
           </div>
@@ -1803,7 +1814,7 @@
           </div>
         </article>
         <article class="prog-card fade-up" id="prog-csuite" data-group="workforce">
-          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-csuite"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2020/07/11/23/36/meeting-5395615_1280.jpg" srcset="https://cdn.pixabay.com/photo/2020/07/11/23/36/meeting-5395615_640.jpg 640w, https://cdn.pixabay.com/photo/2020/07/11/23/36/meeting-5395615_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 560px" alt="Colleagues around a table in a team meeting" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">C-Suite Leadership Development · 1280×720 · 16:9</span></div>
+          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-csuite"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://images.pexels.com/photos/7845344/pexels-photo-7845344.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/7845344/pexels-photo-7845344.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/7845344/pexels-photo-7845344.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Asian business team presenting charts and discussing strategy" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">C-Suite Leadership Development · 1280×720 · 16:9</span></div>
             <span class="prog-badge">Leadership</span>
             <span class="prog-status">Available</span>
           </div>
@@ -1819,7 +1830,7 @@
           </div>
         </article>
         <article class="prog-card fade-up" id="prog-360" data-group="workforce">
-          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-360"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg" srcset="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_640.jpg 640w, https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 560px" alt="Workshop participants with cards and markers in a collaborative session" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">360° Feedback &amp; Coaching · 1280×720 · 16:9</span></div>
+          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-360"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg" srcset="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_640.jpg 640w, https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Workshop participants with cards and markers in a collaborative session" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">360° Feedback &amp; Coaching · 1280×720 · 16:9</span></div>
             <span class="prog-badge">Leadership</span>
             <span class="prog-status">Available</span>
           </div>
@@ -1835,7 +1846,7 @@
           </div>
         </article>
         <article class="prog-card fade-up" id="prog-sel" data-group="workforce">
-          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-sel"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_1280.jpg" srcset="https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_640.jpg 640w, https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 560px" alt="Chairs arranged in a circle for a group conversation" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">SEL &amp; Workforce Resilience · 1280×720 · 16:9</span></div>
+          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-sel"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2016/10/30/05/43/school-1782427_1280.jpg" srcset="https://cdn.pixabay.com/photo/2016/10/30/05/43/school-1782427_640.jpg 640w, https://cdn.pixabay.com/photo/2016/10/30/05/43/school-1782427_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Teacher with students sitting on the floor of a classroom" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">SEL &amp; Workforce Resilience · 1280×720 · 16:9</span></div>
             <span class="prog-badge">Workforce</span>
             <span class="prog-status">Available</span>
           </div>
@@ -1851,7 +1862,7 @@
           </div>
         </article>
         <article class="prog-card fade-up" id="prog-wellbeing" data-group="workforce">
-          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-wellbeing"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2020/03/29/18/33/girl-4981766_1280.jpg" srcset="https://cdn.pixabay.com/photo/2020/03/29/18/33/girl-4981766_640.jpg 640w, https://cdn.pixabay.com/photo/2020/03/29/18/33/girl-4981766_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 560px" alt="Woman meditating outdoors in nature" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Workplace Wellbeing &amp; Burnout Screening · 1280×720 · 16:9</span></div>
+          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-wellbeing"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://images.unsplash.com/photo-1517363898874-737b62a7db91?auto=format&fit=crop&q=75&w=1280" srcset="https://images.unsplash.com/photo-1517363898874-737b62a7db91?auto=format&fit=crop&q=75&w=640 640w, https://images.unsplash.com/photo-1517363898874-737b62a7db91?auto=format&fit=crop&q=75&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Woman meditating on the floor with a view of trees" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Workplace Wellbeing &amp; Burnout Screening · 1280×720 · 16:9</span></div>
             <span class="prog-badge">Workforce</span>
             <span class="prog-status">Available</span>
           </div>
@@ -1923,7 +1934,7 @@
         <a class="footer-link" href="#programmes" data-nav="programmes">Programmes</a>
         <a class="footer-link" href="#profile" data-nav="profile">Profile</a>
         <a class="footer-link" href="#about" data-nav="about">About Us</a>
-        <a class="footer-link" href="#approach" data-nav="approach">approach</a>
+        <a class="footer-link" href="#approach" data-nav="approach">Our Approach</a>
         <a class="footer-link" href="#contact" data-nav="about" data-contact>Contact</a>
       </div>
       <div>
@@ -1934,7 +1945,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div><div class="footer-copy">© 2026 Neuroedge Insights. All rights reserved.</div><div class="footer-copy">Photography via <a href="https://pixabay.com" rel="noopener" target="_blank" style="text-decoration:underline">Pixabay</a> (Pixabay Content License).</div></div>
+      <div><div class="footer-copy">© 2026 Neuroedge Insights. All rights reserved.</div><div class="footer-copy">Photography: Neuroedge Insights, plus free images from <a href="https://www.pexels.com" rel="noopener" target="_blank" style="text-decoration:underline">Pexels</a>, <a href="https://unsplash.com" rel="noopener" target="_blank" style="text-decoration:underline">Unsplash</a> and <a href="https://pixabay.com" rel="noopener" target="_blank" style="text-decoration:underline">Pixabay</a>.</div></div>
       <div class="footer-legal"><a>Privacy Policy</a><a>Terms of Use</a></div>
     </div>
   </div>
