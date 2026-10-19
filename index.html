@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 =====================================================================================
- NEUROEDGE INSIGHTS — single-file site  (Overview · Programmes · Profile · About Us · Projects)
+ NEUROEDGE INSIGHTS — single-file site  (Overview · Programmes · Profile · About Us · approach)
  Self-contained: all CSS and JS are inline. No frameworks. Copy and structure are unchanged
  from your base file; this round only restyles them to the DESIGN.md brief.
 
@@ -54,7 +54,7 @@
    prog-<id>  (8)           Programme cards                 1280 × 720         16:9
    profile-1…3              Profile carousel (your files)   900 × 1200         3:4
    about-team               About › mission                 1200 × 675         16:9
-   projects-1…3             Projects carousel               1600 × 560         20:7
+   approach-1…3             approach carousel               1600 × 560         20:7
  Photo sources (Pixabay):
    brainhand    cdn.pixabay.com/photo/2019/01/05/10/01/knowledge-3914811_1280.jpg   geralt
    neurons      cdn.pixabay.com/photo/2017/11/07/09/05/nerves-2926087_1280.jpg   geralt
@@ -123,7 +123,7 @@
         3  Navigation + mobile menu            13  Profile view
         4  Layout, type, buttons               14  About view + contact form
         5  Image slots                         15  Footer + brand lockup
-        6  Hero + constellation canvas         16  Projects view
+        6  Hero + constellation canvas         16  approach view
         7  Intro pills, banner, photo strip    17  Programmes view
         8  Services                            18  Curtain, back-to-top, transitions
         9  Where we work                       19  Responsive (960px / 600px)
@@ -337,7 +337,7 @@
        (script section 13). It fills the hero so ambient triangles drift behind the text;
        the brain itself sits on .hero-visual. */
     canvas.ambient { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; z-index: 0; }
-    .hero, .about-hero, .projects-hero, .profile-hero, .prog-hero { position: relative; overflow: hidden; isolation: isolate; background: var(--color-void); }
+    .hero, .about-hero, .approach-hero, .profile-hero, .prog-hero { position: relative; overflow: hidden; isolation: isolate; background: var(--color-void); }
     .hero { padding: clamp(36px, 6vw, 72px) 0 var(--gap-section); }
     .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 24px; align-items: center; min-height: clamp(460px, 62vh, 680px); }
     .hero-eyebrow { font-size: var(--text-nav-label); font-weight: 600; letter-spacing: .025em; text-transform: uppercase; color: var(--color-saffron-spark); margin-bottom: var(--spacing-24); }
@@ -624,13 +624,13 @@
     .footer-legal a:hover { color: var(--color-bone-white); }
 
 
-    /* 16 ── PROJECTS VIEW ─────────────────────────────────────────────────── */
-    .projects-hero { padding: clamp(56px, 8vw, 112px) 0 var(--gap-section); }
-    .projects-hero-inner { position: relative; z-index: 1; max-width: 900px; }
-    .projects-hero .section-title { font-size: clamp(40px, 5.6vw, 84px); }
-    .projects-wave { display: none; }
-    .projects-intro { padding: 0 0 var(--gap-section); }
-    .projects-intro-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--spacing-36) var(--spacing-60); }
+    /* 16 ── approach VIEW ─────────────────────────────────────────────────── */
+    .approach-hero { padding: clamp(56px, 8vw, 112px) 0 var(--gap-section); }
+    .approach-hero-inner { position: relative; z-index: 1; max-width: 900px; }
+    .approach-hero .section-title { font-size: clamp(40px, 5.6vw, 84px); }
+    .approach-wave { display: none; }
+    .approach-intro { padding: 0 0 var(--gap-section); }
+    .approach-intro-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--spacing-36) var(--spacing-60); }
     .proj-intro-card { transition: transform var(--transition); }
     .proj-intro-card:hover { transform: translateY(-4px); }
     .proj-intro-num { font-size: var(--text-heading-sm); font-weight: 400; line-height: 1.1; letter-spacing: -0.04em; color: var(--color-bone-white); margin-bottom: var(--spacing-12); }
@@ -683,7 +683,7 @@
     .sel-badge { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--tint-blue); color: var(--light-blue); font-size: 12px; font-weight: 600; flex-shrink: 0; }
     .proj-callout { background: var(--tint-royal); border-radius: var(--radius-field); padding: 16px 20px; margin: var(--spacing-18) 0; font-size: 15px; font-weight: 200; color: var(--light-blue); line-height: 1.6; }
     .proj-callout strong { font-weight: 600; color: var(--color-saffron-spark); }
-    .projects-cta { padding: var(--gap-section) 0; }
+    .approach-cta { padding: var(--gap-section) 0; }
 
 
     /* 17 ── PROGRAMMES VIEW ───────────────────────────────────────────────── */
@@ -739,7 +739,7 @@
 
 
 
-    /* 17c ── formerly inline-styled snippets (Projects accordions, About mission) ── */
+    /* 17c ── formerly inline-styled snippets (approach accordions, About mission) ── */
     .sub-block { position: relative; padding: 6px 0 6px 24px; }
     .sub-block::before { content: ''; position: absolute; left: 0; top: 11px; width: 12px; height: 12px; background: var(--tri) center / contain no-repeat; }
     .sub-h { font-size: 18px; font-weight: 400; letter-spacing: -0.02em; color: var(--color-bone-white); margin-bottom: 6px; }
@@ -785,7 +785,7 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid > div:first-child { grid-column: 1 / -1; }
       .cta-banner { grid-template-columns: 1fr; gap: var(--spacing-30); align-items: start; }
-      .proj-topics-grid, .projects-intro-grid { grid-template-columns: minmax(0, 1fr); }
+      .proj-topics-grid, .approach-intro-grid { grid-template-columns: minmax(0, 1fr); }
       .proj-carousel-slide .img-slot { aspect-ratio: 2 / 1; }
       .prog-steps { grid-template-columns: 1fr 1fr; }
       .pp-grid { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 8px; scrollbar-width: none; }
@@ -879,7 +879,7 @@
       <li><a class="nav-link" href="#programmes" data-nav="programmes">Programmes</a></li>
       <li><a class="nav-link" href="#profile"  data-nav="profile">Profile</a></li>
       <li><a class="nav-link" href="#about"    data-nav="about">About Us</a></li>
-      <li><a class="nav-link" href="#projects" data-nav="projects">Projects</a></li>
+      <li><a class="nav-link" href="#approach" data-nav="approach">Our Approach</a></li>
     </ul>
     <button type="button" class="nav-cta" data-nav="about" data-contact>Get in Touch</button>
     <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -893,7 +893,7 @@
   <a class="mobile-link" href="#programmes" data-nav="programmes">Programmes</a>
   <a class="mobile-link" href="#profile"  data-nav="profile">Profile</a>
   <a class="mobile-link" href="#about"    data-nav="about">About Us</a>
-  <a class="mobile-link" href="#projects" data-nav="projects">Projects</a>
+  <a class="mobile-link" href="#approach" data-nav="approach">Our Approach</a>
   <a class="mobile-link" href="#contact"  data-nav="about" data-contact>Get in Touch</a>
 </div>
 
@@ -959,7 +959,7 @@
         <button type="button" class="subnav-chip" data-jump="sectors">Where we work</button>
         <button type="button" class="subnav-chip" data-jump="evidence">Evidence</button>
         <button type="button" class="subnav-chip" data-jump="programmes-preview">Programmes</button>
-        <button type="button" class="subnav-chip" data-jump="approach">Approach</button>
+        <button type="button" class="subnav-chip" data-jump="approach">Our Approach</button>
       </div>
     </div>
   </nav>
@@ -981,10 +981,10 @@
   <section class="photo-strip" aria-label="Where our work makes a difference">
     <div class="strip-row">
       <figure class="img-slot  strip-tile fade-up" data-slot="strip-brain-science"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-data"/></svg><img src="https://cdn.pixabay.com/photo/2017/11/07/09/05/nerves-2926087_1280.jpg" srcset="https://cdn.pixabay.com/photo/2017/11/07/09/05/nerves-2926087_640.jpg 640w, https://cdn.pixabay.com/photo/2017/11/07/09/05/nerves-2926087_1280.jpg 1280w" sizes="(max-width: 960px) 70vw, 22vw" alt="Glowing abstract network of neurons and synapses" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Brain science · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Brain science</strong><span>Neuroscience-informed insight</span></figcaption></figure>
-      <figure class="img-slot  strip-tile fade-up" data-slot="strip-education"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-education"/></svg><img src="https://cdn.pixabay.com/photo/2016/10/30/05/43/school-1782427_1280.jpg" srcset="https://cdn.pixabay.com/photo/2016/10/30/05/43/school-1782427_640.jpg 640w, https://cdn.pixabay.com/photo/2016/10/30/05/43/school-1782427_1280.jpg 1280w" sizes="(max-width: 960px) 70vw, 22vw" alt="Teacher with students sitting on the floor of a classroom" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Education · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Education</strong><span>Educator retention</span></figcaption></figure>
+      <figure class="img-slot  strip-tile fade-up" data-slot="strip-education"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-education"/></svg><img src="https://www.pexels.com/photo/students-studying-inside-the-classroom-6936021" srcset="https://www.pexels.com/photo/students-studying-inside-the-classroom-6936021 640w, https://www.pexels.com/photo/students-studying-inside-the-classroom-6936021_1280.jpg 1280w" sizes="(max-width: 960px) 70vw, 22vw" alt="Teacher with students sitting on the floor of a classroom" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Education · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Education</strong><span>Educator retention</span></figcaption></figure>
       <figure class="img-slot  strip-tile fade-up" data-slot="strip-healthcare"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-health"/></svg><img src="https://cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_1280.jpg" srcset="https://cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_640.jpg 640w, https://cdn.pixabay.com/photo/2017/08/07/20/05/doctors-2607295_1280.jpg 1280w" sizes="(max-width: 960px) 70vw, 22vw" alt="Doctors and nurses walking along a hospital corridor" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Healthcare · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Healthcare</strong><span>Workforce sustainability</span></figcaption></figure>
       <figure class="img-slot  strip-tile fade-up" data-slot="strip-workforce"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2020/07/11/23/36/meeting-5395615_1280.jpg" srcset="https://cdn.pixabay.com/photo/2020/07/11/23/36/meeting-5395615_640.jpg 640w, https://cdn.pixabay.com/photo/2020/07/11/23/36/meeting-5395615_1280.jpg 1280w" sizes="(max-width: 960px) 70vw, 22vw" alt="Colleagues around a table in a team meeting" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Workforce · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Workforce</strong><span>HR analytics &amp; leadership</span></figcaption></figure>
-      <figure class="img-slot  strip-tile fade-up" data-slot="strip-wellbeing"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-person"/></svg><img src="https://cdn.pixabay.com/photo/2020/07/06/07/19/meditate-5375835_1280.jpg" srcset="https://cdn.pixabay.com/photo/2020/07/06/07/19/meditate-5375835_640.jpg 640w, https://cdn.pixabay.com/photo/2020/07/06/07/19/meditate-5375835_1280.jpg 1280w" sizes="(max-width: 960px) 70vw, 22vw" alt="Woman meditating at a misty mountain viewpoint" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Wellbeing · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Wellbeing</strong><span>Resilience and recovery</span></figcaption></figure>
+      <figure class="img-slot  strip-tile fade-up" data-slot="strip-wellbeing"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-person"/></svg><img src="https://www.pexels.com/photo/people-sitting-on-green-grass-field-13300029" srcset="https://www.pexels.com/photo/people-sitting-on-green-grass-field-13300029 640w, https://www.pexels.com/photo/people-sitting-on-green-grass-field-13300029 1280w" sizes="(max-width: 960px) 70vw, 22vw" alt="Woman meditating at a misty mountain viewpoint" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Wellbeing · 800×1000 · 4:5</span><figcaption class="strip-cap"><strong>Wellbeing</strong><span>Resilience and recovery</span></figcaption></figure>
     </div>
   </section>
 
@@ -1482,24 +1482,24 @@
 </div><!-- END PAGE: ABOUT US -->
 
 
-<!-- PAGE: PROJECTS -->
-<div class="page" id="page-projects">
-  <div class="projects-hero">
+<!-- PAGE: approach -->
+<div class="page" id="page-approach">
+  <div class="approach-hero">
     <canvas class="ambient" data-ambient aria-hidden="true"></canvas>
     <div class="container">
-      <div class="projects-hero-inner fade-up">
-        <div class="section-label">Our Projects</div>
+      <div class="approach-hero-inner fade-up">
+        <div class="section-label">Our approach</div>
         <h1 class="section-title light">Building Bridges.<br>Setting Goals Together.</h1>
         <div class="divider"></div>
         <p class="section-body light">We work alongside organisations — not just for them. Every project begins with listening, and ends with measurable, lasting change grounded in science.</p>
       </div>
     </div>
-    <div class="projects-wave"></div>
+    <div class="approach-wave"></div>
   </div>
 
-  <div class="projects-intro">
+  <div class="approach-intro">
     <div class="container">
-      <div class="projects-intro-grid">
+      <div class="approach-intro-grid">
         <div class="proj-intro-card fade-up"><div class="proj-intro-num">Collaborative</div><div class="proj-intro-label">Frameworks applied across every engagement</div></div>
         <div class="proj-intro-card fade-up"><div class="proj-intro-num">Evidence-Led</div><div class="proj-intro-label">Every recommendation rooted in peer-reviewed neuroscience and occupational psychology</div></div>
         <div class="proj-intro-card fade-up"><div class="proj-intro-num">360°</div><div class="proj-intro-label">Whole-system view — individual, team, and organisational factors examined together</div></div>
@@ -1519,21 +1519,21 @@
         <div class="proj-carousel-wrap">
           <div class="proj-carousel-track" id="projCarouselTrack">
             <div class="proj-carousel-slide">
-              <div class="img-slot" data-slot="projects-1"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_1280.jpg" srcset="https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_640.jpg 640w, https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 1200px" alt="Chairs arranged in a circle for a group conversation" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Carousel photo · 1600×560 · 20:7</span></div>
+              <div class="img-slot" data-slot="approach-1"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_1280.jpg" srcset="https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_640.jpg 640w, https://cdn.pixabay.com/photo/2012/09/29/18/33/chairs-58475_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 1200px" alt="Chairs arranged in a circle for a group conversation" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Carousel photo · 1600×560 · 20:7</span></div>
               <div class="proj-carousel-caption">
                 <div class="proj-carousel-title">Discovery &amp; Listening Sessions</div>
                 <div class="proj-carousel-sub">We begin every engagement by immersing ourselves in your organisation by understanding the pressures your people face before any assessment begins.</div>
               </div>
             </div>
             <div class="proj-carousel-slide">
-              <div class="img-slot" data-slot="projects-2"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-data"/></svg><img src="https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg" srcset="https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_640.jpg 640w, https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 1200px" alt="Person reviewing analytics charts on a laptop" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Carousel photo · 1600×560 · 20:7</span></div>
+              <div class="img-slot" data-slot="approach-2"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-data"/></svg><img src="https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg" srcset="https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_640.jpg 640w, https://cdn.pixabay.com/photo/2018/03/27/12/16/analytics-3265840_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 1200px" alt="Person reviewing analytics charts on a laptop" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Carousel photo · 1600×560 · 20:7</span></div>
               <div class="proj-carousel-caption">
                 <div class="proj-carousel-title">Data, Analysis &amp; Insight</div>
                 <div class="proj-carousel-sub">Psychological assessments, HR data, and behavioural signals are brought together into a unified picture, with findings presented clearly for every level of your organisation.</div>
               </div>
             </div>
             <div class="proj-carousel-slide">
-              <div class="img-slot" data-slot="projects-3"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-steps"/></svg><img src="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg" srcset="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_640.jpg 640w, https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 1200px" alt="Workshop participants with cards and markers in a collaborative session" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Carousel photo · 1600×560 · 20:7</span></div>
+              <div class="img-slot" data-slot="approach-3"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-steps"/></svg><img src="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg" srcset="https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_640.jpg 640w, https://cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg 1280w" sizes="(max-width: 600px) 100vw, 1200px" alt="Workshop participants with cards and markers in a collaborative session" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Carousel photo · 1600×560 · 20:7</span></div>
               <div class="proj-carousel-caption">
                 <div class="proj-carousel-title">Strategy, Action &amp; Accountability</div>
                 <div class="proj-carousel-sub">Insights translate into tailored action plans with clear owners, timelines, and follow-up checkpoints so change actually happens.</div>
@@ -1616,7 +1616,7 @@
                 <thead><tr><th>Failure Pattern</th><th>Why It Blocks Behaviour Change</th></tr></thead>
                 <tbody>
                   <tr><td>Knowledge over transformation</td><td>Programmes teach concepts but don't build new habits; behaviour change requires practice, not just understanding</td></tr>
-                  <tr><td>Decoupled from real work</td><td>Classroom learning isn't tied to actual projects; adults retain ~10% of lectures vs ~66% when learning by doing</td></tr>
+                  <tr><td>Decoupled from real work</td><td>Classroom learning isn't tied to actual approach; adults retain ~10% of lectures vs ~66% when learning by doing</td></tr>
                   <tr><td>Ignoring context</td><td>One-size-fits-all competencies don't match the organisation's strategy, culture, or leadership transitions</td></tr>
                   <tr><td>Underestimating mindsets</td><td>Deep beliefs block new behaviours; programmes rarely surface and shift these</td></tr>
                   <tr><td>No accountability or reinforcement</td><td>No managers or peers involved, no feedback loops, no follow-up; what gets measured is what changes</td></tr>
@@ -1633,7 +1633,7 @@
             <p>Research shows that without sustained practice, feedback, and systems support, gains remain superficial and leaders revert to old habits. Our approach uses a <strong>behaviour-change design</strong> — aligned with a small set of core, evidence-based principles that apply across habits, health, work, and education</p>
             <ul class="proj-list">
               <li>Prioritise personal and organisational impact by defining motivation, enhancing capabilities, and addressing obstacles to foster adoption and achieve significant results.</li>
-              <li>Build around real work — learning tied to live business projects</li>
+              <li>Build around real work — learning tied to live business approach</li>
               <li>Embed sustained practice — application periods between modules</li>
               <li>Address mindsets, not just skills — surface unconscious beliefs</li>
               <li>Create accountability systems — involve managers, peers, and mentors</li>
@@ -1645,12 +1645,12 @@
           <div class="proj-accordion-body"><div class="clip"><div class="inner">
             <div style="margin-top:14px;display:flex;flex-direction:column;gap:14px">
               <div class="sub-block"><div class="sub-h">1. Impact First, Capability Defined</div><p class="sub-p">Translate organisational challenges into tailored leadership pathways by clarifying motivation, strengthening capability, and removing barriers to ensure adoption and measurable impact.</p></div>
-              <div class="sub-block"><div class="sub-h">2. Build around real work</div><p class="sub-p">Design learning around live business projects. Use stretch assignments that push leaders outside their comfort zone to create new neural pathways.</p></div>
+              <div class="sub-block"><div class="sub-h">2. Build around real work</div><p class="sub-p">Design learning around live business approach. Use stretch assignments that push leaders outside their comfort zone to create new neural pathways.</p></div>
               <div class="sub-block"><div class="sub-h">3. Embed sustained practice</div><p class="sub-p">Structure application periods between modules. Regular practice expands the skill-related neural network. Provide quick-reference tools to make new behaviours easier to do.</p></div>
               <div class="sub-block"><div class="sub-h">4. Address mindsets, not just skills</div><p class="sub-p">Use self-assessment, 360 feedback, and reflection to surface unconscious beliefs. Apply a whole-person approach: who the leader needs to be, not just what they need to know.</p></div>
               <div class="sub-block"><div class="sub-h">5. Create accountability systems</div><p class="sub-p">Involve managers, peers, and mentors in supporting new behaviours. Establish peer coaching groups and set SMART goals with clear action plans.</p></div>
               <div class="sub-block"><div class="sub-h">6. Use neuroscience-based learning principles</div><p class="sub-p">Stretch outside comfort zones. Enable self-directed learning. Emphasise on-the-job repetition. Create a positive, psychologically safe context. Focus on strengths and build in feedback loops.</p></div>
-              <div class="sub-block"><div class="sub-h">7. Measure behaviour change and business impact</div><p class="sub-p">Run 360-degree feedback before and 6–12 months after. Monitor career outcomes. Track business metrics tied to projects. Avoid relying only on satisfaction surveys.</p></div>
+              <div class="sub-block"><div class="sub-h">7. Measure behaviour change and business impact</div><p class="sub-p">Run 360-degree feedback before and 6–12 months after. Monitor career outcomes. Track business metrics tied to approach. Avoid relying only on satisfaction surveys.</p></div>
             </div>
           </div></div></div>
         </div>
@@ -1687,7 +1687,7 @@
     </div>
   </section>
 
-  <section class="projects-cta">
+  <section class="approach-cta">
     <div class="container">
       <div class="cta-banner fade-up">
         <div>
@@ -1701,7 +1701,7 @@
       </div>
     </div>
   </section>
-</div><!-- END PAGE: PROJECTS -->
+</div><!-- END PAGE: approach -->
 
 
 <!-- PAGE: PROGRAMMES -->
@@ -1894,7 +1894,7 @@
         </div>
         <div class="cta-actions">
           <button type="button" class="btn btn-primary" data-nav="about" data-contact>Start the conversation</button>
-          <button type="button" class="btn btn-outline-white" data-nav="projects">See how we work</button>
+          <button type="button" class="btn btn-outline-white" data-nav="approach">See how we work</button>
         </div>
       </div>
     </div>
@@ -1923,7 +1923,7 @@
         <a class="footer-link" href="#programmes" data-nav="programmes">Programmes</a>
         <a class="footer-link" href="#profile" data-nav="profile">Profile</a>
         <a class="footer-link" href="#about" data-nav="about">About Us</a>
-        <a class="footer-link" href="#projects" data-nav="projects">Projects</a>
+        <a class="footer-link" href="#approach" data-nav="approach">approach</a>
         <a class="footer-link" href="#contact" data-nav="about" data-contact>Contact</a>
       </div>
       <div>
@@ -1965,7 +1965,7 @@
 
   /* 0 ── CONFIG & HELPERS ─────────────────────────────────────────────── */
   var SHOW_SLOT_LABELS = true;   // set to false before launch to hide the dashed "image slot" labels
-  var PAGES = ['overview', 'programmes', 'profile', 'about', 'projects'];
+  var PAGES = ['overview', 'programmes', 'profile', 'about', 'approach'];
   var LEAVE_MS = 280;            // time the navy sweep takes to cover the page (matches .curtain.in in CSS)
 
   var $  = function (sel, root) { return (root || document).querySelector(sel); };
@@ -2013,7 +2013,7 @@
   }
 
 
-  /* 2 ── VIEW SWITCHING (Overview / Profile / About / Projects) ───────────
+  /* 2 ── VIEW SWITCHING (Overview / Profile / About / approach) ───────────
      Outgoing view fades (.page-leave) → swap → incoming view rises
      (.page-enter). A token makes rapid clicks safe: only the last wins. */
   var token = 0;
@@ -2111,7 +2111,7 @@
 
 
   /* 3 ── HASH / BACK BUTTON ───────────────────────────────────────────────
-     #profile, #about, #projects, #contact are shareable and Back works.
+     #profile, #about, #approach, #contact are shareable and Back works.
      pushState can throw (sandboxed iframes, some file:// cases) — ignored. */
   function parseHash() {
     var h = (window.location.hash || '').slice(1);
@@ -2209,7 +2209,7 @@
 
 
   /* 7 ── CAROUSELS ────────────────────────────────────────────────────────
-     createCarousel(cfg) powers both the profile photos and the projects
+     createCarousel(cfg) powers both the profile photos and the approach
      slides. Features: arrows, dots, keyboard (←/→), swipe/drag with live
      follow (pointer events; touch-action: pan-y keeps vertical scrolling),
      optional autoplay (pauses on hover/focus/hidden tab/reduced motion and
@@ -2749,7 +2749,7 @@
     createCarousel({ root: '#avatarCarousel', track: '#avatarTrack', slide: '.avatar-carousel-slide',
                      dots: '#avatarDots', dotClass: 'avatar-dot', label: 'Profile photos' });
   });
-  safe('projects carousel', function () {
+  safe('approach carousel', function () {
     createCarousel({ root: '#projCarousel', viewport: '.proj-carousel-wrap', track: '#projCarouselTrack',
                      slide: '.proj-carousel-slide', dots: '#projCarouselDots', dotClass: 'proj-cdot',
                      label: 'How we work', autoplay: 5000 });
