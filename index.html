@@ -77,6 +77,7 @@
    pp-education         Your upload  images/school-clock-tower.jpg
    pp-healthcare        Pexels       images.pexels.com/photos/6749742/pexels-photo-6749742.jpeg
    pp-workforce         Your upload  images/man-at-laptop.jpg
+   pp-community         Pexels       images.pexels.com/photos/5637704/pexels-photo-5637704.jpeg
    about-team           Your upload  images/open-plan-team.jpg
    approach-1           Pixabay      cdn.pixabay.com/photo/2018/09/20/17/38/client-3691443_1280.jpg
    approach-2           Your upload  images/hands-over-charts.jpg
@@ -89,6 +90,10 @@
    prog-360             Pixabay      cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg
    prog-sel             Pixabay      cdn.pixabay.com/photo/2016/10/30/05/43/school-1782427_1280.jpg
    prog-wellbeing       Unsplash     images.unsplash.com/photo-1517363898874-737b62a7db91
+   prog-ageing          Pexels       images.pexels.com/photos/27865477/pexels-photo-27865477.jpeg
+   prog-resilience      Your upload  images/community-crowd-crossing.jpg
+   prog-neighbourhoods  Your upload  images/community-food-drive.jpg
+   prog-switchedon      Your upload  images/friends-with-phones.jpg
 
  -------------------------------------------------------------------------------------
  PUBLISHING ON GITHUB PAGES
@@ -387,14 +392,14 @@
     .strip-tile { flex: 1 1 0; min-width: 0; transition: flex .65s var(--ease-out); }
     .strip-tile::after { content: ''; position: absolute; inset: 0; z-index: 2; background: rgba(0,0,0,.42); pointer-events: none; transition: opacity var(--transition); }
     .strip-tile:hover::after { opacity: .35; }
-    .strip-cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 22px; color: var(--color-bone-white); }
+    .strip-cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 16px 18px 18px; color: var(--color-bone-white); background: #000; } /* solid box so the caption is always readable */
     .strip-cap strong { display: block; font-size: var(--text-heading-2xs); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; }
-    .strip-cap span { display: block; font-size: 15px; font-weight: 200; color: var(--color-silver-mist); line-height: 1.4; max-height: 0; opacity: 0; overflow: hidden; transition: max-height .5s var(--ease), opacity .4s ease; }
+    .strip-cap span { display: block; font-size: 15px; font-weight: 200; color: var(--color-silver-mist); line-height: 1.4; margin-top: 4px; }
     .strip-tile:hover img { transform: scale(1.05); }
     @media (hover: hover) and (min-width: 961px) {
       .strip-row:hover .strip-tile { flex: .85; }
       .strip-row .strip-tile:hover { flex: 2.3; }
-      .strip-tile:hover .strip-cap span { max-height: 48px; opacity: 1; }
+      .strip-cap { min-height: 128px; }
     }
 
     /* Sticky "On this page" bar (Overview) — text only. */
@@ -485,7 +490,7 @@
 
     /* Programmes preview (Overview) */
     .prog-preview-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
-    .pp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: var(--spacing-60); }
+    .pp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: var(--spacing-60); }
     .pp-tile { position: relative; display: block; aspect-ratio: 4 / 5; border-radius: var(--radius-3xl); overflow: hidden; transition: transform var(--transition); }
     .pp-tile:hover { transform: translateY(-6px); }
     .pp-photo { position: absolute; inset: 0; display: block; border-radius: var(--radius-3xl); }
@@ -1264,7 +1269,7 @@
           <div class="section-label">Programmes</div>
           <h2 class="section-title">From insight to<br>lasting change</h2>
           <div class="divider"></div>
-          <p class="section-body">Eight programmes across education, healthcare and the wider workforce, each one built on the evidence above.</p>
+          <p class="section-body">Twelve programmes across education, healthcare, community and the wider workforce, each one built on the evidence above.</p>
         </div>
         <button type="button" class="btn btn-primary" data-nav="programmes">See all programmes</button>
       </div>
@@ -1272,6 +1277,7 @@
         <a class="pp-tile fade-up" href="#programmes" data-nav="programmes" data-goto="filter-education"><span class="img-slot  pp-photo" data-slot="pp-education"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/school-clock-tower.jpg" alt="School clock tower and grandstand beside a sports field" loading="lazy" decoding="async" draggable="false" style="object-position:70% 50%"><span class="slot-tag">Education · 800×1000</span><span class="pp-cap"><strong>Education</strong><span>Keeping educators well and in the profession</span><em>Explore <i aria-hidden="true">&#8594;</i></em></span></span></a>
         <a class="pp-tile fade-up" href="#programmes" data-nav="programmes" data-goto="filter-healthcare"><span class="img-slot  pp-photo" data-slot="pp-healthcare"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://images.pexels.com/photos/6749742/pexels-photo-6749742.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/6749742/pexels-photo-6749742.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/6749742/pexels-photo-6749742.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Female ophthalmologist talking with a male patient in a clinic" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Healthcare · 800×1000</span><span class="pp-cap"><strong>Healthcare</strong><span>Sustaining clinical teams</span><em>Explore <i aria-hidden="true">&#8594;</i></em></span></span></a>
         <a class="pp-tile fade-up" href="#programmes" data-nav="programmes" data-goto="filter-workforce"><span class="img-slot  pp-photo" data-slot="pp-workforce"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/man-at-laptop.jpg" alt="Smiling man working at a laptop in a sunlit office" loading="lazy" decoding="async" draggable="false" style="object-position:56% 50%"><span class="slot-tag">Workforce &amp; Leadership · 800×1000</span><span class="pp-cap"><strong>Workforce &amp; Leadership</strong><span>Leaders, teams and wellbeing</span><em>Explore <i aria-hidden="true">&#8594;</i></em></span></span></a>
+        <a class="pp-tile fade-up" href="#programmes" data-nav="programmes" data-goto="filter-community"><span class="img-slot  pp-photo" data-slot="pp-community"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://images.pexels.com/photos/5637704/pexels-photo-5637704.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/5637704/pexels-photo-5637704.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/5637704/pexels-photo-5637704.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Multigenerational Asian family sitting together on a city bench holding flowers" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Community · 800×1000</span><span class="pp-cap"><strong>Community</strong><span>Connection, resilience and wellbeing for everyone</span><em>Explore <i aria-hidden="true">&#8594;</i></em></span></span></a>
       </div>
     </div>
   </section>
@@ -1766,6 +1772,7 @@
           <button type="button" class="prog-filter-btn" data-filter="education" aria-pressed="false" id="filter-education">Education</button>
           <button type="button" class="prog-filter-btn" data-filter="healthcare" aria-pressed="false" id="filter-healthcare">Healthcare</button>
           <button type="button" class="prog-filter-btn" data-filter="workforce" aria-pressed="false" id="filter-workforce">Workforce &amp; Leadership</button>
+          <button type="button" class="prog-filter-btn" data-filter="community" aria-pressed="false" id="filter-community">Community</button>
         </div>
       </div>
       <div class="prog-grid" id="progGrid">
@@ -1894,6 +1901,73 @@
               <div><dt>Format</dt><dd>Assessment, team stress mapping and action plan</dd></div>
             </dl>
             <ul class="prog-points"><li>Burnout risk screening and resilience profiling</li><li>Individual and team-level stress mapping</li><li>Targeted recommendations with timelines and follow-up</li></ul>
+            <button type="button" class="prog-enquire" data-nav="about" data-contact>Enquire about this programme <span aria-hidden="true">&#8594;</span></button>
+          </div>
+        </article>
+        <article class="prog-card fade-up" id="prog-ageing" data-group="community">
+          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-ageing"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="https://images.pexels.com/photos/27865477/pexels-photo-27865477.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/27865477/pexels-photo-27865477.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/27865477/pexels-photo-27865477.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Older adults dancing together indoors in a community gathering" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Ageing Well Together · 1280×720 · 16:9</span></div>
+            <span class="prog-badge">Community</span>
+            <span class="prog-status">Available</span>
+          </div>
+          <div class="prog-body">
+            <h3 class="prog-title">Ageing Well Together</h3>
+            <p class="prog-lead">Programmes that help older adults stay active, connected and purposeful, and help families understand the ageing process.</p>
+            <dl class="prog-meta">
+              <div><dt>For</dt><dd>Individuals, families and community groups</dd></div>
+              <div><dt>Format</dt><dd>Workshop series and group sessions</dd></div>
+            </dl>
+            <ul class="prog-points"><li>Understanding the ageing process, for older adults and their families</li><li>Group activities that keep people active and connected</li><li>Custom sessions shaped with each community</li></ul>
+            <button type="button" class="prog-enquire" data-nav="about" data-contact>Enquire about this programme <span aria-hidden="true">&#8594;</span></button>
+          </div>
+        </article>
+
+        <article class="prog-card fade-up" id="prog-resilience" data-group="community">
+          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-resilience"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/community-crowd-crossing.jpg" alt="Crowd of people crossing a busy Singapore street at a green pedestrian light" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Resilience in Community · 1280×720 · 16:9</span></div>
+            <span class="prog-badge">Community</span>
+            <span class="prog-status">Available</span>
+          </div>
+          <div class="prog-body">
+            <h3 class="prog-title">Resilience in Community</h3>
+            <p class="prog-lead">Practical sessions that build everyday coping skills and mutual support among residents and volunteers.</p>
+            <dl class="prog-meta">
+              <div><dt>For</dt><dd>Individuals, families and community groups</dd></div>
+              <div><dt>Format</dt><dd>Short workshop series with follow-up check-ins</dd></div>
+            </dl>
+            <ul class="prog-points"><li>Everyday coping and wellbeing skills</li><li>Peer support and mutual help among residents and volunteers</li><li>Check-ins to keep the momentum going</li></ul>
+            <button type="button" class="prog-enquire" data-nav="about" data-contact>Enquire about this programme <span aria-hidden="true">&#8594;</span></button>
+          </div>
+        </article>
+
+        <article class="prog-card fade-up" id="prog-neighbourhoods" data-group="community">
+          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-neighbourhoods"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/community-food-drive.jpg" alt="Volunteers of different backgrounds packing food bags at a community food table" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Connected Neighbourhoods · 1280×720 · 16:9</span></div>
+            <span class="prog-badge">Community</span>
+            <span class="prog-status">Available</span>
+          </div>
+          <div class="prog-body">
+            <h3 class="prog-title">Connected Neighbourhoods</h3>
+            <p class="prog-lead">Activities that bring generations and neighbours together to build lasting social bonds.</p>
+            <dl class="prog-meta">
+              <div><dt>For</dt><dd>Individuals, families and community groups</dd></div>
+              <div><dt>Format</dt><dd>Intergenerational events and co-designed activities</dd></div>
+            </dl>
+            <ul class="prog-points"><li>Intergenerational activities and shared events</li><li>Knowledge sharing across generations and backgrounds</li><li>Co-designed with the people who take part</li></ul>
+            <button type="button" class="prog-enquire" data-nav="about" data-contact>Enquire about this programme <span aria-hidden="true">&#8594;</span></button>
+          </div>
+        </article>
+
+        <article class="prog-card fade-up" id="prog-switchedon" data-group="community">
+          <div class="prog-media"><div class="img-slot ratio-16x9 prog-photo" data-slot="prog-switchedon"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/friends-with-phones.jpg" alt="Friends standing in a circle, each looking at a smartphone" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Switched On: Healthy Social Media Habits · 1280×720 · 16:9</span></div>
+            <span class="prog-badge">Community</span>
+            <span class="prog-status">Available</span>
+          </div>
+          <div class="prog-body">
+            <h3 class="prog-title">Switched On: Healthy Social Media Habits</h3>
+            <p class="prog-lead">Helping people of all ages use social media with more confidence and less strain.</p>
+            <dl class="prog-meta">
+              <div><dt>For</dt><dd>Individuals, families and community groups</dd></div>
+              <div><dt>Format</dt><dd>Interactive workshops for mixed-age groups</dd></div>
+            </dl>
+            <ul class="prog-points"><li>How social media can affect mood and relationships</li><li>Practical habits for healthier use</li><li>Sessions for mixed-age groups, so generations learn together</li></ul>
             <button type="button" class="prog-enquire" data-nav="about" data-contact>Enquire about this programme <span aria-hidden="true">&#8594;</span></button>
           </div>
         </article>
