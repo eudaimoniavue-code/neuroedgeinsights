@@ -88,7 +88,7 @@
    prog-psych           Pexels       images.pexels.com/photos/6129657/pexels-photo-6129657.jpeg
    prog-csuite          Pexels       images.pexels.com/photos/7845344/pexels-photo-7845344.jpeg
    prog-360             Pixabay      cdn.pixabay.com/photo/2016/04/28/09/37/seminar-1358408_1280.jpg
-   prog-sel             Pixabay      cdn.pixabay.com/photo/2016/10/30/05/43/school-1782427_1280.jpg
+   prog-sel             Pexels       images.pexels.com/photos/4051134/pexels-photo-4051134.jpeg
    prog-wellbeing       Unsplash     images.unsplash.com/photo-1517363898874-737b62a7db91
    prog-ageing          Pexels       images.pexels.com/photos/27865477/pexels-photo-27865477.jpeg
    prog-resilience      Your upload  images/community-crowd-crossing.jpg
@@ -862,6 +862,32 @@
       .js .fade-up:not(.visible) { opacity: 1; }
     }
 
+  
+    /* LEGAL POPUP (Privacy Policy / Terms of Use). Content is loaded from privacy.html and terms.html */
+    .legal-modal { position: fixed; inset: 0; z-index: 400; display: none; align-items: center; justify-content: center; padding: 24px; background: rgba(0,0,0,.82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+    .legal-modal.open { display: flex; animation: legal-fade .22s var(--ease-out); }
+    @keyframes legal-fade { from { opacity: 0; } to { opacity: 1; } }
+    .legal-panel { position: relative; width: 100%; max-width: 780px; max-height: min(88vh, 900px); display: flex; flex-direction: column; background: var(--tint-navy); border-radius: var(--radius-3xl); overflow: hidden; }
+    .legal-close { position: absolute; top: 16px; right: 16px; z-index: 2; width: 44px; height: 44px; border: 0; border-radius: 50%; background: #000; color: var(--color-bone-white); font-size: 22px; line-height: 1; cursor: pointer; transition: background var(--transition), color var(--transition); }
+    .legal-close:hover { background: var(--color-electric-iris); }
+    .legal-scroll { overflow-y: auto; overscroll-behavior: contain; padding: clamp(28px, 5vw, 56px); padding-right: clamp(28px, 5vw, 56px); -webkit-overflow-scrolling: touch; }
+    .legal-scroll .legal p.legal-eyebrow { font-size: var(--text-nav-label); font-weight: 600; letter-spacing: .025em; text-transform: uppercase; color: var(--color-saffron-spark); margin-bottom: 14px; padding-right: 48px; }
+    .legal h1 { font-size: clamp(32px, 4vw, 48px); font-weight: 400; line-height: 1.05; letter-spacing: -0.04em; color: var(--color-bone-white); margin-bottom: 12px; }
+    .legal p.legal-updated { font-size: 14px; color: var(--color-ash-gray); margin-bottom: 24px; }
+    .legal p.legal-lead { font-size: 19px; color: var(--color-bone-white); margin-bottom: 12px; }
+    .legal h2 { font-size: 22px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; margin: 34px 0 10px; color: var(--color-bone-white); }
+    .legal p, .legal li { font-size: 16px; color: var(--color-silver-mist); line-height: 1.65; }
+    .legal p { margin-bottom: 12px; }
+    .legal ul { list-style: none; margin: 0 0 14px; }
+    .legal li { position: relative; padding: 4px 0 4px 24px; }
+    .legal li::before { content: ''; position: absolute; left: 2px; top: 12px; width: 10px; height: 10px; background: var(--tri) center/contain no-repeat; }
+    .legal a { color: var(--color-bone-white); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--color-saffron-spark); }
+    .legal a:hover { color: var(--color-saffron-spark); }
+    .legal-modal-foot { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 34px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.12); font-size: 14px; }
+    .legal-modal-foot a { font-weight: 600; letter-spacing: .025em; text-transform: uppercase; }
+    body.legal-open { overflow: hidden; }
+    @media (max-width: 600px) { .legal-modal { padding: 0; align-items: flex-end; } .legal-panel { max-height: 92vh; border-radius: var(--radius-3xl) var(--radius-3xl) 0 0; } }
+    @media (prefers-reduced-motion: reduce) { .legal-modal.open { animation: none; } }
   </style>
 </head>
 <body>
@@ -1162,7 +1188,7 @@
           <div class="focus-visual-label">Where We Work</div>
           <div class="sector-mosaic">
             <figure class="img-slot ratio-16x9 sector-tile wide" data-slot="sector-education"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-education"/></svg><img src="images/school-blue-arches.jpg" alt="Blue-and-white school building with an arched walkway above a paved courtyard" loading="lazy" decoding="async" draggable="false"><span class="slot-tag">Education · 1280×720 · 16:9</span><figcaption class="sector-cap"><strong>Education</strong><span>Educator attrition and retention</span></figcaption></figure>
-            <figure class="img-slot ratio-4x3 sector-tile" data-slot="sector-healthcare"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-health"/></svg><img src="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Doctor and patient in a positive consultation in a bright clinic" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Healthcare · 960×720 · 4:3</span><figcaption class="sector-cap"><strong>Healthcare</strong><span>Critical Rentention for Healthcare Workforce </span></figcaption></figure>
+            <figure class="img-slot ratio-4x3 sector-tile" data-slot="sector-healthcare"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-health"/></svg><img src="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width: 600px) 100vw, 50vw" alt="Doctor and patient in a positive consultation in a bright clinic" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false"><span class="slot-tag">Healthcare · 960×720 · 4:3</span><figcaption class="sector-cap"><strong>Healthcare</strong><span>Pipeline coming soon</span></figcaption></figure>
             <figure class="img-slot ratio-4x3 sector-tile" data-slot="sector-workforce"><svg class="ph-icon" aria-hidden="true" focusable="false"><use href="#ph-people"/></svg><img src="images/marina-bay-skyline.jpg" alt="Marina Bay skyline at sunset seen from the Jubilee Bridge promenade, Singapore" loading="lazy" decoding="async" draggable="false" style="object-position:62% 50%"><span class="slot-tag">Workforce · 960×720 · 4:3</span><figcaption class="sector-cap"><strong>Workforce</strong><span>HR analytics and behaviour change</span></figcaption></figure>
           </div>
         </div>
@@ -1709,7 +1735,7 @@
               </table>
             </div>
           </div>
-          <button class="proj-accordion-btn" type="button" data-accordion aria-expanded="false">How SEL builds resilience. The connections <span class="proj-accordion-arrow" aria-hidden="true">↓</span></button>
+          <button class="proj-accordion-btn" type="button" data-accordion aria-expanded="false">How SEL builds resilience — the connections <span class="proj-accordion-arrow" aria-hidden="true">↓</span></button>
           <div class="proj-accordion-body"><div class="clip"><div class="inner">
             <div style="margin-top:14px;display:flex;flex-direction:column;gap:12px">
               <div class="proj-callout"><strong>Self-awareness + self-management</strong> allow employees to detect stress early and regulate their response, preventing fight-or-flight reactions before they escalate.</div>
@@ -2040,7 +2066,7 @@
     </div>
     <div class="footer-bottom">
       <div><div class="footer-copy">© 2026 Neuroedge Insights. All rights reserved.</div><div class="footer-copy">Photography: Neuroedge Insights, plus free images from <a href="https://www.pexels.com" rel="noopener" target="_blank" style="text-decoration:underline">Pexels</a>, <a href="https://unsplash.com" rel="noopener" target="_blank" style="text-decoration:underline">Unsplash</a> and <a href="https://pixabay.com" rel="noopener" target="_blank" style="text-decoration:underline">Pixabay</a>.</div></div>
-      <div class="footer-legal"><a>Privacy Policy</a><a>Terms of Use</a></div>
+      <div class="footer-legal"><a href="privacy.html" data-legal="privacy">Privacy Policy</a><a href="terms.html" data-legal="terms">Terms of Use</a></div>
     </div>
   </div>
 </footer>
@@ -2865,6 +2891,74 @@
     setNavState('overview');
     var p = parseHash();
     if (p && p.name !== 'overview') showPage(p.name, { contact: p.contact, push: false, instant: true, focus: false });
+  });
+})();
+</script>
+
+<!-- LEGAL POPUP: opened by the footer links; text is read from privacy.html / terms.html (same folder) -->
+<div class="legal-modal" id="legalModal" role="dialog" aria-modal="true" aria-label="Legal information" aria-hidden="true">
+  <div class="legal-panel">
+    <button class="legal-close" type="button" id="legalClose" aria-label="Close">&times;</button>
+    <div class="legal-scroll" id="legalScroll" tabindex="-1"><div class="legal" id="legalBody"></div></div>
+  </div>
+</div>
+<script>
+/* Legal popup. Works on a web host (GitHub Pages). If the page can't be loaded (e.g. file opened
+   straight from a folder), the footer link just opens privacy.html / terms.html normally. */
+(function () {
+  var modal = document.getElementById('legalModal'), body = document.getElementById('legalBody'),
+      scroller = document.getElementById('legalScroll'), closeBtn = document.getElementById('legalClose'),
+      lastFocus = null, cache = {}, FILES = { privacy: 'privacy.html', terms: 'terms.html' },
+      OTHER = { privacy: ['terms', 'Terms of Use'], terms: ['privacy', 'Privacy Policy'] };
+  if (!modal) return;
+  function show(key, html) {
+    body.innerHTML = html;
+    var o = OTHER[key], f = document.createElement('div');
+    f.className = 'legal-modal-foot';
+    f.innerHTML = '<a href="' + FILES[o[0]] + '" data-legal="' + o[0] + '">' + o[1] + '</a><a href="' + FILES[key] + '" target="_blank" rel="noopener">Open as a page</a>';
+    body.appendChild(f);
+    modal.setAttribute('aria-label', key === 'privacy' ? 'Privacy Policy' : 'Terms of Use');
+    scroller.scrollTop = 0;
+    if (!modal.classList.contains('open')) {
+      lastFocus = document.activeElement;
+      modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('legal-open');
+    }
+    closeBtn.focus({ preventScroll: true });
+  }
+  function close() {
+    modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('legal-open');
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+  }
+  function open(key, link) {
+    if (cache[key]) return show(key, cache[key]);
+    fetch(FILES[key], { credentials: 'same-origin' }).then(function (r) {
+      if (!r.ok) throw new Error(r.status); return r.text();
+    }).then(function (t) {
+      var d = new DOMParser().parseFromString(t, 'text/html'), m = d.getElementById('legal-content');
+      if (!m) throw new Error('no content');
+      cache[key] = m.innerHTML; show(key, cache[key]);
+    }).catch(function () { window.location.href = FILES[key]; });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[data-legal]');
+    if (a) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+      e.preventDefault(); open(a.getAttribute('data-legal'), a); return;
+    }
+    if (e.target === modal) close();
+  });
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (!modal.classList.contains('open')) return;
+    if (e.key === 'Escape') { e.preventDefault(); close(); }
+    if (e.key === 'Tab') {                       /* keep keyboard focus inside the popup */
+      var f = modal.querySelectorAll('a[href], button'); if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
   });
 })();
 </script>
